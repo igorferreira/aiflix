@@ -154,3 +154,7 @@ Como cliente-piloto, quero acessar um endereço público para avaliar a experiê
 ## Evidências exigidas para conclusão do MVP
 
 Registrar testes de lógica relevante, verificação manual do fluxo, estados de erro, persistência após recarga, acessibilidade, telas pequenas e grandes, teste no endereço publicado, catálogo real e tempo editorial observado. Resultados ainda não executados devem permanecer pendentes. Esta documentação não constitui evidência de implementação ou aceite dos pilotos.
+
+## Ajuste da página inicial — 14/11/2026
+
+- VIS-01 — Concluída por root: remover legenda redundante acima do título e CSS sem uso, após revisão do alerta `hero-eyebrow-chip`. Sem supressão do alerta. Validação: ausência da classe no HTML e CSS; atualização publicada via Git.
