@@ -11,7 +11,8 @@ Projeto em especificação SDD. A página em `public/` apresenta o projeto em co
 - Tarefas, status e responsáveis: `TASKS.md`.
 - Decisões de arquitetura: `docs/adrs/`.
 - Repositório: https://github.com/igorferreira/aiflix.
-- Endereço solicitado de produção: https://aiflix.vercel.app.
+- Página inicial publicada: https://aiflix-topaz-nine.vercel.app.
+- Endereço solicitado: https://aiflix.vercel.app; atribuição recusada pela Vercel com `alias_in_use` (já em uso).
 
 ## Publicação
 

@@ -1,0 +1,156 @@
+# Tarefas — aiflix
+
+> Versão: v2 · Data: 14/11/2026 · Fonte: PRD.md v0.3 e AGENTS.md.
+
+## Objetivo e limites
+
+Entregar uma vitrine de cursos próprios de IA, organizada para profissionais brasileiros, com vídeos no YouTube. O MVP inclui catálogo por trilha, curso com módulos e aulas, player com tela cheia e progresso local básico. Não inclui contas de alunos, progresso em nuvem, certificados, streaming próprio, busca avançada, gamificação, aplicativo móvel ou cobrança.
+
+O pedido atual autoriza repositório público e publicação Vercel, além da consolidação SDD. Execução de infraestrutura e implantação funcional do produto são resultados distintos. O quadro abaixo é a fonte de status e responsáveis; checkboxes históricos não significam execução de aplicativo.
+
+
+## Quadro de gestão dos pedidos — fonte atual de status
+
+Status: `concluída` exige evidência; `em andamento` identifica execução real; `planejada` tem responsável previsto, sem agente executando; `bloqueada` indica insumo/decisão ausente. Atualize status, agente e evidência a cada transição. Não atribua execução a um agente apenas por existir no catálogo. Todas as tarefas se vinculam ao PRD v0.3 e às specs indicadas.
+
+| ID | Pedido / tarefa | Status | Agente responsável / executor | Dependência e evidência |
+|---|---|---|---|---|
+| DOC-01–05 | Especificação inicial, backlog e ADR 0001 | concluída | DevSquad da rodada anterior | Artefatos v1 e registro do Passo 003; só documentação |
+| DOC-06 | Incorporar todos os novos pedidos no SDD | concluída | devsquad-lead / sdd_scope_update | PRD v0.3, Spec 001 v2, Spec 007 v1, ADR 0002 |
+| DOC-07 | Gestão por status e agente neste TASKS.md | concluída | devsquad-lead / sdd_scope_update | Este quadro; preservar histórias detalhadas abaixo |
+| INF-01 | Criar/verificar GitHub público aiflix | concluída | root, função DevSecOps | https://github.com/igorferreira/aiflix público; evidência em docs/publicacao-2026-11-14.md |
+| INF-02 | Manter checkout Git fora do Drive e publicar arquivos autorizados | concluída (bootstrap) | root, função DevSecOps | /home/igorferreira/projetos/aiflix; commit inicial 0bcb05964ed3b41a826f69b9edf1d4f5f3b8ee7c; sincronização da nova revisão documental pela raiz |
+| INF-03 | Criar projeto e publicar na conta Vercel de Igor | concluída (landing) | root, função DevSecOps | Produção READY em https://aiflix-topaz-nine.vercel.app; / e /styles.css 200, comparação local confirmada; aplicação ainda pendente |
+| INF-04 | Atribuir endereço solicitado https://aiflix.vercel.app | bloqueada | root, função DevSecOps | Alias recusado HTTP 400 alias_in_use; produção alternativa ativa; depende de liberação do endereço ou nova escolha de Igor |
+| US-01 | Catálogo completo e agrupamentos por referências | planejada | devsquad-frontend (previsto) | Spec 001 v2, CA01/CA05/CA13/CA14 |
+| US-02 | Curso independente, módulos e aulas | planejada | devsquad-frontend (previsto) | Spec 001 v2, CA02/CA13 |
+| US-03 | Player YouTube, tela cheia e fallback | planejada | devsquad-frontend (previsto) | CA03/CA09/CA12; conteúdo real para teste |
+| US-04 | Conclusão manual local reversível | planejada | devsquad-frontend (previsto) | CA04/CA09; retomada fase 002 |
+| US-05 | Validar catálogo e procedimento editorial | planejada | devsquad-frontend (previsto) | Schema 2 e CA05/CA12 |
+| CUR-01 | Pesquisar referências de IA no iBest Brasil e confirmar canais YouTube | planejada (continuação) | DevSquad / curadoria (previsto); levantamento inicial por root | Fonte oficial https://app.premioibest.com/votacao/autoridade-ia; registro em docs/pesquisa-ibest-2026.md; distinguir ano, TOP10, voto popular e academia, sem ranking inferido |
+| CUR-02 | Definir uso das referências: inspiração editorial ou embed de terceiros | planejada | Igor / produto, com curadoria do DevSquad | CUR-01; referência iBest não autoriza substituir conteúdo próprio ou reutilizar material; confirmar autoria, condições de uso e disponibilidade |
+| CNT-01 | Preparar três módulos de cursos reais após pesquisa e curadoria | bloqueada | DevSquad / curadoria (previsto) | CUR-01/02; faltam seleção, títulos, curso(s) de destino, aulas e URLs verificadas; CA15; não depende somente de Igor fornecer URLs e não equivale a três cursos |
+| CNT-02 | Cobrir seis trilhas com cursos reais | bloqueada | Igor / conteúdo | Meta original preservada; três módulos não a substituem; CA10 |
+| PUB-01 | Garantir plataforma gratuita aberta sem login de alunos | planejada | devsquad-frontend (previsto) | CA13/LP07; sem cobrança ou pré-requisitos |
+| ADM-01 | Escolher autenticação, persistência e publicação server-side | planejada | devsquad-architect (previsto) | ADR de implementação, custos, conta admin e contrato OpenAPI; Spec 007 |
+| ADM-02 | Implementar serviço administrativo autorizado | planejada | devsquad-backend (previsto) | ADM-01; LP01/LP02/LP04/LP05/LP06 |
+| ADM-03 | UI para criar/editar/ordenar/pré-visualizar/publicar learn paths | planejada | devsquad-frontend (previsto) | ADM-01/02; LP02/LP08 |
+| ADM-04 | Exibir learn paths publicados com cursos independentes | planejada | devsquad-frontend (previsto) | CA14; LP03/LP04/LP07 |
+| US-06 | QA de teclado, telas, catálogo, player, progresso e erros | planejada | devsquad-qa (previsto) | CA01–CA15 e LP01–LP08; sem execução funcional nesta revisão |
+| US-07 | Validar publicação funcional e coletar feedback dos oito pilotos | planejada | devsquad-qa (previsto) / Igor | Deploy técnico não conclui conteúdo, admin ou aceite de negócio |
+| REV-01 | Review final da implementação | planejada | devsquad-reviewer (previsto) | QA aprovado antes de considerar produto pronto |
+| UX-01 | Definir identidade visual | planejada | Igor / devsquad-frontend (previsto) | Identidade ainda não definida |
+
+As linhas de infraestrutura refletem execução da raiz e evidências em docs/publicacao-2026-11-14.md; este agente documental não executou GitHub/Vercel. As histórias abaixo conservam o detalhamento de aceite original, complementado por CA13–CA16 e LP01–LP08.
+
+## Entrega documental atual
+
+- [x] DOC-01 — Ler PRD.md e AGENTS.md e identificar escopo e restrições.
+- [x] DOC-02 — Registrar backlog priorizado com critérios de aceite e pendências neste arquivo.
+- [x] DOC-03 — Elaborar a revisão v1 de `specs/001-mvp-catalogo-player.md` com contrato de catálogo, navegação, progresso, erros e validação.
+- [x] DOC-04 — Registrar decisão de stack em `docs/adrs/0001-frontend-estatico.md`; base solicitada: HTML, CSS e JavaScript vanilla. Framework depende de justificativa do arquiteto.
+- [x] DOC-05 — Revisar consistência documental entre PRD, especificação, ADR e tarefas.
+
+Revisão documental: fontes, nomes de arquivos, limites da fase 001 e critérios CA01–CA12 conferidos. Não equivale a QA funcional nem aceite do produto.
+
+## Backlog da Spec 001
+
+Todas as histórias têm prioridade P0 para o MVP. A ordem abaixo orienta execução; detalhes técnicos pertencem à especificação.
+
+### US-01 — Consultar trilhas e cursos
+
+Como profissional, quero descobrir cursos por trilha para encontrar conteúdo adequado ao meu perfil.
+
+- [ ] Implementar home com carrosséis derivados do catálogo.
+- Fonte: PRD §§3, 5 e 6.
+- Dado um catálogo válido, quando abrir a home, então verei cursos agrupados nas respectivas trilhas.
+- Dado um curso novo no catálogo, quando recarregar a home, então ele aparecerá sem alteração de código.
+- Dado um catálogo vazio ou indisponível, quando abrir a home, então verei um estado compreensível, sem tela quebrada.
+
+### US-02 — Explorar um curso
+
+Como aluno, quero consultar módulos e aulas para entender a sequência do curso e selecionar uma aula.
+
+- [ ] Implementar página de curso e seleção de aula.
+- Fonte: PRD §§4 e 5.
+- Dado um curso válido, quando abri-lo, então verei seus módulos e aulas na ordem editorial.
+- Dada uma aula, quando selecioná-la, então verei título, descrição, duração e materiais complementares disponíveis.
+- Dado um endereço de curso ou aula inexistente, quando acessá-lo, então verei uma mensagem e um caminho de volta ao catálogo.
+
+### US-03 — Assistir a uma aula
+
+Como aluno, quero reproduzir a aula na plataforma para acompanhar o curso.
+
+- [ ] Implementar embed do YouTube, acesso à tela cheia e link alternativo.
+- Fonte: PRD §§1, 4, 5 e 8.
+- Dada uma aula com vídeo disponível, quando abri-la, então poderei iniciar a reprodução e acessar tela cheia pelos controles do player.
+- Dado um embed indisponível, quando consultar a aula, então terei um link para abrir o vídeo no YouTube.
+- Dada uma URL inválida no catálogo, quando ela for processada, então não será usada para incorporar conteúdo inseguro.
+
+### US-04 — Registrar progresso local básico
+
+Como aluno, quero marcar aulas como concluídas para acompanhar meu avanço no mesmo navegador.
+
+- [ ] Implementar marcação e desmarcação manual de conclusão com persistência local.
+- Fonte: PRD §5; delimitação da fase 002 em AGENTS.md.
+- Dada uma aula, quando marcar sua conclusão e recarregar a página, então sua conclusão permanecerá no mesmo navegador e origem.
+- Dada uma aula concluída, quando desfizer a marcação e recarregar, então ela permanecerá não concluída.
+- Dado armazenamento bloqueado ou corrompido, quando usar o curso, então ainda poderei assistir e receberei indicação da limitação de persistência.
+- Dado apenas um título alterado e identificadores preservados, quando recarregar, então o progresso não será perdido.
+- Retomada no segundo exato e sincronização não fazem parte desta história.
+
+### US-05 — Publicar conteúdo pelo catálogo
+
+Como responsável editorial, quero adicionar cursos e trilhas por dados para publicar sem alterar código.
+
+- [ ] Validar catálogo e documentar procedimento editorial.
+- [ ] Fornecer conteúdo próprio real para as seis trilhas iniciais.
+- Fonte: PRD §§3, 4, 6, 8 e 9.
+- Dado um catálogo válido, quando adicionar uma trilha e seu curso, então ambos aparecerão sem mudança no código.
+- Dado o conteúdo e os metadados prontos, quando um responsável adicionar um curso pelo procedimento documentado, então a operação editorial levará menos de 30 minutos; registrar tempo observado.
+- Dada a versão candidata ao lançamento, quando conferir o catálogo, então haverá pelo menos um curso real em cada uma das seis trilhas do PRD.
+- Dado um vídeo ainda não publicado ou sem confirmação de autoria, quando preparar o catálogo de produção, então sua publicação ficará pendente.
+
+### US-06 — Usar a plataforma com acessibilidade e em diferentes telas
+
+Como aluno, quero navegar por teclado e em telas pequenas para acessar os cursos no meu dispositivo.
+
+- [ ] Validar navegação por teclado, foco, rótulos, iframe e layout responsivo.
+- Fonte: PRD §5 e AGENTS.md, Qualidade e validação.
+- Dada qualquer ação do fluxo home → curso → aula, quando navegar por teclado, então poderei acioná-la com foco visível.
+- Dado o player, quando inspecionar seu nome acessível, então haverá um título que identifica a aula.
+- Dadas telas pequenas e grandes, quando percorrer o fluxo, então texto, controles e player permanecerão utilizáveis sem sobreposição.
+
+### US-07 — Acessar a versão publicada
+
+Como cliente-piloto, quero acessar um endereço público para avaliar a experiência.
+
+- [x] Registrar escolha de Vercel e endereço solicitado `https://aiflix.vercel.app` por Igor.
+- [ ] Definir identidade visual.
+- [ ] Publicar e validar assets, navegação direta e recarga no endereço final.
+- [ ] Coletar feedback dos oito clientes-piloto e registrar resultados, sem presumir aprovação.
+- Fonte: PRD §§5, 6 e 9.
+- Dado o provedor escolhido, quando acessar a versão publicada e recarregar uma aula diretamente, então catálogo, navegação e player funcionarão.
+- Dada a versão publicada, quando os oito clientes-piloto avaliarem o fluxo, então seus feedbacks e eventuais pendências serão registrados separadamente da validação técnica.
+
+## Pendências e dependências
+
+| ID | Pendência | Responsável pela decisão ou insumo | Impacto |
+|---|---|---|---|
+| P-01 | Pesquisa/curadoria de referências iBest, confirmação de canais e decisão sobre uso editorial ou embed; depois metadados e vídeos válidos | DevSquad / curadoria e Igor / produto | Bloqueia preparação dos três módulos; meta original de cobertura continua separada |
+| P-02 | Liberar alias solicitado ou escolher endereço definitivo | Igor / root DevSecOps | Conta e publicação verificadas; somente aiflix.vercel.app bloqueado por alias_in_use |
+| P-03 | Domínio e identidade visual | Igor | Bloqueia fechamento da apresentação de lançamento |
+| P-04 | Coleta e registro do feedback dos oito pilotos | Igor / produto | Bloqueia comprovação da métrica de feedback |
+
+## Fases futuras
+
+- 002 — Evoluir progresso e continuação de aula; especificar antes de implementar.
+- 003 — Busca e filtros.
+- 004 — Landing por trilha e SEO.
+- 005 — Contas e progresso em nuvem, com decisão de backend.
+- 006 — Certificados e gamificação.
+- 007 — Administração e learn paths; novo escopo priorizado, contrato em specs/007-admin-learn-paths.md.
+
+## Evidências exigidas para conclusão do MVP
+
+Registrar testes de lógica relevante, verificação manual do fluxo, estados de erro, persistência após recarga, acessibilidade, telas pequenas e grandes, teste no endereço publicado, catálogo real e tempo editorial observado. Resultados ainda não executados devem permanecer pendentes. Esta documentação não constitui evidência de implementação ou aceite dos pilotos.
