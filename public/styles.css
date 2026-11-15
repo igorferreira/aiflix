@@ -31,7 +31,7 @@ section { margin-block: 32px; min-width: 0; }
 .meta { font-size: 14px; color: #d2c6c8; }
 .carousel { display: flex; gap: 18px; overflow-x: auto; scroll-snap-type: x proximity; padding: 6px 5px 18px; }
 .carousel .course-card { flex: 0 0 min(310px, 88%); scroll-snap-align: start; }
-.empty, .notice { border-left: 3px solid #b46c73; padding: 12px 18px; background: #211b1d; }
+.empty, .notice { padding: 12px 18px; background: #211b1d; }
 .notice { color: #f0dce0; }
 .player { width: 100%; aspect-ratio: 16 / 9; border: 0; background: #000; }
 .course-layout { display: grid; grid-template-columns: minmax(0, 2fr) minmax(240px, 1fr); gap: 32px; align-items: start; }
@@ -47,7 +47,7 @@ fieldset { border: 1px solid var(--line); padding: 18px; margin-top: 24px; min-w
 legend { padding-inline: 6px; }
 .ordered-courses { padding-left: 24px; }
 .ordered-courses li { padding-block: 12px; overflow-wrap: anywhere; }
-.error { color: #ffd2cf; border-left: 3px solid #efa8a0; padding: 12px; background: #302024; }
+.error { color: #ffd2cf; padding: 12px; background: #302024; }
 .error:empty { display: none; }
 footer { padding: 24px clamp(18px, 5vw, 72px); border-top: 1px solid var(--line); }
 footer p { font-size: 13px; }
@@ -58,7 +58,7 @@ footer p { font-size: 13px; }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
 
 .course-visual { display: block; text-decoration: none; overflow: hidden; border-radius: 4px 4px 0 0; }
-.course-art { aspect-ratio: 16 / 9; width: 100%; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(125deg, #351316, #181719 72%); border-bottom: 3px solid #d82937; color: #fff; }
+.course-art { aspect-ratio: 16 / 9; width: 100%; padding: 24px; display: flex; flex-direction: column; justify-content: space-between; background: linear-gradient(125deg, #351316, #181719 72%); color: #fff; }
 .art-title { display: block; font-weight: 750; font-size: clamp(20px, 2vw, 27px); line-height: 1.12; letter-spacing: -.035em; overflow-wrap: anywhere; }
 .art-lesson { color: #d6c4c6; font-size: 12px; margin-top: 14px; line-height: 1.35; }
 .featured-course { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); background: #191516; border: 1px solid #503337; margin-block: 28px 42px; overflow: hidden; }

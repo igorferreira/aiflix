@@ -202,3 +202,5 @@ Três cursos curtos, três módulos e três aulas externas de Diogo Cortiz cadas
 - DEP-02 — Concluída por root / DevSecOps: aplicação commit `fcf1363`, deployment `dpl_9NrpCH92SS9UgXoK22goEuxwo2ed` READY em https://iaflix.vercel.app. HTTP200 para frontend, catálogo, script e capa; smoke real confirmou CTA, iframe esperado e conclusão persistente. Evidência: docs/publicacao-2026-11-14.md.
 - ADM-PROD — Bloqueada por configuração externa; root / DevSecOps aguarda token restrito por cartão seguro, credenciais administrativas e proteção durável de login. API503 confirmada, sem simular gravação. Código local aprovado não comprova administração ativa na produção.
 - CNT-PLAYBACK — Planejada para devsquad-qa: validar reprodução e fullscreen reais das três aulas. Metadados, URLs e duração foram confirmados; não declarar reprodução validada apenas pelo iframe.
+
+- VIS-03 — Concluída por root: revisão dos três alertas impeccable em styles.css; removidas bordas decorativas de avisos, erros e capa fallback. Texto, contraste de fundo, semântica de erro e foco preservados. Nenhuma supressão.
