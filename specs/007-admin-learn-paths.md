@@ -97,3 +97,7 @@ Implementação autorizada no pedido “Devsquad Vamos virar os primeiros cursos
 Catálogo inicial: três cursos curtos com um módulo e uma aula externa de Diogo Cortiz cada, autoria e links originais preservados. Não equivalem ao curso completo original nem cobrem a meta de um curso por cada uma das seis trilhas. Configuração Vercel reescreve `/data/catalog.json` para `/api/catalog`; sem integração editorial configurada há bootstrap, mas falha de storage configurado retorna indisponibilidade sem fallback silencioso.
 
 QA técnico local aprovado em `docs/qa-implementacao.md`: 18 testes Node, 32 verificações de browser e integração de handlers com armazenamento substituto isolado. Isso não comprova persistência remota ou reprodução efetiva de YouTube. Administração permanece fechada na produção até token restrito, credenciais, origem e proteção durável de tentativas serem configurados. Review final e deploy são gates separados.
+
+## Correção de marca — 15/11/2026
+
+Marca pública atual: **IAFLIX**, conforme confirmação de Igor. Identificadores internos, repositórios e evidências de implantação anteriores conservam seus nomes reais. Esta correção não altera os contratos administrativos nem habilita serviços sem configuração.

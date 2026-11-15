@@ -6,5 +6,5 @@ export function courseShareUrl(id) {
 }
 
 export function whatsappUrl(course) {
-  return `https://wa.me/?text=${encodeURIComponent(`${course.title} — aiflix\n${courseShareUrl(course.id)}`)}`;
+  return `https://wa.me/?text=${encodeURIComponent(`${course.title} — IAFLIX\n${courseShareUrl(course.id)}`)}`;
 }

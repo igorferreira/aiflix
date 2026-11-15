@@ -11,7 +11,7 @@ let storage;
 try { storage = window.localStorage; } catch { storage = { getItem() { throw new Error(); }, setItem() { throw new Error(); } }; }
 const progress = createProgress(storage);
 function announce(text) { announcements.textContent = ''; requestAnimationFrame(() => { announcements.textContent = text; }); }
-function heading(text) { const title = el('h1', text); title.tabIndex = -1; document.title = `${text} — aiflix`; main.append(title); return title; }
+function heading(text) { const title = el('h1', text); title.tabIndex = -1; document.title = `${text} — IAFLIX`; main.append(title); return title; }
 function duration(seconds) { return `${Math.ceil(seconds / 60)} min`; }
 function lessons(course) { return course.modules.flatMap(module => module.lessons); }
 function statsText(course) { const s = progress.stats(course); return `${s.completed} de ${s.total} aulas concluídas · ${s.percent}%`; }
@@ -34,7 +34,7 @@ function card(course) {
     article.append(title, el('p', course.description), el('p', 'Vídeos em preparação', 'meta'));
     return article;
   }
-  article.append(title, el('p', course.description), el('p', `${list.length} aulas · ${duration(list.reduce((sum, lesson) => sum + lesson.durationSeconds, 0))}`, 'meta'), el('p', statsText(course), 'meta'));
+  article.append(title, el('p', course.description), el('p', `${list.length} ${list.length === 1 ? 'aula' : 'aulas'} · ${duration(list.reduce((sum, lesson) => sum + lesson.durationSeconds, 0))}`, 'meta'), el('p', statsText(course), 'meta'));
   return article;
 }
 function group(title, description, courses, carousel = false) {
@@ -55,15 +55,15 @@ function group(title, description, courses, carousel = false) {
 }
 function home() {
   heading('O que você quer aprender?');
-  main.append(el('p', 'Escolha um curso ou siga um caminho de aprendizagem. Todo conteúdo é gratuito e pode ser acessado na ordem que você preferir.'));
+  main.append(el('p', 'Cursos gratuitos de IA. Aprenda no seu ritmo, sem matrícula.'));
   if (!catalog.courses.length) main.append(el('p', 'Estamos preparando os primeiros cursos. Nenhuma aula está publicada neste catálogo ainda.', 'notice'));
   else if (catalog.courses.some(course => lessons(course).length)) {
     const course = catalog.courses.find(course => lessons(course).length); const firstLesson = lessons(course)[0];
     const feature = el('section', undefined, 'featured-course'); const copy = el('div', undefined, 'featured-copy');
-    copy.append(el('h2', course.title), el('p', course.description));
+    copy.append(el('h2', course.title), el('p', course.description.split('. ')[0] + '.'));
     const actions = el('div', undefined, 'actions'); const watch = link('Assistir agora', `#/curso/${course.id}/aula/${firstLesson.id}`); watch.className = 'button primary';
     const details = link('Ver curso', `#/curso/${course.id}`); details.className = 'button secondary'; actions.append(watch, details);
-    copy.append(el('p', `${lessons(course).length} aulas · ${duration(lessons(course).reduce((sum, lesson) => sum + lesson.durationSeconds, 0))} · Acesso gratuito`, 'meta'), actions);
+    copy.append(el('p', `${lessons(course).length} ${lessons(course).length === 1 ? 'aula' : 'aulas'} · ${duration(lessons(course).reduce((sum, lesson) => sum + lesson.durationSeconds, 0))} · Acesso gratuito`, 'meta'), actions);
     const visual = el('div', undefined, 'featured-visual');
     if (course.cover) {
       const img = el('img'); img.src = course.cover; img.alt = ''; img.className = 'featured-image'; img.addEventListener('error', () => visual.replaceChildren(artwork(course)), { once: true }); visual.append(img);
@@ -76,7 +76,13 @@ function home() {
     for (const path of catalog.learnPaths) { const article = el('article', undefined, 'course-card'); const title = el('h3'); title.append(link(path.title, `#/caminho/${path.id}`)); article.append(title, el('p', path.description), el('p', `${path.courseIds.length} cursos · sequência recomendada`, 'meta')); section.append(article); }
     main.append(section);
   }
-  catalog.tracks.forEach(track => main.append(group(track.title, track.description, track.courseIds.map(id => catalog.courses.find(course => course.id === id)), true)));
+  catalog.tracks.filter(track => track.courseIds.length).forEach(track => main.append(group(track.title, track.description, track.courseIds.map(id => catalog.courses.find(course => course.id === id)), true)));
+  const upcomingTracks = catalog.tracks.filter(track => !track.courseIds.length);
+  if (upcomingTracks.length) {
+    const upcoming = el('section');
+    upcoming.append(el('h2', 'Mais trilhas em preparação'), el('p', upcomingTracks.map(track => track.title).join(', ') + '.'));
+    main.append(upcoming);
+  }
 }
 function shareActions(course) {
   const actions = el('div', undefined, 'actions share-actions');

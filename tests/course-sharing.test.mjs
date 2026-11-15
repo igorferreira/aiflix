@@ -14,7 +14,7 @@ test('links de curso e WhatsApp usam URLs absolutas sem hash', () => {
   assert.equal(courseShareUrl('gerencia-contexto'), 'https://iaflix.vercel.app/cursos/gerencia-contexto/');
   const url = new URL(whatsappUrl({ id: 'harness', title: 'Harness & contexto' }));
   assert.equal(url.origin, 'https://wa.me');
-  assert.equal(url.searchParams.get('text'), 'Harness & contexto — aiflix\nhttps://iaflix.vercel.app/cursos/harness/');
+  assert.equal(url.searchParams.get('text'), 'Harness & contexto — IAFLIX\nhttps://iaflix.vercel.app/cursos/harness/');
   for (const id of ['../admin', '<script>', 'bad/id', '']) assert.throws(() => courseShareUrl(id));
 });
 
@@ -78,4 +78,15 @@ test('todos os cursos têm capa social PNG real de 1200 por 630', async () => {
     assert.equal(png.readUInt32BE(20), 630);
     assert.equal(course.cover, `assets/images/course-${course.id}.png`);
   }
+});
+
+test('marca pública IAFLIX aparece no HTML, logo, catálogo e compartilhamento', async () => {
+  const index = await readFile(new URL('../public/index.html', import.meta.url), 'utf8');
+  const logo = await readFile(new URL('../public/assets/images/logo-iaflix.svg', import.meta.url), 'utf8');
+  assert.ok(index.includes('IAFLIX — Aprenda inteligência artificial'));
+  assert.ok(index.includes('aria-label="IAFLIX, início"'));
+  assert.ok(logo.includes('>IAFLIX</text>'));
+  assert.ok(renderCoursePage(catalog.courses[0]).includes('content="IAFLIX"'));
+  assert.ok(catalog.courses.every(course => !/\baiflix\b/i.test(course.description)));
+  assert.ok(new URL(whatsappUrl(catalog.courses[0])).searchParams.get('text').includes('— IAFLIX\n'));
 });

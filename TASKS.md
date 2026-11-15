@@ -245,3 +245,10 @@ Histórico do YouTube: trabalho mantido no backlog a pedido explícito de Igor. 
 - UX-VALIDACAO — Concluída por agente UX e reviewer: 56 verificações de UX/browser, 25 testes Node finais e review aprovado sem bloqueantes. Ver docs/ux-revisao.md e docs/review-ux-sharing.md. Compartilhamento apenas abre compositor; não envia mensagem. Prévia/cache reais do WhatsApp não testados.
 
 - SHARE-PROD — Concluída por root / DevSecOps: sete links diretos e sete PNG1200x630 publicados, deployment `dpl_8Vv1L2SvRzgmMk643Jv8KcXvhVRy` READY, alias https://iaflix.vercel.app. HTTP200, MIME, dimensões reais e metadados conferidos; crawler simulado recebeu OG estático no alias. Evidência docs/compartilhamento.md. Sem envio de WhatsApp ou confirmação de cache no app real.
+
+## Correção de marca e primeira página — 15/11/2026
+
+- BRAND-01 — Concluída (código e assets) por root e agente UX: auditar texto público, logo, capas, catálogo, páginas sociais, títulos e testes para marca oficial IAFLIX; manter nomes reais de recursos e compatibilidade de armazenamento.
+- HOME-01 — Concluída (correção local) por agente UX: corrigir outline inicial no h1 e composição desproporcional do destaque. Evidência remota390x844: h1 com outline3px; hero547px; catálogo inicia992px. Validar desktop e mobile com screenshots e medidas.
+
+QA/review da marca e home aprovados: 26 testes Node, 74 verificações de regressão e 43 específicas de marca/layout/navegação. Novo review após correção de scroll: docs/review-iaflix-brand-layout-final.md. Publicação e smoke remoto sob responsabilidade da raiz.

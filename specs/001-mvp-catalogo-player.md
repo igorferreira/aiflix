@@ -1,6 +1,6 @@
-# Spec 001 — aiflix: catálogo e player
+# Spec 001 — IAFLIX: catálogo e player
 
-> Versão: v2.1 · 14/11/2026 · Status: revisão técnica proposta para aprovação de Igor.
+> Versão: v2.2 · 14/11/2026 · Status: revisão técnica proposta para aprovação de Igor.
 > Fontes: PRD.md v0.3, AGENTS.md e solicitação de HTML, JavaScript vanilla e CSS.
 
 ## 1. Objetivo e histórico
@@ -183,3 +183,7 @@ Pedido de Igor em 15/11/2026: revisão UX/logo, thumbnails para todos os cursos 
 Cada curso recebe URL pública HTTPS `/cursos/<id>/`, com HTML estático completo gerado do catálogo no build. O documento inclui canonical, título, descrição, Open Graph, Twitter Card e imagem PNG1200x630 absoluta. Não depender de hash ou JavaScript para crawlers. Botão Abrir curso leva a `/#/curso/<id>`; compositor WhatsApp contém título e URL, sem enviar mensagem automaticamente. Conteúdo editorial deve ser escapado em texto e atributos. Cursos `preparing` não anunciam aulas disponíveis.
 
 A geração usa Node nativo, sem framework/dependência de produção nova; Vercel roda `npm run build` e continua servindo `public/` e as funções existentes. A publicação precisa testar HTML/imagem públicos sem login. A presença dos metadados não comprova renderização ou invalidação de cache no cliente WhatsApp. O histórico YouTube foi adiado para backlog por Igor e não é dependência desta entrega.
+
+## Correção de marca — 15/11/2026
+
+Igor confirmou a marca pública **IAFLIX**. A grafia anterior em revisões históricas não define a identidade atual. Interface, logo, catálogo e compartilhamento usam IAFLIX; origem pública https://iaflix.vercel.app. Chave de progresso e cookie existentes continuam com prefixo legado por compatibilidade. Evidência e ajuste da primeira página: docs/ux-correcao-iaflix.md.

@@ -1,0 +1,50 @@
+import assert from 'node:assert/strict';
+const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
+const base = process.env.QA_BASE_URL || 'http://127.0.0.1:4331';
+const browser = await chromium.launch({ headless: true });
+let checks = 0;
+const verify = (condition, label) => { assert.ok(condition, label); checks++; };
+try {
+  const page = await browser.newPage();
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  const layout = [];
+  for (const width of [320, 390, 768, 1440, 1920]) {
+    await page.setViewportSize({ width, height: 1000 });
+    await page.goto(base);
+    const watch = page.getByRole('link', { name: 'Assistir agora', exact: true });
+    await watch.waitFor();
+    verify((await page.title()).endsWith('— IAFLIX'), `marca no título ${width}`);
+    verify(await page.getByRole('link', { name: 'IAFLIX, início', exact: true }).count() === 1, `marca acessível ${width}`);
+    verify(await page.locator('.brand img').evaluate(img => img.complete && img.naturalWidth > 0), `logo carregado ${width}`);
+    verify(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), `sem overflow ${width}`);
+    verify(await page.locator('main h1').evaluate(el => getComputedStyle(el).outlineStyle === 'none'), `heading sem borda decorativa ${width}`);
+    verify(!/\baiflix\b/i.test(await page.locator('body').innerText()), `marca antiga não visível ${width}`);
+    await watch.focus();
+    verify(await watch.evaluate(el => getComputedStyle(el).outlineStyle !== 'none'), `foco visível CTA ${width}`);
+    const feature = await page.locator('.featured-course').boundingBox();
+    const courses = await page.getByRole('heading', { name: 'Todos os cursos', exact: true }).boundingBox();
+    layout.push({ width, featureTop: feature.y, featureHeight: feature.height, coursesTop: courses.y });
+    if (width >= 1440) verify(courses.y < 800, `catálogo alcança primeira dobra desktop ${width}`);
+    if (width === 390) verify(courses.y < 844, 'catálogo alcança primeira dobra mobile390');
+  }
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(base);
+  await page.getByRole('link', { name: 'Regressão linear', exact: true }).last().click();
+  const scrolledCourseTitle = page.getByRole('heading', { name: 'Regressão linear', level: 1, exact: true });
+  await scrolledCourseTitle.waitFor();
+  const scrolledBox = await scrolledCourseTitle.boundingBox();
+  verify(scrolledBox.y >= 0 && scrolledBox.y + scrolledBox.height <= 844, 'navegação de cartão abaixo da dobra mostra título do curso');
+  verify(await scrolledCourseTitle.evaluate(el => document.activeElement === el), 'foco de rota no título visível');
+  await page.getByRole('link', { name: 'Todos os cursos', exact: true }).click();
+  const homeTitle = page.getByRole('heading', { name: 'O que você quer aprender?', level: 1, exact: true });
+  await homeTitle.waitFor();
+  verify((await homeTitle.boundingBox()).y >= 0, 'retorno ao catálogo mostra título');
+  await page.goto(`${base}/#/curso/introducao-ia`);
+  await page.getByRole('link', { name: 'Compartilhar Introdução à inteligência artificial no WhatsApp (nova aba)', exact: true }).waitFor();
+  const whatsapp = new URL(await page.getByRole('link', { name: 'Compartilhar Introdução à inteligência artificial no WhatsApp (nova aba)', exact: true }).getAttribute('href'));
+  verify(whatsapp.searchParams.get('text').includes('— IAFLIX\n'), 'WhatsApp usa marca correta');
+  assert.deepEqual(errors, []);
+  checks++;
+  console.log(JSON.stringify({ checks, layout, pageErrors: errors.length }, null, 2));
+} finally { await browser.close(); }

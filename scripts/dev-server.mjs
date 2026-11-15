@@ -43,6 +43,6 @@ export function createServer() {
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT || 3000);
   createServer().listen(port, '127.0.0.1', () => {
-    process.stdout.write(`aiflix local: http://127.0.0.1:${port}\n`);
+    process.stdout.write(`IAFLIX local: http://127.0.0.1:${port}\n`);
   });
 }

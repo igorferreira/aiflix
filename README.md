@@ -1,4 +1,4 @@
-# aiflix
+# IAFLIX
 
 Plataforma gratuita e aberta para aprender inteligência artificial, com cursos independentes e caminhos de aprendizagem.
 
@@ -13,8 +13,8 @@ A administração possui funções de servidor e persistência editorial em repo
 - Tarefas, status e responsáveis: `TASKS.md`.
 - Decisões de arquitetura: `docs/adrs/`.
 - Repositório: https://github.com/igorferreira/aiflix.
-- Página inicial publicada: https://aiflix-topaz-nine.vercel.app.
-- Endereço solicitado: https://aiflix.vercel.app; atribuição recusada pela Vercel com `alias_in_use` (já em uso).
+- Acesso público atual: https://iaflix.vercel.app.
+- O endereço antigo solicitado `aiflix.vercel.app` pertence a outro projeto; não é a URL do IAFLIX.
 
 ## Publicação
 
@@ -31,3 +31,5 @@ A pasta sincronizada pelo Drive permanece sem `.git`. O checkout usado para vers
 ## Manutenção do código
 
 O bootstrap e as telas públicas ficam em `app.js`; o editor administrativo em `admin.js`; seu transporte HTTP em `admin-api.js`; helpers DOM em `ui.js`. Validação e progresso continuam módulos independentes. Mapa de dependências e motivos da separação: `docs/revisao-camadas.md`.
+
+A marca oficial é **IAFLIX**. O nome técnico do repositório e os identificadores internos de armazenamento anteriores foram preservados por compatibilidade.

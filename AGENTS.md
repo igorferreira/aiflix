@@ -1,15 +1,15 @@
-# Instruções para agentes — aiflix
+# Instruções para agentes — IAFLIX
 
 ## Fonte de verdade
 
 - Leia `PRD.md` antes de alterar produto, arquitetura ou escopo.
-- O nome oficial é `aiflix`. O PRD v0.3 incorpora a ampliação de escopo solicitada em 14/11/2026.
+- O nome oficial é **IAFLIX**, conforme correção explícita de Igor em 15/11/2026. Use essa grafia em toda apresentação e compartilhamento. O PRD v0.4 registra a decisão.
 - Trabalhe e escreva documentação em português brasileiro.
 - Preserve alterações existentes. Não invente requisitos, conteúdo publicado ou resultados de validação.
 
 ## Produto e escopo
 
-O aiflix oferece cursos e curadoria de aulas externas de IA gratuitamente a qualquer pessoa, com experiência de streaming e vídeos hospedados no YouTube.
+O IAFLIX oferece cursos e curadoria de aulas externas de IA gratuitamente a qualquer pessoa, com experiência de streaming e vídeos hospedados no YouTube.
 
 O MVP (Spec 001) inclui:
 
@@ -90,4 +90,8 @@ Pesquisa de canais de referência de IA no iBest Brasil integra o pedido atual; 
 
 ## Decisão editorial aprovada — 14/11/2026
 
-Igor autorizou explicitamente: “Sim, usar vídeos externos com autoria e links”. O catálogo pode incorporar vídeos gratuitos de terceiros disponíveis no YouTube, com atribuição clara ao autor e links originais. O aiflix organiza a sequência; não reivindica autoria dos vídeos. Não baixar, republicar arquivos ou contornar bloqueio de incorporação. Fontes e metadados devem ser verificáveis; popularidade no iBest não comprova qualidade pedagógica. Esta decisão substitui as restrições anteriores a conteúdo exclusivamente próprio e resolve CUR-02; mantém curadoria, disponibilidade e atribuição como gates de publicação.
+Igor autorizou explicitamente: “Sim, usar vídeos externos com autoria e links”. O catálogo pode incorporar vídeos gratuitos de terceiros disponíveis no YouTube, com atribuição clara ao autor e links originais. O IAFLIX organiza a sequência; não reivindica autoria dos vídeos. Não baixar, republicar arquivos ou contornar bloqueio de incorporação. Fontes e metadados devem ser verificáveis; popularidade no iBest não comprova qualidade pedagógica. Esta decisão substitui as restrições anteriores a conteúdo exclusivamente próprio e resolve CUR-02; mantém curadoria, disponibilidade e atribuição como gates de publicação.
+
+## Compatibilidade da correção de marca
+
+Marca pública: IAFLIX. URL: https://iaflix.vercel.app. Repositórios, caminhos de checkout e IDs Vercel mantêm nomes reais existentes até migração explícita. Chave legada de progresso `aiflix.progress.v1` e cookie `aiflix_admin` podem permanecer internos para preservar dados e sessões; não são a marca exibida. Não executar troca global que altere URLs de recursos ou apague progresso. Evidências históricas permanecem identificadas como históricas.

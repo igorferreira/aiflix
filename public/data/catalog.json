@@ -4,7 +4,7 @@
     {
       "id": "introducao-ia",
       "title": "Introdução à inteligência artificial",
-      "description": "Primeiro contato com a sequência de aulas de inteligência artificial do autor. Curadoria aiflix: aula externa de Diogo Cortiz, publicada originalmente na série Curso de Inteligência Artificial para todos. Este recorte contém um módulo e uma aula; não representa o curso completo do autor. Vídeo gratuito com autoria preservada.",
+      "description": "Primeiro contato com a sequência de aulas de inteligência artificial do autor. Curadoria IAFLIX: aula externa de Diogo Cortiz, publicada originalmente na série Curso de Inteligência Artificial para todos. Este recorte contém um módulo e uma aula; não representa o curso completo do autor. Vídeo gratuito com autoria preservada.",
       "modules": [
         {
           "id": "introducao-ia-modulo",
@@ -13,7 +13,7 @@
             {
               "id": "introducao-ia-aula",
               "title": "Curso de Inteligência Artificial para todos - Aula 1",
-              "description": "Autoria: Diogo Cortiz. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo aiflix. A sequência completa é do autor; esta seleção pode ser acessada independentemente.",
+              "description": "Autoria: Diogo Cortiz. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. A sequência completa é do autor; esta seleção pode ser acessada independentemente.",
               "durationSeconds": 2291,
               "youtubeUrl": "https://www.youtube.com/watch?v=Ze-Q6ZNWpco",
               "materials": [
@@ -35,7 +35,7 @@
     {
       "id": "regressao-linear",
       "title": "Regressão linear",
-      "description": "Recorte dedicado à regressão linear. Familiaridade com matemática básica pode ajudar; acesso livre. Curadoria aiflix: aula externa de Diogo Cortiz, publicada originalmente na série Curso de Inteligência Artificial para todos. Este recorte contém um módulo e uma aula; não representa o curso completo do autor. Vídeo gratuito com autoria preservada.",
+      "description": "Recorte dedicado à regressão linear. Familiaridade com matemática básica pode ajudar; acesso livre. Curadoria IAFLIX: aula externa de Diogo Cortiz, publicada originalmente na série Curso de Inteligência Artificial para todos. Este recorte contém um módulo e uma aula; não representa o curso completo do autor. Vídeo gratuito com autoria preservada.",
       "modules": [
         {
           "id": "regressao-linear-modulo",
@@ -44,7 +44,7 @@
             {
               "id": "regressao-linear-aula",
               "title": "Regressão Linear - Aula 2",
-              "description": "Autoria: Diogo Cortiz. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo aiflix. A sequência completa é do autor; esta seleção pode ser acessada independentemente.",
+              "description": "Autoria: Diogo Cortiz. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. A sequência completa é do autor; esta seleção pode ser acessada independentemente.",
               "durationSeconds": 4120,
               "youtubeUrl": "https://www.youtube.com/watch?v=J9HuFIYcFWU",
               "materials": [
@@ -66,7 +66,7 @@
     {
       "id": "arvore-decisao",
       "title": "Árvore de decisão",
-      "description": "Recorte dedicado à árvore de decisão. Conceitos básicos de dados podem ajudar; acesso livre. Curadoria aiflix: aula externa de Diogo Cortiz, publicada originalmente na série Curso de Inteligência Artificial para todos. Este recorte contém um módulo e uma aula; não representa o curso completo do autor. Vídeo gratuito com autoria preservada.",
+      "description": "Recorte dedicado à árvore de decisão. Conceitos básicos de dados podem ajudar; acesso livre. Curadoria IAFLIX: aula externa de Diogo Cortiz, publicada originalmente na série Curso de Inteligência Artificial para todos. Este recorte contém um módulo e uma aula; não representa o curso completo do autor. Vídeo gratuito com autoria preservada.",
       "modules": [
         {
           "id": "arvore-decisao-modulo",
@@ -75,7 +75,7 @@
             {
               "id": "arvore-decisao-aula",
               "title": "Árvore de Decisão - Aula 3",
-              "description": "Autoria: Diogo Cortiz. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo aiflix. A sequência completa é do autor; esta seleção pode ser acessada independentemente.",
+              "description": "Autoria: Diogo Cortiz. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. A sequência completa é do autor; esta seleção pode ser acessada independentemente.",
               "durationSeconds": 4775,
               "youtubeUrl": "https://www.youtube.com/watch?v=ecYpXd4WREk",
               "materials": [
@@ -187,7 +187,7 @@
     {
       "id": "primeiros-passos-ia",
       "title": "Primeiros passos em IA e modelos",
-      "description": "Sequência sugerida de três aulas externas de Diogo Cortiz. A ordem é opcional e nenhum curso exige conclusão anterior. Curadoria aiflix; vídeos e curso original pertencem ao autor.",
+      "description": "Sequência sugerida de três aulas externas de Diogo Cortiz. A ordem é opcional e nenhum curso exige conclusão anterior. Curadoria IAFLIX; vídeos e curso original pertencem ao autor.",
       "courseIds": [
         "introducao-ia",
         "regressao-linear",

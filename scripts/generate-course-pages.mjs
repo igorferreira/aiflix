@@ -8,10 +8,10 @@ const escapeHtml = value => String(value).replace(/[&<>"']/g, character => ({ '&
 
 export function renderCoursePage(course) {
   const url = courseShareUrl(course.id);
-  const title = `${course.title} — aiflix`;
+  const title = `${course.title} — IAFLIX`;
   const preparing = course.status === 'preparing';
   const description = preparing
-    ? `${course.title}: curso em preparação. Vídeos ainda não disponíveis. Aprendizagem gratuita em inteligência artificial no aiflix.`
+    ? `${course.title}: curso em preparação. Vídeos ainda não disponíveis. Aprendizagem gratuita em inteligência artificial no IAFLIX.`
     : course.description.replace(/\s+/g, ' ').trim().slice(0, 240);
   const image = `https://iaflix.vercel.app/assets/images/course-${course.id}.png`;
   const lessonCount = course.modules.reduce((total, module) => total + module.lessons.length, 0);
@@ -25,7 +25,7 @@ export function renderCoursePage(course) {
   <link rel="canonical" href="${url}">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="pt_BR">
-  <meta property="og:site_name" content="aiflix">
+  <meta property="og:site_name" content="IAFLIX">
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${url}">
@@ -34,7 +34,7 @@ export function renderCoursePage(course) {
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="${escapeHtml(`Capa do curso ${course.title} no aiflix`)}">
+  <meta property="og:image:alt" content="${escapeHtml(`Capa do curso ${course.title} no IAFLIX`)}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
@@ -45,7 +45,7 @@ export function renderCoursePage(course) {
 <body>
   <a class="skip" href="#content">Pular para o conteúdo</a>
   <header class="site-header">
-    <a class="brand" href="/" aria-label="aiflix, início"><img src="/assets/images/logo-aiflix.svg" width="165" height="40" alt=""><span>Aprendizagem em IA</span></a>
+    <a class="brand" href="/" aria-label="IAFLIX, início"><img src="/assets/images/logo-iaflix.svg" width="165" height="40" alt=""><span>Aprendizagem em IA</span></a>
     <nav aria-label="Principal"><a href="/">Catálogo</a></nav>
   </header>
   <main id="content" tabindex="-1">
@@ -59,7 +59,7 @@ export function renderCoursePage(course) {
     </div>
     ${course.modules.map(module => `<section><h2>${escapeHtml(module.title)}</h2><ul>${module.lessons.map(lesson => `<li><a href="/#/curso/${course.id}/aula/${lesson.id}">${escapeHtml(lesson.title)}</a></li>`).join('')}</ul></section>`).join('\n    ')}
   </main>
-  <footer><p>Curadoria aiflix. Autoria e links originais preservados nas aulas.</p></footer>
+  <footer><p>Curadoria IAFLIX. Autoria e links originais preservados nas aulas.</p></footer>
 </body>
 </html>
 `.replace(/[ \t]+$/gm, '');

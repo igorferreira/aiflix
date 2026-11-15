@@ -1,7 +1,7 @@
-# PRD — AiFlix
+# PRD — IAFLIX
 
-> **Status:** v0.3 · **Criado em:** 14/11/2026 · **Atualizado:** 14/11/2026 (gratuidade, cursos independentes e learn paths) · **Autor do pedido:** Igor dos Santos Ferreira
-> **Nome oficial:** `aiflix` (definido por Igor em 14/11/2026 03:29 BRT)
+> **Status:** v0.4 · **Criado em:** 14/11/2026 · **Atualizado:** 15/11/2026 (marca IAFLIX e correção da primeira página) · **Autor do pedido:** Igor dos Santos Ferreira
+> **Nome oficial:** `IAFLIX` (correção explícita de Igor em 15/11/2026; substitui a grafia anterior).
 > **Localização:** `/home/igorferreira/Insync/GoogleDrive/igorferreira08/Projetos/aiflix/` (Google Drive via Insync — **sem `.git`**; versionamento fica fora do Drive)
 
 ---
@@ -71,7 +71,7 @@ Novas trilhas entram como dados de catálogo, não como mudança de código. Cur
 - **Premissa:** todos os vídeos existem no YouTube antes de entrarem no catálogo.
 - **Risco:** dependência do player do YouTube (anúncios, disponibilidade) — mitigável com fallback de links.
 - **Risco:** pasta no Google Drive sem `.git` → histórico de versão depende do Drive; specs versionadas por `vN` no nome/cabeçalho.
-- **Nome oficial:** aiflix.
+- **Nome oficial:** IAFLIX.
 - **Administração:** ocultar controles no navegador não protege publicação; toda mutação compartilhada exige autorização no servidor.
 - **Conteúdo inicial:** três módulos não têm títulos, vídeos ou curso de destino informados; não alegar disponibilidade real.
 
@@ -102,3 +102,7 @@ Decisão editorial resolvida: Igor autorizou incorporar vídeos externos com aut
 ## Decisão editorial aprovada — 14/11/2026
 
 Igor autorizou explicitamente: “Sim, usar vídeos externos com autoria e links”. O catálogo pode incorporar vídeos gratuitos de terceiros disponíveis no YouTube, com atribuição clara ao autor e links originais. O aiflix organiza a sequência; não reivindica autoria dos vídeos. Não baixar, republicar arquivos ou contornar bloqueio de incorporação. Fontes e metadados devem ser verificáveis; popularidade no iBest não comprova qualidade pedagógica. Esta decisão substitui as restrições anteriores a conteúdo exclusivamente próprio e resolve CUR-02; mantém curadoria, disponibilidade e atribuição como gates de publicação.
+
+## Correção de marca e UX — 15/11/2026
+
+Igor definiu a grafia oficial **IAFLIX**. Aplicar a nome visível, logo, capas, títulos de página, catálogo, metadados e compartilhamento. A URL pública é https://iaflix.vercel.app. Referências históricas à grafia anterior não são a identidade atual. Nomes reais de repositório, checkout e recursos existentes não devem ser alterados por substituição textual; mudanças desses recursos exigem migração própria. Preservar progresso e sessões ao atualizar a marca. Revisar erro visual da primeira página com evidência de navegador.
