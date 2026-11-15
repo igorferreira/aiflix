@@ -60,3 +60,11 @@ O reviewer reproduziu que `preventScroll` preservava a posição de um cartão n
 ## Gate final de review
 
 O novo review independente aprovou a correção após reproduzir o cenário de navegação abaixo da dobra. Com a home em `scrollY=3582`, abrir o curso agora retornou a `scrollY=0`, com H1 focado e visível entre 173px e 205px. O heading não recebe retângulo; o CTA por teclado mantém contorno visível. As 43 verificações específicas passaram. O parecer final em `docs/review-iaflix-brand-layout-final.md` substitui a reprovação anterior, cuja evidência foi mantida no histórico.
+
+## Publicação e verificação da raiz no navegador integrado
+
+Commit `e2e6a8fcabeac0b208aa31b712a8188229a6c4ae`, deployment Vercel `dpl_4fgiPmT3TSxrGe1i3JxrmmvumQ9b` READY, alias https://iaflix.vercel.app atualizado. A raiz conferiu a página pública em1440x900 e390x844 pelo navegador integrado. Marca visível IAFLIX, sem grafia invertida no texto de página e sem outline no título programático. Em1440px o destaque mediu345px e o título do catálogo apareceu em632px; em390px apareceu em809px, dentro da altura844px conferida.
+
+As sete páginas de compartilhamento responderam200 com título e og:site_name IAFLIX, sem grafia antiga no texto público. Capas reexportadas com a marca correta; snapshot editorial privado sincronizado. Cookies e chave de progresso legados permanecem internos por compatibilidade, sem alterar a marca pública. Recursos existentes de GitHub/Vercel mantêm seus identificadores reais.
+
+Capturas remotas: desktop `/home/igorferreira/.t3/userdata/browser-artifacts/browser-screenshot-iaflix-vercel-app-mwhb4qfl-62a75eac.png`; mobile `/home/igorferreira/.t3/userdata/browser-artifacts/browser-screenshot-iaflix-vercel-app-mwhb5arm-d0ee80a9.png`. A aba de verificação foi fechada. Não houve teste de prévia dentro do WhatsApp nem limpeza de seu cache.

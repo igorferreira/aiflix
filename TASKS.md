@@ -252,3 +252,5 @@ Histórico do YouTube: trabalho mantido no backlog a pedido explícito de Igor. 
 - HOME-01 — Concluída (correção local) por agente UX: corrigir outline inicial no h1 e composição desproporcional do destaque. Evidência remota390x844: h1 com outline3px; hero547px; catálogo inicia992px. Validar desktop e mobile com screenshots e medidas.
 
 QA/review da marca e home aprovados: 26 testes Node, 74 verificações de regressão e 43 específicas de marca/layout/navegação. Novo review após correção de scroll: docs/review-iaflix-brand-layout-final.md. Publicação e smoke remoto sob responsabilidade da raiz.
+
+- BRAND-HOME-PROD — Concluída por root / DevSecOps e UX: correção publicada em https://iaflix.vercel.app, deployment `dpl_4fgiPmT3TSxrGe1i3JxrmmvumQ9b` READY. Navegador integrado confirmou marca IAFLIX e título sem borda em desktop/mobile; sete páginas sociais200 com marca correta. Evidência docs/ux-correcao-iaflix.md. Prévia/cache reais do WhatsApp permanecem não verificados.
