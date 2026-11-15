@@ -2,6 +2,7 @@ import { validateCatalog, youtubeId, resolveRoute } from './catalog.js';
 import { createProgress } from './progress.js';
 import { el, link, button } from './ui.js';
 import { createAdminView } from './admin.js';
+import { courseShareUrl, whatsappUrl } from './share.js';
 const main = document.querySelector('main');
 const announcements = document.querySelector('#announcements');
 let catalog = { schemaVersion: 2, courses: [], tracks: [], learnPaths: [] };
@@ -77,10 +78,45 @@ function home() {
   }
   catalog.tracks.forEach(track => main.append(group(track.title, track.description, track.courseIds.map(id => catalog.courses.find(course => course.id === id)), true)));
 }
+function shareActions(course) {
+  const actions = el('div', undefined, 'actions share-actions');
+  actions.setAttribute('role', 'group');
+  actions.setAttribute('aria-label', 'Compartilhar curso');
+  const whatsapp = link('Compartilhar no WhatsApp', whatsappUrl(course));
+  whatsapp.className = 'button secondary';
+  whatsapp.target = '_blank';
+  whatsapp.rel = 'noopener noreferrer';
+  whatsapp.setAttribute('aria-label', `Compartilhar ${course.title} no WhatsApp (nova aba)`);
+  const direct = link('Link direto do curso', courseShareUrl(course.id));
+  direct.className = 'direct-course-link';
+  const copy = button('Copiar link', async () => {
+    try {
+      await navigator.clipboard.writeText(courseShareUrl(course.id));
+      copy.textContent = 'Link copiado';
+      announce('Link do curso copiado.');
+    } catch {
+      announce('Não foi possível copiar. Use o link direto do curso.');
+      direct.focus();
+    }
+  });
+  actions.append(whatsapp, copy, direct);
+  return actions;
+}
 function courseView(course, lesson) {
-  main.append(link('Todos os cursos', '#/')); heading(course.title); main.append(el('p', course.description));
+  const back = link('Todos os cursos', '#/');
+  back.className = 'back-link';
+  main.append(back);
+  heading(course.title);
+  main.append(el('p', course.description), shareActions(course));
   if (course.status === 'preparing') {
-    main.append(el('p', 'Vídeos em preparação. Aguardamos acesso ao histórico do YouTube ou os links das aulas para montar este curso.', 'notice'));
+    if (course.cover) {
+      const cover = el('img');
+      cover.src = course.cover;
+      cover.alt = '';
+      cover.className = 'course-overview-cover';
+      main.append(cover);
+    }
+    main.append(el('p', 'Vídeos em preparação. Este curso ainda não tem aulas disponíveis.', 'notice'));
     return;
   }
   const status = el('p', statsText(course), 'meta'); const meter = el('progress'); meter.max = 100; meter.value = progress.stats(course).percent; meter.setAttribute('aria-label', 'Conclusão do curso'); main.append(status, meter);
@@ -99,7 +135,15 @@ function courseView(course, lesson) {
     updateToggle(); const actions = el('div', undefined, 'actions'); actions.append(toggle); content.append(actions, warning);
     if (lesson.materials.length) { content.append(el('h3', 'Materiais complementares')); const list = el('ul'); lesson.materials.forEach(material => { const item = el('li'); const a = link(`${material.title} (nova aba)`, material.url); a.target = '_blank'; a.rel = 'noopener noreferrer'; item.append(a); list.append(item); }); content.append(list); }
     content.append(el('p', 'Conclusão manual salva neste navegador. A reprodução não marca a aula automaticamente.', 'meta'));
-  } else { content.append(el('h2', 'Comece por uma aula'), el('p', 'Selecione uma aula na lista. Você pode assistir em qualquer ordem.')); }
+  } else {
+    if (course.cover) {
+      const cover = el('img'); cover.src = course.cover; cover.alt = ''; cover.className = 'course-overview-cover'; content.append(cover);
+    }
+    const firstLesson = lessons(course)[0];
+    const watch = link('Assistir à primeira aula', `#/curso/${course.id}/aula/${firstLesson.id}`);
+    watch.className = 'button primary';
+    content.append(el('h2', 'Comece por uma aula'), el('p', 'Selecione uma aula na lista. Você pode assistir em qualquer ordem.'), watch);
+  }
   function renderModules() {
     sidebar.replaceChildren(el('h2', 'Aulas do curso'));
     course.modules.forEach(module => {

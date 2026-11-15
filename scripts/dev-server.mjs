@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 
 const root = path.resolve(fileURLToPath(new URL('../public/', import.meta.url)));
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.json': 'application/json; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml' };
 
 export function createServer() {
   return http.createServer(async (req, res) => {
@@ -23,7 +23,7 @@ export function createServer() {
         res.writeHead(405).end();
         return;
       }
-      const name = decodeURIComponent(url.pathname === '/' ? '/index.html' : url.pathname);
+      const name = decodeURIComponent(url.pathname.endsWith('/') ? `${url.pathname}index.html` : url.pathname);
       const target = path.resolve(root, `.${name}`);
       if (!target.startsWith(`${root}${path.sep}`)) {
         res.writeHead(404).end();

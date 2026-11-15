@@ -175,3 +175,11 @@ Refactor sem mudança no contrato ou comportamento público: administração e t
 Pedido de Igor: cursos independentes Harness, Gerência de contexto, Memória e Agentes reunidos em uma seção por assunto. Seleção será feita a partir de vídeos assistidos na sua conta YouTube, sem publicar o histórico completo ou datas de visualização. Sem acesso ao histórico, nenhum vídeo pode ser atribuído como assistido.
 
 Contrato schema 2 ampliado de forma aditiva: curso pode ter `status: "preparing"` e `modules: []`. Nesse estado não apresenta player, progresso, duração nem ação de assistir; mostra curadoria pendente. Cursos sem status mantêm exigência de módulos e aulas não vazios. Ao cadastrar aulas reais, remover status de preparação. Rota de curso continua válida; rota de aula inexistente permanece não encontrada. Não usar aulas fictícias para satisfazer o contrato.
+
+## Extensão aprovada — compartilhamento de cursos
+
+Pedido de Igor em 15/11/2026: revisão UX/logo, thumbnails para todos os cursos e links diretos que gerem uma apresentação adequada ao compartilhar no WhatsApp.
+
+Cada curso recebe URL pública HTTPS `/cursos/<id>/`, com HTML estático completo gerado do catálogo no build. O documento inclui canonical, título, descrição, Open Graph, Twitter Card e imagem PNG1200x630 absoluta. Não depender de hash ou JavaScript para crawlers. Botão Abrir curso leva a `/#/curso/<id>`; compositor WhatsApp contém título e URL, sem enviar mensagem automaticamente. Conteúdo editorial deve ser escapado em texto e atributos. Cursos `preparing` não anunciam aulas disponíveis.
+
+A geração usa Node nativo, sem framework/dependência de produção nova; Vercel roda `npm run build` e continua servindo `public/` e as funções existentes. A publicação precisa testar HTML/imagem públicos sem login. A presença dos metadados não comprova renderização ou invalidação de cache no cliente WhatsApp. O histórico YouTube foi adiado para backlog por Igor e não é dependência desta entrega.

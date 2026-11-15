@@ -30,7 +30,7 @@
           ]
         }
       ],
-      "cover": "assets/images/introducao-ia.jpg"
+      "cover": "assets/images/course-introducao-ia.png"
     },
     {
       "id": "regressao-linear",
@@ -61,7 +61,7 @@
           ]
         }
       ],
-      "cover": "assets/images/regressao-linear.jpg"
+      "cover": "assets/images/course-regressao-linear.png"
     },
     {
       "id": "arvore-decisao",
@@ -92,35 +92,39 @@
           ]
         }
       ],
-      "cover": "assets/images/arvore-decisao.jpg"
+      "cover": "assets/images/course-arvore-decisao.png"
     },
     {
       "id": "harness",
       "title": "Harness",
-      "description": "Estrutura de execução, ferramentas e controle de sistemas com IA. Vídeos aguardando seleção a partir dos links do seu histórico do YouTube.",
+      "description": "Estrutura de execução, ferramentas e controle de sistemas com IA. Seleção de aulas em preparação.",
       "status": "preparing",
-      "modules": []
+      "modules": [],
+      "cover": "assets/images/course-harness.png"
     },
     {
       "id": "gerencia-contexto",
       "title": "Gerência de contexto",
-      "description": "Organização e seleção das informações usadas pelos modelos. Vídeos aguardando seleção a partir dos links do seu histórico do YouTube.",
+      "description": "Organização e seleção das informações usadas pelos modelos. Seleção de aulas em preparação.",
       "status": "preparing",
-      "modules": []
+      "modules": [],
+      "cover": "assets/images/course-gerencia-contexto.png"
     },
     {
       "id": "memoria-ia",
       "title": "Memória",
-      "description": "Memória e persistência de informações em aplicações de IA. Vídeos aguardando seleção a partir dos links do seu histórico do YouTube.",
+      "description": "Memória e persistência de informações em aplicações de IA. Seleção de aulas em preparação.",
       "status": "preparing",
-      "modules": []
+      "modules": [],
+      "cover": "assets/images/course-memoria-ia.png"
     },
     {
       "id": "agentes-ia",
       "title": "Agentes",
-      "description": "Agentes de IA, suas ferramentas e formas de colaboração. Vídeos aguardando seleção a partir dos links do seu histórico do YouTube.",
+      "description": "Agentes de IA, suas ferramentas e formas de colaboração. Seleção de aulas em preparação.",
       "status": "preparing",
-      "modules": []
+      "modules": [],
+      "cover": "assets/images/course-agentes-ia.png"
     }
   ],
   "tracks": [

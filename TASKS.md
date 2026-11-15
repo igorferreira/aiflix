@@ -223,7 +223,23 @@ Resultado MAN-01–04: arquitetura revisada, extração frontend concluída, QA 
 ## Cursos por assunto e histórico YouTube
 
 - TOP-01 — Concluída (estrutura) por root: área “Assuntos de IA em foco”, cursos Harness, Gerência de contexto, Memória e Agentes, independentes, com estado explícito de preparação até receber vídeos reais.
-- TOP-02 — Bloqueada por acesso externo; root / curadoria: buscar vídeos assistidos na conta de Igor. Preview indisponível (`available:false`), runtime de navegador retornou `No browser is available` e lista de navegadores vazia. Não houve acesso ao histórico nem seleção de vídeos assistidos. Aguardando navegador conectado ou links fornecidos pelo usuário.
-- TOP-03 — Planejada por root: validar autoria, URL, duração e tema dos vídeos recebidos; associar a cada curso e publicar. Não substituir o histórico pessoal por buscas públicas nem apresentar os quatro assuntos como ranking verificado.
+- TOP-02 — Backlog, adiada explicitamente por Igor em 15/11/2026; root / curadoria (previsto): buscar vídeos assistidos na conta de Igor. Preview indisponível (`available:false`), runtime de navegador retornou `No browser is available` e lista de navegadores vazia. Não houve acesso ao histórico nem seleção de vídeos assistidos. Aguardando navegador conectado ou links fornecidos pelo usuário.
+- TOP-03 — Backlog, adiada junto à busca no histórico; root / curadoria (previsto): validar autoria, URL, duração e tema dos vídeos recebidos; associar a cada curso e publicar. Não substituir o histórico pessoal por buscas públicas nem apresentar os quatro assuntos como ranking verificado.
 
 Validação TOP-01: 20 testes Node passaram; sintaxe do app conferida; deployment `dpl_Dc1w7YDcmmTMDu2eJgpq7DtK8JV2` READY (commit `5f95acb`), alias https://iaflix.vercel.app atualizado. Catálogo remoto HTTP200 confirmou quatro cursos em preparação e preservou os três cursos com aulas. Sem navegador conectado, verificação visual e leitura do histórico permanecem pendentes.
+
+## UX, capas e compartilhamento — 15/11/2026
+
+- SHARE-01 — Concluída por course_sharing: sete páginas HTML por curso com URLs próprias sem hash, canonical, Open Graph/Twitter Card e estado editorial real. Evidência: scripts/generate-course-pages.mjs e public/cursos/.
+- SHARE-02 — Concluída por course_sharing: helper de link direto e compositor WhatsApp; integração na UI pela agente UX. Não envia mensagens.
+- SHARE-03 — Concluída por course_sharing: build Vercel regenera páginas do catálogo e servidor local resolve diretórios index.html, preservando isolamento de public. Testes de compartilhamento e segurança: 24 testes Node aprovados.
+- SHARE-04 — Planejada para root / QA: verificar PNG1200x630 finais, respostas públicas das sete páginas/imagens e metadados na publicação. Prévia real e cache do WhatsApp ainda não conferidos.
+- UX-REVIEW — Em andamento por ux_brand_covers: revisão de layout, logo e controles de compartilhamento, conforme pedido de Igor.
+- COURSE-COVERS — Em andamento por root: capas próprias dos sete cursos, sem afirmar aulas publicadas nos cursos em preparação.
+
+Histórico do YouTube: trabalho mantido no backlog a pedido explícito de Igor. Não buscar vídeos ou credenciais nesta entrega de UX/compartilhamento.
+
+## Fechamento de UX e capas
+
+- UX-CAPAS — Concluída por root: sete ilustrações originais geradas com imagegen, composição tipográfica e marca exportadas em PNG1200x630, uma para cada curso. Cursos sem aulas mostram “Em preparação”. Catálogo usa todas as novas capas; imagens originais dos vídeos foram preservadas.
+- UX-VALIDACAO — Concluída por agente UX e reviewer: 56 verificações de UX/browser, 25 testes Node finais e review aprovado sem bloqueantes. Ver docs/ux-revisao.md e docs/review-ux-sharing.md. Compartilhamento apenas abre compositor; não envia mensagem. Prévia/cache reais do WhatsApp não testados.
