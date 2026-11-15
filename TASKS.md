@@ -196,3 +196,9 @@ Três cursos curtos, três módulos e três aulas externas de Diogo Cortiz cadas
 - VIS-02-QA — Concluída, devsquad-qa / qa: regressão final com 60 verificações browser em 320/768/1440. Capas reais carregadas em 16:9, CTA Assistir agora acionado por teclado abre primeira aula, carrosséis e fluxos anteriores aprovados. Backend inalterado; review visual final aprovado.
 
 - VIS-02-REV — Concluída, devsquad-reviewer / review_streaming: APROVADO sem bloqueantes para publicar catálogo com administração fechada. Relatório `docs/review-layout-streaming.md`; backend inalterado.
+
+## Resultado de publicação — cursos e layout de streaming
+
+- DEP-02 — Concluída por root / DevSecOps: aplicação commit `fcf1363`, deployment `dpl_9NrpCH92SS9UgXoK22goEuxwo2ed` READY em https://iaflix.vercel.app. HTTP200 para frontend, catálogo, script e capa; smoke real confirmou CTA, iframe esperado e conclusão persistente. Evidência: docs/publicacao-2026-11-14.md.
+- ADM-PROD — Bloqueada por configuração externa; root / DevSecOps aguarda token restrito por cartão seguro, credenciais administrativas e proteção durável de login. API503 confirmada, sem simular gravação. Código local aprovado não comprova administração ativa na produção.
+- CNT-PLAYBACK — Planejada para devsquad-qa: validar reprodução e fullscreen reais das três aulas. Metadados, URLs e duração foram confirmados; não declarar reprodução validada apenas pelo iframe.
