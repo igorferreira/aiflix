@@ -222,6 +222,8 @@ Resultado MAN-01–04: arquitetura revisada, extração frontend concluída, QA 
 
 ## Cursos por assunto e histórico YouTube
 
-- TOP-01 — Em andamento por root: área “Assuntos de IA em foco”, cursos Harness, Gerência de contexto, Memória e Agentes, independentes, com estado explícito de preparação até receber vídeos reais.
+- TOP-01 — Concluída (estrutura) por root: área “Assuntos de IA em foco”, cursos Harness, Gerência de contexto, Memória e Agentes, independentes, com estado explícito de preparação até receber vídeos reais.
 - TOP-02 — Bloqueada por acesso externo; root / curadoria: buscar vídeos assistidos na conta de Igor. Preview indisponível (`available:false`), runtime de navegador retornou `No browser is available` e lista de navegadores vazia. Não houve acesso ao histórico nem seleção de vídeos assistidos. Aguardando navegador conectado ou links fornecidos pelo usuário.
 - TOP-03 — Planejada por root: validar autoria, URL, duração e tema dos vídeos recebidos; associar a cada curso e publicar. Não substituir o histórico pessoal por buscas públicas nem apresentar os quatro assuntos como ranking verificado.
+
+Validação TOP-01: 20 testes Node passaram; sintaxe do app conferida; deployment `dpl_Dc1w7YDcmmTMDu2eJgpq7DtK8JV2` READY (commit `5f95acb`), alias https://iaflix.vercel.app atualizado. Catálogo remoto HTTP200 confirmou quatro cursos em preparação e preservou os três cursos com aulas. Sem navegador conectado, verificação visual e leitura do histórico permanecem pendentes.
