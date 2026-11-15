@@ -217,3 +217,5 @@ Três cursos curtos, três módulos e três aulas externas de Diogo Cortiz cadas
 Aceite: comportamento público e administrativo preservado; HTTP administrativo e renderização separados do bootstrap quando justificado; contratos e gate seguro503 mantidos; nenhuma dependência de produção nova; testes e análise registrados em docs/revisao-camadas.md.
 
 Resultado MAN-01–04: arquitetura revisada, extração frontend concluída, QA APROVADO (19 testes Node,60 verificações browser,4 gravações integração com GitHub substituto), review APROVADO. Evidências: docs/revisao-camadas.md, docs/qa-camadas.md e docs/review-camadas.md. Publicação desta revisão fica com root; não confundir testes locais com administração remota ativa.
+
+- MAN-05 — Concluída por root / DevSecOps: revisão publicada em https://iaflix.vercel.app, commit `3a1f82e`, deployment `dpl_6bebpRptCwxCpYueZbpHeeY35D1H` READY. Smoke remoto confirmou curso/player, novos módulos HTTP200, admin503 esperado e zero erros JavaScript. Evidência: docs/revisao-camadas.md. Credenciais administrativas continuam pendentes.

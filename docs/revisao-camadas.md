@@ -29,3 +29,9 @@ Não foram alterados catálogo, URLs, CSS, aparência de streaming, autenticaç�
 Teste novo do transporte verifica payload, cookies, cache,204, falha de rede, JSON inválido, conflito409 e erro503 do servidor. Os testes existentes continuam cobrindo validação, progresso, autorização e persistência com substitutos isolados. QA de navegador e integração após refactor constam em `docs/qa-camadas.md`; review final em `docs/review-camadas.md` quando concluídos.
 
 Este refactor não ativa administração em produção nem resolve credenciais/proteção operacional pendentes. Reprodução completa de vídeos e aceite dos pilotos permanecem fora da evidência desta revisão.
+
+## Publicação e validação remota
+
+A raiz publicou o commit `3a1f82e8791543e0c6351693ccb008d8b958a555` no deployment Vercel `dpl_6bebpRptCwxCpYueZbpHeeY35D1H`, produção READY. O alias https://iaflix.vercel.app foi atualizado.
+
+Smoke Chromium no endereço público confirmou CTA para a aula esperada, iframe correto, mensagem administrativa de configuração ausente, HTTP200 para `admin.js`, `admin-api.js` e `ui.js` e ausência de erros JavaScript de página. Não constitui validação de reprodução audiovisual, tela cheia ou publicação administrativa remota.
