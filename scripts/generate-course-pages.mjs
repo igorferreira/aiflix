@@ -62,7 +62,7 @@ export function renderCoursePage(course) {
   <footer><p>Curadoria aiflix. Autoria e links originais preservados nas aulas.</p></footer>
 </body>
 </html>
-`;
+`.replace(/[ \t]+$/gm, '');
 }
 
 export async function generateCoursePages(catalog, outputDirectory) {
