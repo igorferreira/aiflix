@@ -41,3 +41,9 @@ Documentação de build consultada via Context7: https://vercel.com/docs/project
 As sete capas finais são ilustrações originais geradas com imagegen, com título e marca vetorial aplicados na exportação PNG1200x630. A atribuição a Diogo Cortiz nas três aulas é mantida no catálogo e nas capas; não indica autoria das ilustrações nem parceria com o autor. Os quatro cursos restantes continuam em preparação. O snapshot editorial privado foi sincronizado com as capas finais.
 
 Teste adicional confirma assinatura PNG, dimensões reais e vínculo da capa para cada curso. Resultado final: 25 testes Node aprovados; UX registrou 56 verificações de navegador e review independente aprovou sem bloqueantes.
+
+## Validação de produção — 15/11/2026
+
+Commit `d013294f96be2eb4e8cb4f901366d683d1941e3b`, deployment `dpl_8Vv1L2SvRzgmMk643Jv8KcXvhVRy` READY. Alias https://iaflix.vercel.app atualizado. As sete páginas responderam HTTP200, com título, URL canônica social e PNG público1200x630 corretos. Verificadas assinatura, MIME e dimensões de cada imagem remota. O endereço /cursos/harness/ no alias também respondeu ao user-agent facebookexternalhit com OpenGraph estático correto, sem login nem execução de JavaScript.
+
+Não houve envio de mensagem ou validação dentro do aplicativo WhatsApp. O user-agent não substitui esse aceite; a prévia final e seu cache dependem do cliente. Histórico pessoal do YouTube continua no backlog por decisão de Igor.

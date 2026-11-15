@@ -243,3 +243,5 @@ Histórico do YouTube: trabalho mantido no backlog a pedido explícito de Igor. 
 
 - UX-CAPAS — Concluída por root: sete ilustrações originais geradas com imagegen, composição tipográfica e marca exportadas em PNG1200x630, uma para cada curso. Cursos sem aulas mostram “Em preparação”. Catálogo usa todas as novas capas; imagens originais dos vídeos foram preservadas.
 - UX-VALIDACAO — Concluída por agente UX e reviewer: 56 verificações de UX/browser, 25 testes Node finais e review aprovado sem bloqueantes. Ver docs/ux-revisao.md e docs/review-ux-sharing.md. Compartilhamento apenas abre compositor; não envia mensagem. Prévia/cache reais do WhatsApp não testados.
+
+- SHARE-PROD — Concluída por root / DevSecOps: sete links diretos e sete PNG1200x630 publicados, deployment `dpl_8Vv1L2SvRzgmMk643Jv8KcXvhVRy` READY, alias https://iaflix.vercel.app. HTTP200, MIME, dimensões reais e metadados conferidos; crawler simulado recebeu OG estático no alias. Evidência docs/compartilhamento.md. Sem envio de WhatsApp ou confirmação de cache no app real.
