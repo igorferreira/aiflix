@@ -204,3 +204,16 @@ Três cursos curtos, três módulos e três aulas externas de Diogo Cortiz cadas
 - CNT-PLAYBACK — Planejada para devsquad-qa: validar reprodução e fullscreen reais das três aulas. Metadados, URLs e duração foram confirmados; não declarar reprodução validada apenas pelo iframe.
 
 - VIS-03 — Concluída por root: revisão dos três alertas impeccable em styles.css; removidas bordas decorativas de avisos, erros e capa fallback. Texto, contraste de fundo, semântica de erro e foco preservados. Nenhuma supressão.
+
+## Revisão de camadas e manutenção — 14/11/2026
+
+| ID | Pedido / tarefa | Status | Agente responsável / executor | Dependência e evidência |
+|---|---|---|---|---|
+| MAN-01 | Analisar fronteiras de UI, aplicação, transporte e domínio | concluída | devsquad-architect / architecture | Código atual; preservar contratos e aparência |
+| MAN-02 | Refatorar apenas fronteiras com acoplamento comprovado | concluída | devsquad-lead / review_layers_maintenance | MAN-01; sem framework ou abstrações genéricas |
+| MAN-03 | QA de regressão após refactor | concluída | devsquad-qa / qa | Catálogo, rotas, progresso, admin e falhas |
+| MAN-04 | Review final de manutenção | concluída | devsquad-reviewer / review | MAN-03 aprovado; publicação pela raiz |
+
+Aceite: comportamento público e administrativo preservado; HTTP administrativo e renderização separados do bootstrap quando justificado; contratos e gate seguro503 mantidos; nenhuma dependência de produção nova; testes e análise registrados em docs/revisao-camadas.md.
+
+Resultado MAN-01–04: arquitetura revisada, extração frontend concluída, QA APROVADO (19 testes Node,60 verificações browser,4 gravações integração com GitHub substituto), review APROVADO. Evidências: docs/revisao-camadas.md, docs/qa-camadas.md e docs/review-camadas.md. Publicação desta revisão fica com root; não confundir testes locais com administração remota ativa.

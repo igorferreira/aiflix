@@ -27,3 +27,7 @@ Com Node.js 24, execute `npm test` para os testes automatizados e `npm run dev` 
 Configuração segura, inicialização do estado privado e gates de ativação estão em `docs/operacao-admin.md`. Testes de navegador ficam em `tests/qa-browser.mjs`; exigem Playwright disponível no ambiente e servidor local ativo. Fixtures ficam isoladas dos dados públicos.
 
 A pasta sincronizada pelo Drive permanece sem `.git`. O checkout usado para versionamento fica fora do Drive; sincronize arquivos revisados explicitamente, sem copiar credenciais ou configurações locais.
+
+## Manutenção do código
+
+O bootstrap e as telas públicas ficam em `app.js`; o editor administrativo em `admin.js`; seu transporte HTTP em `admin-api.js`; helpers DOM em `ui.js`. Validação e progresso continuam módulos independentes. Mapa de dependências e motivos da separação: `docs/revisao-camadas.md`.

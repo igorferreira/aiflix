@@ -1,6 +1,6 @@
 # Spec 001 — aiflix: catálogo e player
 
-> Versão: v2 · 14/11/2026 · Status: revisão técnica proposta para aprovação de Igor.
+> Versão: v2.1 · 14/11/2026 · Status: revisão técnica proposta para aprovação de Igor.
 > Fontes: PRD.md v0.3, AGENTS.md e solicitação de HTML, JavaScript vanilla e CSS.
 
 ## 1. Objetivo e histórico
@@ -24,8 +24,11 @@ O leitor da Spec 001 consome somente o catálogo público. A API administrativa 
 | Arquivo | Responsabilidade |
 |---|---|
 | `public/index.html` | Documento pt-BR, cabeçalho, navegação, região principal e mensagem sem JavaScript |
-| `public/assets/css/styles.css` | Layout, cartões, carrosséis, foco, contraste e adaptação de telas |
-| `public/assets/js/app.js` | Inicialização, rotas hash, renderização e eventos |
+| `public/styles.css` | Layout, cartões, carrosséis, foco, contraste e adaptação de telas |
+| `public/assets/js/app.js` | Inicialização, estado público, rotas hash e renderização pública |
+| `public/assets/js/admin.js` | Tela e formulário administrativos; callbacks explícitos para navegação e atualização de catálogo |
+| `public/assets/js/admin-api.js` | Transporte HTTP administrativo, cookies e erros, sem DOM |
+| `public/assets/js/ui.js` | Helpers DOM compartilhados, sem estado global |
 | `public/assets/js/catalog.js` | Leitura, validação e consulta do catálogo; extração segura do ID YouTube |
 | `public/assets/js/progress.js` | Leitura/gravação tolerante a erros e cálculo de conclusão |
 | `public/data/catalog.json` | Fonte única editorial de trilhas, cursos, módulos e aulas |
@@ -162,3 +165,7 @@ Implementação autorizada no pedido “Devsquad Vamos virar os primeiros cursos
 Catálogo inicial: três cursos curtos com um módulo e uma aula externa de Diogo Cortiz cada, autoria e links originais preservados. Não equivalem ao curso completo original nem cobrem a meta de um curso por cada uma das seis trilhas. Configuração Vercel reescreve `/data/catalog.json` para `/api/catalog`; sem integração editorial configurada há bootstrap, mas falha de storage configurado retorna indisponibilidade sem fallback silencioso.
 
 QA técnico local aprovado em `docs/qa-implementacao.md`: 18 testes Node, 32 verificações de browser e integração de handlers com armazenamento substituto isolado. Isso não comprova persistência remota ou reprodução efetiva de YouTube. Administração permanece fechada na produção até token restrito, credenciais, origem e proteção durável de tentativas serem configurados. Review final e deploy são gates separados.
+
+## Revisão de manutenção v2.1
+
+Refactor sem mudança no contrato ou comportamento público: administração e transporte extraídos do bootstrap. Mapa e justificativa em `docs/revisao-camadas.md`; evidências locais em `docs/qa-camadas.md` e `docs/review-camadas.md`.

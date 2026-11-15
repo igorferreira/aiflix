@@ -17,3 +17,7 @@
 
 - Não foi cronometrado esforço integral ou por agente. Sem estimativa de horas retroativa.
 - Artefatos: frontend e funções administrativas, testes Node/browser, documentação operacional e catálogo inicial. QA e review emitiram aprovação técnica restrita; produção administrativa depende de provisionamento externo.
+
+## Revisão de camadas e manutenção
+
+Arquiteto analisou fronteiras, líder extraiu UI administrativa/transporte/helpers, QA verificou regressão e reviewer executa gate final. Não foi medida uma janela contínua desta rodada; duração total não informada para evitar estimativa sem evidência.
