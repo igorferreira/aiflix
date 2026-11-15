@@ -169,3 +169,9 @@ QA técnico local aprovado em `docs/qa-implementacao.md`: 18 testes Node, 32 ver
 ## Revisão de manutenção v2.1
 
 Refactor sem mudança no contrato ou comportamento público: administração e transporte extraídos do bootstrap. Mapa e justificativa em `docs/revisao-camadas.md`; evidências locais em `docs/qa-camadas.md` e `docs/review-camadas.md`.
+
+## Extensão: cursos por assunto em preparação
+
+Pedido de Igor: cursos independentes Harness, Gerência de contexto, Memória e Agentes reunidos em uma seção por assunto. Seleção será feita a partir de vídeos assistidos na sua conta YouTube, sem publicar o histórico completo ou datas de visualização. Sem acesso ao histórico, nenhum vídeo pode ser atribuído como assistido.
+
+Contrato schema 2 ampliado de forma aditiva: curso pode ter `status: "preparing"` e `modules: []`. Nesse estado não apresenta player, progresso, duração nem ação de assistir; mostra curadoria pendente. Cursos sem status mantêm exigência de módulos e aulas não vazios. Ao cadastrar aulas reais, remover status de preparação. Rota de curso continua válida; rota de aula inexistente permanece não encontrada. Não usar aulas fictícias para satisfazer o contrato.

@@ -219,3 +219,9 @@ Aceite: comportamento público e administrativo preservado; HTTP administrativo 
 Resultado MAN-01–04: arquitetura revisada, extração frontend concluída, QA APROVADO (19 testes Node,60 verificações browser,4 gravações integração com GitHub substituto), review APROVADO. Evidências: docs/revisao-camadas.md, docs/qa-camadas.md e docs/review-camadas.md. Publicação desta revisão fica com root; não confundir testes locais com administração remota ativa.
 
 - MAN-05 — Concluída por root / DevSecOps: revisão publicada em https://iaflix.vercel.app, commit `3a1f82e`, deployment `dpl_6bebpRptCwxCpYueZbpHeeY35D1H` READY. Smoke remoto confirmou curso/player, novos módulos HTTP200, admin503 esperado e zero erros JavaScript. Evidência: docs/revisao-camadas.md. Credenciais administrativas continuam pendentes.
+
+## Cursos por assunto e histórico YouTube
+
+- TOP-01 — Em andamento por root: área “Assuntos de IA em foco”, cursos Harness, Gerência de contexto, Memória e Agentes, independentes, com estado explícito de preparação até receber vídeos reais.
+- TOP-02 — Bloqueada por acesso externo; root / curadoria: buscar vídeos assistidos na conta de Igor. Preview indisponível (`available:false`), runtime de navegador retornou `No browser is available` e lista de navegadores vazia. Não houve acesso ao histórico nem seleção de vídeos assistidos. Aguardando navegador conectado ou links fornecidos pelo usuário.
+- TOP-03 — Planejada por root: validar autoria, URL, duração e tema dos vídeos recebidos; associar a cada curso e publicar. Não substituir o histórico pessoal por buscas públicas nem apresentar os quatro assuntos como ranking verificado.

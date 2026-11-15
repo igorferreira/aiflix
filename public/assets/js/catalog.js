@@ -36,9 +36,11 @@ export function validateCatalog(value) {
   for (const key of ['courses', 'tracks', 'learnPaths']) array(value[key], key);
   value.courses.forEach((course, i) => {
     const p = `courses[${i}]`;
-    object(course, p, ['id', 'title', 'description', 'modules'], ['cover']); identity(course, p, 'course'); text(course.description, `${p}.description`, 4000, true);
+    object(course, p, ['id', 'title', 'description', 'modules'], ['cover', 'status']); identity(course, p, 'course'); text(course.description, `${p}.description`, 4000, true);
     if (course.cover !== undefined && (typeof course.cover !== 'string' || !/^assets\/images\/[a-zA-Z0-9_/-]+\.(?:png|jpe?g|webp|avif|svg)$/.test(course.cover) || course.cover.includes('..'))) fail(`${p}.cover`, 'capa inválida');
-    array(course.modules, `${p}.modules`, true);
+    if (course.status !== undefined && course.status !== 'preparing') fail(`${p}.status`, 'estado inválido');
+    array(course.modules, `${p}.modules`, course.status !== 'preparing');
+    if (course.status === 'preparing' && course.modules.length) fail(`${p}.modules`, 'curso em preparação não contém aulas publicadas');
     course.modules.forEach((module, j) => {
       const mp = `${p}.modules[${j}]`; object(module, mp, ['id', 'title', 'lessons']); identity(module, mp, 'module'); array(module.lessons, `${mp}.lessons`, true);
       module.lessons.forEach((lesson, k) => {

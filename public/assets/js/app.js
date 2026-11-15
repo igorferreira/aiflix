@@ -17,7 +17,7 @@ function statsText(course) { const s = progress.stats(course); return `${s.compl
 function artwork(course) {
   const art = el('div', undefined, 'course-art');
   art.setAttribute('aria-hidden', 'true');
-  art.append(el('span', course.title, 'art-title'), el('span', lessons(course)[0].title, 'art-lesson'));
+  art.append(el('span', course.title, 'art-title'), el('span', lessons(course)[0]?.title || 'Vídeos em preparação', 'art-lesson'));
   return art;
 }
 function card(course) {
@@ -29,6 +29,10 @@ function card(course) {
   article.append(visual);
   const title = el('h3'); title.append(link(course.title, `#/curso/${course.id}`));
   const list = lessons(course);
+  if (course.status === 'preparing') {
+    article.append(title, el('p', course.description), el('p', 'Vídeos em preparação', 'meta'));
+    return article;
+  }
   article.append(title, el('p', course.description), el('p', `${list.length} aulas · ${duration(list.reduce((sum, lesson) => sum + lesson.durationSeconds, 0))}`, 'meta'), el('p', statsText(course), 'meta'));
   return article;
 }
@@ -52,8 +56,8 @@ function home() {
   heading('O que você quer aprender?');
   main.append(el('p', 'Escolha um curso ou siga um caminho de aprendizagem. Todo conteúdo é gratuito e pode ser acessado na ordem que você preferir.'));
   if (!catalog.courses.length) main.append(el('p', 'Estamos preparando os primeiros cursos. Nenhuma aula está publicada neste catálogo ainda.', 'notice'));
-  else {
-    const course = catalog.courses[0]; const firstLesson = lessons(course)[0];
+  else if (catalog.courses.some(course => lessons(course).length)) {
+    const course = catalog.courses.find(course => lessons(course).length); const firstLesson = lessons(course)[0];
     const feature = el('section', undefined, 'featured-course'); const copy = el('div', undefined, 'featured-copy');
     copy.append(el('h2', course.title), el('p', course.description));
     const actions = el('div', undefined, 'actions'); const watch = link('Assistir agora', `#/curso/${course.id}/aula/${firstLesson.id}`); watch.className = 'button primary';
@@ -63,8 +67,9 @@ function home() {
     if (course.cover) {
       const img = el('img'); img.src = course.cover; img.alt = ''; img.className = 'featured-image'; img.addEventListener('error', () => visual.replaceChildren(artwork(course)), { once: true }); visual.append(img);
     } else visual.append(artwork(course));
-    feature.append(copy, visual); main.append(feature, group('Todos os cursos', 'Acesso direto, sem matrícula ou pré-requisitos.', catalog.courses, true));
+    feature.append(copy, visual); main.append(feature);
   }
+  if (catalog.courses.length) main.append(group('Todos os cursos', 'Acesso direto, sem matrícula ou pré-requisitos.', catalog.courses, true));
   if (catalog.learnPaths.length) {
     const section = el('section'); section.append(el('h2', 'Caminhos de aprendizagem'));
     for (const path of catalog.learnPaths) { const article = el('article', undefined, 'course-card'); const title = el('h3'); title.append(link(path.title, `#/caminho/${path.id}`)); article.append(title, el('p', path.description), el('p', `${path.courseIds.length} cursos · sequência recomendada`, 'meta')); section.append(article); }
@@ -74,6 +79,10 @@ function home() {
 }
 function courseView(course, lesson) {
   main.append(link('Todos os cursos', '#/')); heading(course.title); main.append(el('p', course.description));
+  if (course.status === 'preparing') {
+    main.append(el('p', 'Vídeos em preparação. Aguardamos acesso ao histórico do YouTube ou os links das aulas para montar este curso.', 'notice'));
+    return;
+  }
   const status = el('p', statsText(course), 'meta'); const meter = el('progress'); meter.max = 100; meter.value = progress.stats(course).percent; meter.setAttribute('aria-label', 'Conclusão do curso'); main.append(status, meter);
   const layout = el('div', undefined, 'course-layout'); const content = el('section'); const sidebar = el('aside'); sidebar.setAttribute('aria-label', 'Módulos e aulas');
   if (lesson) {

@@ -41,3 +41,19 @@ test('falha de escrita mantém conclusão na sessão sem prometer persistência'
   const state = createProgress({ getItem: () => null, setItem: () => { throw new Error('blocked'); } });
   assert.equal(state.toggle('test-lesson'), true); assert.equal(state.completed.has('test-lesson'), true); assert.match(state.warning, /sessão/);
 });
+
+test('cursos em preparação são explícitos e não simulam aulas publicadas', () => {
+  const value = fixture();
+  value.courses.push({ id: 'harness', title: 'Harness', description: 'Curadoria pendente', status: 'preparing', modules: [] });
+  assert.equal(validateCatalog(value), value);
+  assert.equal(resolveRoute('#/curso/harness', value).type, 'course');
+  assert.equal(resolveRoute('#/curso/harness/aula/inventada', value).type, 'not-found');
+  assert.deepEqual(createProgress({ getItem: () => null }).stats(value.courses[1]), { completed: 0, total: 0, percent: 0 });
+  delete value.courses[1].status;
+  assert.throws(() => validateCatalog(value));
+  value.courses[1].status = 'published';
+  assert.throws(() => validateCatalog(value));
+  value.courses[1].status = 'preparing';
+  value.courses[1].modules = value.courses[0].modules;
+  assert.throws(() => validateCatalog(value));
+});

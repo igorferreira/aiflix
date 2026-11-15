@@ -93,9 +93,48 @@
         }
       ],
       "cover": "assets/images/arvore-decisao.jpg"
+    },
+    {
+      "id": "harness",
+      "title": "Harness",
+      "description": "Estrutura de execução, ferramentas e controle de sistemas com IA. Vídeos aguardando seleção a partir dos links do seu histórico do YouTube.",
+      "status": "preparing",
+      "modules": []
+    },
+    {
+      "id": "gerencia-contexto",
+      "title": "Gerência de contexto",
+      "description": "Organização e seleção das informações usadas pelos modelos. Vídeos aguardando seleção a partir dos links do seu histórico do YouTube.",
+      "status": "preparing",
+      "modules": []
+    },
+    {
+      "id": "memoria-ia",
+      "title": "Memória",
+      "description": "Memória e persistência de informações em aplicações de IA. Vídeos aguardando seleção a partir dos links do seu histórico do YouTube.",
+      "status": "preparing",
+      "modules": []
+    },
+    {
+      "id": "agentes-ia",
+      "title": "Agentes",
+      "description": "Agentes de IA, suas ferramentas e formas de colaboração. Vídeos aguardando seleção a partir dos links do seu histórico do YouTube.",
+      "status": "preparing",
+      "modules": []
     }
   ],
   "tracks": [
+    {
+      "id": "assuntos-ia",
+      "title": "Assuntos de IA em foco",
+      "description": "Cursos por assunto. A seleção de vídeos está em preparação; esta lista não representa um ranking de popularidade.",
+      "courseIds": [
+        "harness",
+        "gerencia-contexto",
+        "memoria-ia",
+        "agentes-ia"
+      ]
+    },
     {
       "id": "nivelamento",
       "title": "Nivelamento",
