@@ -158,3 +158,41 @@ Registrar testes de lógica relevante, verificação manual do fluxo, estados de
 ## Ajuste da página inicial — 14/11/2026
 
 - VIS-01 — Concluída por root: remover legenda redundante acima do título e CSS sem uso, após revisão do alerta `hero-eyebrow-chip`. Sem supressão do alerta. Validação: ausência da classe no HTML e CSS; atualização publicada via Git.
+
+## Endereço alternativo — 14/11/2026
+
+- INF-05 — Parcial, root / DevSecOps: alias `iaflix.vercel.app` criado e confirmado no projeto atual, apontando ao deployment `dpl_94H9FbLZ3xjoDKwhps8zyKxKAexU`. Acesso anônimo retorna HTTP 302 para login Vercel. Tentativa de adicionar como domínio permanente retornou HTTP 409 `owned-on-other-team`, apesar de o alias consultado apontar ao projeto correto. Publicação aberta e associação permanente pendentes de resolver essa inconsistência; não declarar URL pública funcional.
+
+## Implementação autorizada — 14/11/2026
+
+| ID | Pedido / tarefa | Status | Agente responsável / executor | Dependência e evidência |
+|---|---|---|---|---|
+| IMP-01 | Validar escopo e aceite dos primeiros cursos e administração | concluída | devsquad-po / scope | docs/aceite-implementacao.md |
+| IMP-02 | Definir implementação concreta administrativa | concluída | devsquad-architect / architecture | ADR 0003 e contrato OpenAPI |
+| IMP-03 | Implementar catálogo, aulas e progresso | concluída (técnica local) | devsquad-frontend / frontend | public/ e 7 testes Node; QA em andamento |
+| IMP-04 | Implementar autorização, rascunhos e publicação compartilhada | concluída (código/testes locais); produção bloqueada | devsquad-backend / backend | IMP-02; configuração segura de produção |
+| IMP-05 | QA funcional e segurança | concluída (escopo técnico local) | devsquad-qa / qa | IMP-03/04 |
+| IMP-06 | Review final | concluída | devsquad-reviewer / review | docs/review-implementacao.md: APROVADO para público com admin fechado |
+
+Conteúdo de terceiros aguarda decisão editorial consultada pela raiz; não confundir proposta de curadoria com conteúdo publicado.
+
+- CUR-02 — Concluída por decisão explícita de Igor em 14/11/2026: “Sim, usar vídeos externos com autoria e links”. CUR-01/CNT-01 passam à seleção e verificação de vídeos gratuitos; autoria e link original serão exibidos no catálogo.
+
+- INF-06 — Concluída por root / DevSecOps: repositório privado `igorferreira/aiflix-editorial` inicializado com snapshot validado de três cursos e um caminho, commit `ca2b6d1bea5f9507702632eca1a1233bccd6ca81`. Token de operador não reutilizado pelo aplicativo.
+- ADM-CONFIG — Bloqueada: token fine-grained do repositório privado, senha/segredo administrativos e proteção durável de tentativas de login ainda precisam de provisionamento seguro pela raiz. Nenhum administrador está habilitado em produção.
+
+## Resultado técnico desta implementação
+
+QA APROVADO no escopo local: 18 testes Node, 32 verificações de browser e integração de handlers reais com armazenamento GitHub substituto isolado (quatro gravações). Review APROVADO para publicação do catálogo e administração fechada por configuração. Evidências: `docs/qa-implementacao.md` e `docs/review-implementacao.md`.
+
+Três cursos curtos, três módulos e três aulas externas de Diogo Cortiz cadastrados com título, duração, autoria e links originais verificados pela raiz. A meta original de seis cursos/trilhas, reprodução real dos vídeos, fullscreen, auditoria completa de acessibilidade, medição editorial, persistência remota administrativa e aceite dos pilotos permanecem pendentes. Não marcar o produto inteiro como concluído.
+
+## Refinamento visual solicitado — 14/11/2026
+
+- VIS-02 — Implementada e QA aprovado, devsquad-frontend / frontend: Igor solicitou “O layout deve ser similar a netflix”. Aplicar experiência de streaming com fundo escuro, acento vermelho, destaque de curso real e CTA assistir, cartões 16:9 e carrosséis horizontais. Preservar acessibilidade e administração; não copiar marca ou assets Netflix, não inventar capas. QA de fluxos e larguras 320/768/1440 e review antes da publicação.
+
+- INF-05 — Atualização concluída pela raiz: alias `https://iaflix.vercel.app` agora retorna HTTP 200 sem login Vercel, após desativar proteção de deployment do aplicativo público. O conflito anterior de associação permanente permanece como histórico; alias é apontado manualmente ao deployment escolhido. Isso não habilita nem substitui autenticação administrativa, que continua fechada sem configuração.
+
+- VIS-02-QA — Concluída, devsquad-qa / qa: regressão final com 60 verificações browser em 320/768/1440. Capas reais carregadas em 16:9, CTA Assistir agora acionado por teclado abre primeira aula, carrosséis e fluxos anteriores aprovados. Backend inalterado; review visual final aprovado.
+
+- VIS-02-REV — Concluída, devsquad-reviewer / review_streaming: APROVADO sem bloqueantes para publicar catálogo com administração fechada. Relatório `docs/review-layout-streaming.md`; backend inalterado.

@@ -108,3 +108,7 @@ Documento de **estudo** do projeto: explica **tudo o que está sendo usado** (co
 - **Resultado de infraestrutura informado e evidenciado pela raiz:** GitHub público criado; landing READY em https://aiflix-topaz-nine.vercel.app, HTTP 200 e comparação local confirmada. Alias solicitado bloqueado por `alias_in_use`. Evidência detalhada em `docs/publicacao-2026-11-14.md`; nenhuma funcionalidade de cursos/admin foi concluída pelo bootstrap.
 
 - **Clarificação posterior de conteúdo:** pesquisar referências de IA no iBest Brasil para curadoria dos três módulos. Registro em `docs/pesquisa-ibest-2026.md`; CUR-01/02 antecedem CNT-01. Confirmar canais e modalidade/ano, sem inventar ranking. Uso editorial versus embed de terceiros permanece decisão pendente; não presumir direitos ou abandono de conteúdo próprio.
+
+## Passo 005 — Implementação de cursos e administração
+
+Em 14/11/2026, Igor autorizou implementação pelo DevSquad e depois o uso de vídeos externos com autoria e links. PO registrou aceite, arquiteto definiu Vercel Functions e estado editorial privado no GitHub, frontend e backend implementaram sem framework. Catálogo inicial contém três recortes independentes da sequência de Diogo Cortiz com metadados confirmados pela raiz. QA técnico local aprovou 18 testes Node, 32 verificações de browser e integração HTTP real com GitHub substituto; review e publicação verificados separadamente. Token/segredos/rate limit de produção são bloqueios externos e não serão simulados como administração pronta.

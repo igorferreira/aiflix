@@ -9,7 +9,7 @@
 
 ## Produto e escopo
 
-O aiflix oferece cursos próprios de IA gratuitamente a qualquer pessoa, com experiência de streaming e vídeos hospedados no YouTube.
+O aiflix oferece cursos e curadoria de aulas externas de IA gratuitamente a qualquer pessoa, com experiência de streaming e vídeos hospedados no YouTube.
 
 O MVP (Spec 001) inclui:
 
@@ -36,7 +36,7 @@ O PRD inclui progresso local no MVP e reserva progresso e continuação para a f
 - Valide dados do catálogo e URLs antes de renderizar. Trate conteúdo como dados, sem injetar HTML não confiável.
 - Trate ausência, corrupção ou indisponibilidade do `localStorage` sem impedir acesso aos cursos.
 - Use o player incorporado do YouTube. Ofereça link para abrir a aula no YouTube quando o embed estiver indisponível.
-- Não baixe nem hospede os vídeos. Inclua no catálogo apenas vídeos próprios já disponíveis no YouTube.
+- Não baixe nem hospede os vídeos. Inclua no catálogo vídeos próprios ou externos gratuitos já disponíveis no YouTube, com autoria e links originais.
 - Mantenha compatibilidade com hospedagem estática, inclusive caminhos de assets e navegação em subdiretórios.
 
 ## Catálogo inicial
@@ -87,3 +87,7 @@ Repositório público criado: https://github.com/igorferreira/aiflix. Landing de
 ## Curadoria de conteúdo
 
 Pesquisa de canais de referência de IA no iBest Brasil integra o pedido atual; registrar fontes em `docs/pesquisa-ibest-2026.md`. Distinguir ano, indicação/TOP10, voto popular e academia; não inventar ranking nem tratar popularidade como qualidade didática comprovada. Confirmar canais YouTube e decidir com Igor se as referências orientam produção própria ou embed de terceiros. Não assumir permissão de reutilização ou substituir silenciosamente a premissa de conteúdo próprio. Preparação dos três módulos depende de pesquisa e curadoria, não apenas de URLs fornecidas por Igor.
+
+## Decisão editorial aprovada — 14/11/2026
+
+Igor autorizou explicitamente: “Sim, usar vídeos externos com autoria e links”. O catálogo pode incorporar vídeos gratuitos de terceiros disponíveis no YouTube, com atribuição clara ao autor e links originais. O aiflix organiza a sequência; não reivindica autoria dos vídeos. Não baixar, republicar arquivos ou contornar bloqueio de incorporação. Fontes e metadados devem ser verificáveis; popularidade no iBest não comprova qualidade pedagógica. Esta decisão substitui as restrições anteriores a conteúdo exclusivamente próprio e resolve CUR-02; mantém curadoria, disponibilidade e atribuição como gates de publicação.

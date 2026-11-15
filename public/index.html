@@ -3,18 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="aiflix: aprendizagem gratuita em inteligência artificial, com cursos independentes e caminhos de aprendizagem.">
+  <meta name="description" content="Cursos independentes e caminhos de aprendizagem gratuitos em inteligência artificial.">
   <title>aiflix — Aprenda inteligência artificial</title>
   <link rel="stylesheet" href="styles.css">
+  <script type="module" src="assets/js/app.js"></script>
 </head>
 <body>
-  <main>
-    <p class="brand">aiflix</p>
-    <h1>Seu próximo passo em IA começa aqui.</h1>
-    <p>Uma plataforma gratuita para aprender inteligência artificial. Explore cursos independentes ou siga caminhos de aprendizagem organizados para seus objetivos.</p>
-    <p class="status">Em construção · Conteúdo em preparação</p>
-    <p>O catálogo e os caminhos de aprendizagem serão disponibilizados aqui. Os três módulos iniciais estão previstos; títulos e aulas ainda serão cadastrados.</p>
-    <a href="https://github.com/igorferreira/aiflix" rel="noopener noreferrer">Acompanhe o projeto no GitHub</a>
-  </main>
+  <a class="skip" href="#content">Pular para o conteúdo</a>
+  <header class="site-header">
+    <a class="brand" href="#/" aria-label="aiflix, início">aiflix<span>Aprendizagem em IA</span></a>
+    <nav aria-label="Principal"><a href="#/">Catálogo</a><a href="#/admin">Administração</a></nav>
+  </header>
+  <main id="content" tabindex="-1"><p>Carregando catálogo…</p></main>
+  <div id="announcements" class="sr-only" role="status" aria-live="polite"></div>
+  <footer><p>Aprendizado gratuito. Cursos independentes. Caminhos opcionais.</p><p>Progresso salvo apenas neste navegador. Entre abas, a última gravação prevalece.</p></footer>
+  <noscript>Ative JavaScript para navegar pelo catálogo e assistir às aulas. Os vídeos são reproduzidos pelo YouTube.</noscript>
 </body>
 </html>

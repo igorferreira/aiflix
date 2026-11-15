@@ -149,4 +149,16 @@ Bootstrap publicado em `https://aiflix-topaz-nine.vercel.app`, repositório púb
 
 Igor solicitou pesquisar canais de referência de IA no iBest Brasil para orientar a preparação dos três módulos. A dependência inicial é pesquisa e curadoria, não somente recebimento de URLs de Igor. Fontes e resultados serão registrados em `docs/pesquisa-ibest-2026.md`, a partir da fonte oficial `https://app.premioibest.com/votacao/autoridade-ia`. Confirmar ano, modalidade (indicação, voto popular ou academia), colocação efetivamente publicada e canais YouTube de cada referência. TOP10 não estabelece ordem entre nomes nem comprova qualidade de curso.
 
-Decisão pendente: usar referências para produção própria ou incorporar vídeos de terceiros. Não presumir autorização editorial, direitos de reutilização ou mudança automática da premissa de conteúdo próprio. Antes de publicar, confirmar seleção, autoria, condições aplicáveis, disponibilidade e associação de aulas aos módulos e cursos. Tarefas CUR-01, CUR-02 e CNT-01 rastreiam essa dependência.
+Decisão editorial resolvida: Igor autorizou incorporar vídeos externos com autoria e links, conforme registro abaixo. Essa autorização não dispensa curadoria, atribuição e verificação de disponibilidade. Antes de publicar, confirmar seleção, autoria, condições aplicáveis, disponibilidade e associação de aulas aos módulos e cursos. Tarefas CUR-01, CUR-02 e CNT-01 rastreiam essa dependência.
+
+## Decisão editorial aprovada — 14/11/2026
+
+Igor autorizou explicitamente: “Sim, usar vídeos externos com autoria e links”. O catálogo pode incorporar vídeos gratuitos de terceiros disponíveis no YouTube, com atribuição clara ao autor e links originais. O aiflix organiza a sequência; não reivindica autoria dos vídeos. Não baixar, republicar arquivos ou contornar bloqueio de incorporação. Fontes e metadados devem ser verificáveis; popularidade no iBest não comprova qualidade pedagógica. Esta decisão substitui as restrições anteriores a conteúdo exclusivamente próprio e resolve CUR-02; mantém curadoria, disponibilidade e atribuição como gates de publicação.
+
+## Estado da implementação — 14/11/2026
+
+Implementação autorizada no pedido “Devsquad Vamos virar os primeiros cursos e a área administrativa”. Código correspondente em `public/`, `api/` e `lib/`, com execução local em Node.js 24. Arquitetura concreta em ADR 0003 e contrato `specs/openapi-admin.json`. O quadro histórico de endpoints propostos acima é concretizado por esse contrato; respostas de erro usam `{error:{code,message}}`.
+
+Catálogo inicial: três cursos curtos com um módulo e uma aula externa de Diogo Cortiz cada, autoria e links originais preservados. Não equivalem ao curso completo original nem cobrem a meta de um curso por cada uma das seis trilhas. Configuração Vercel reescreve `/data/catalog.json` para `/api/catalog`; sem integração editorial configurada há bootstrap, mas falha de storage configurado retorna indisponibilidade sem fallback silencioso.
+
+QA técnico local aprovado em `docs/qa-implementacao.md`: 18 testes Node, 32 verificações de browser e integração de handlers com armazenamento substituto isolado. Isso não comprova persistência remota ou reprodução efetiva de YouTube. Administração permanece fechada na produção até token restrito, credenciais, origem e proteção durável de tentativas serem configurados. Review final e deploy são gates separados.

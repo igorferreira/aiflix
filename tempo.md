@@ -12,3 +12,8 @@
 - Janela observada parcial documental: 2026-11-14T11:25:09-03:00 até 2026-11-14T11:26:35-03:00 (86 segundos corridos).
 - Atividade observada: atualização de PRD, regras, specs, ADR e quadro de tarefas; intervalo não inclui preparação anterior nem acabamento posterior. Não é esforço total nem soma de horas de agentes.
 - Infraestrutura executada separadamente pela raiz; sem atribuir duração não medida.
+
+## 14/11/2026 — Implementação
+
+- Não foi cronometrado esforço integral ou por agente. Sem estimativa de horas retroativa.
+- Artefatos: frontend e funções administrativas, testes Node/browser, documentação operacional e catálogo inicial. QA e review emitiram aprovação técnica restrita; produção administrativa depende de provisionamento externo.
