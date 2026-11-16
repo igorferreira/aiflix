@@ -21,11 +21,11 @@ function artwork(course) {
   art.append(el('span', course.title, 'art-title'), el('span', lessons(course)[0]?.title || 'Vídeos em preparação', 'art-lesson'));
   return art;
 }
-function card(course) {
+function card(course, eager = false) {
   const article = el('article', undefined, 'course-card');
   const visual = link('', `#/curso/${course.id}`); visual.className = 'course-visual'; visual.setAttribute('aria-label', `Ver curso: ${course.title}`);
   if (course.cover) {
-    const img = el('img'); img.src = course.cover; img.alt = ''; img.loading = 'lazy'; img.className = 'cover'; img.addEventListener('error', () => visual.replaceChildren(artwork(course)), { once: true }); visual.append(img);
+    const img = el('img'); img.src = course.cover; img.alt = ''; img.loading = eager ? 'eager' : 'lazy'; img.className = 'cover'; img.addEventListener('error', () => visual.replaceChildren(artwork(course)), { once: true }); visual.append(img);
   } else visual.append(artwork(course));
   article.append(visual);
   const title = el('h3'); title.append(link(course.title, `#/curso/${course.id}`));
@@ -37,7 +37,7 @@ function card(course) {
   article.append(title, el('p', course.description), el('p', `${list.length} ${list.length === 1 ? 'aula' : 'aulas'} · ${duration(list.reduce((sum, lesson) => sum + lesson.durationSeconds, 0))}`, 'meta'), el('p', statsText(course), 'meta'));
   return article;
 }
-function group(title, description, courses, carousel = false) {
+function group(title, description, courses, carousel = false, eager = false) {
   const section = el('section'); const header = el('div', undefined, 'section-head'); header.append(el('h2', title)); section.append(header);
   if (description) section.append(el('p', description));
   if (!courses.length) { section.append(el('p', 'Conteúdo em preparação.', 'empty')); return section; }
@@ -51,7 +51,7 @@ function group(title, description, courses, carousel = false) {
     }
     header.append(actions);
   }
-  courses.forEach(course => list.append(card(course))); section.append(list); return section;
+  courses.forEach(course => list.append(card(course, eager))); section.append(list); return section;
 }
 function home() {
   heading('O que você quer aprender?');
@@ -70,7 +70,7 @@ function home() {
     } else visual.append(artwork(course));
     feature.append(copy, visual); main.append(feature);
   }
-  if (catalog.courses.length) main.append(group('Todos os cursos', 'Acesso direto, sem matrícula ou pré-requisitos.', catalog.courses, true));
+  if (catalog.courses.length) main.append(group('Todos os cursos', 'Acesso direto, sem matrícula ou pré-requisitos.', catalog.courses, true, true));
   if (catalog.learnPaths.length) {
     const section = el('section'); section.append(el('h2', 'Caminhos de aprendizagem'));
     for (const path of catalog.learnPaths) { const article = el('article', undefined, 'course-card'); const title = el('h3'); title.append(link(path.title, `#/caminho/${path.id}`)); article.append(title, el('p', path.description), el('p', `${path.courseIds.length} cursos · sequência recomendada`, 'meta')); section.append(article); }
