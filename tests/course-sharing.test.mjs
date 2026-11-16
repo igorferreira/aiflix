@@ -25,7 +25,7 @@ test('build gera HTML público e metadados completos para os sete cursos', async
     for (const course of catalog.courses) {
       const html = await readFile(join(directory, course.id, 'index.html'), 'utf8');
       assert.ok(html.includes(`<meta property="og:url" content="${courseShareUrl(course.id)}">`));
-      assert.ok(html.includes(`https://iaflix.vercel.app/assets/images/course-${course.id}.png`));
+      assert.ok(html.includes(`https://iaflix.vercel.app/assets/images/social/course-${course.id}-v1.jpg`));
       for (const field of ['og:title', 'og:description', 'og:image', 'og:image:type', 'og:image:width', 'og:image:height', 'og:image:alt']) assert.ok(html.includes(`property="${field}"`));
       assert.ok(html.includes('content="1200"'));
       assert.ok(html.includes('content="630"'));
@@ -70,7 +70,7 @@ test('servidor local serve páginas por curso sem JavaScript com MIME HTML', asy
   }
 });
 
-test('todos os cursos têm capa social PNG real de 1200 por 630', async () => {
+test('todos os cursos preservam capa original do catálogo em PNG de 1200 por 630', async () => {
   for (const course of catalog.courses) {
     const png = await readFile(new URL(`../public/assets/images/course-${course.id}.png`, import.meta.url));
     assert.equal(png.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');

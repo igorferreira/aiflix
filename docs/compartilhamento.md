@@ -1,6 +1,6 @@
 # Compartilhamento direto de cursos
 
-> Versão: v1 · Data: 15/11/2026 · Responsável: course_sharing.
+> Versão: v2 · Data: 15/11/2026 · Responsável: course_sharing.
 
 ## Decisão
 
@@ -13,7 +13,7 @@ A página apresenta capa, descrição, estado real e aulas disponíveis; “Abri
 - `public/assets/js/share.js`: `courseShareUrl(id)` e `whatsappUrl(course)`, usados também pela interface principal.
 - `scripts/generate-course-pages.mjs`: valida e lê `public/data/catalog.json`, escapa dados editoriais e gera `public/cursos/<id>/index.html`.
 - `npm run build`: regenera as páginas. Vercel executa esse comando mantendo saída em `public/`.
-- Cada imagem social é PNG de 1200 × 630 em `public/assets/images/course-<id>.png`; a URL é HTTPS absoluta nos metadados.
+- Imagens sociais são JPEG de 1200 × 630 em `public/assets/images/social/course-<id>-v1.jpg`, abaixo de 600 KB; as URLs são HTTPS absolutas. A home usa `social/site-v1.jpg`. Os PNG originais continuam nas capas do catálogo.
 - Logo e CSS continuam locais, sem código inline ou dependências novas de produção.
 
 Ao editar título, descrição ou estado de um curso, regenere e publique. Novos cursos exigem também sua capa social nesse padrão de nome. O build lê o catálogo versionado de bootstrap; após ativar persistência editorial remota, alterações de metadados de cursos exigirão sincronizar esse catálogo e reconstruir as páginas. A administração atual edita caminhos de aprendizagem, não cursos.
@@ -47,3 +47,15 @@ Teste adicional confirma assinatura PNG, dimensões reais e vínculo da capa par
 Commit `d013294f96be2eb4e8cb4f901366d683d1941e3b`, deployment `dpl_8Vv1L2SvRzgmMk643Jv8KcXvhVRy` READY. Alias https://iaflix.vercel.app atualizado. As sete páginas responderam HTTP200, com título, URL canônica social e PNG público1200x630 corretos. Verificadas assinatura, MIME e dimensões de cada imagem remota. O endereço /cursos/harness/ no alias também respondeu ao user-agent facebookexternalhit com OpenGraph estático correto, sem login nem execução de JavaScript.
 
 Não houve envio de mensagem ou validação dentro do aplicativo WhatsApp. O user-agent não substitui esse aceite; a prévia final e seu cache dependem do cliente. Histórico pessoal do YouTube continua no backlog por decisão de Igor.
+
+## Correção específica da prévia no WhatsApp
+
+O relato foi esclarecido por Igor: faltam imagens na prévia do WhatsApp. A mudança anterior de lazy para eager no catálogo só afeta a interface do site; não corrige metadados Open Graph nem o orçamento de imagem do crawler.
+
+Consulta oficial via Context7: https://developers.facebook.com/documentation/business-messaging/whatsapp/link-previews. Requisitos recuperados: head nos primeiros300KB de HTML, og:title/description/url não vazios, og:image absoluta, imagem menor que600KB, largura mínima300px e proporção até4:1. A documentação orienta compor mensagem com o link e aguardar prévia antes de enviar; não garante renderização em todo cliente.
+
+Achados remotos com user-agent WhatsApp: homeHTTP200 sem og:image; cursos com og:image para PNG entre720235 e1010835bytes, acima do limite documentado. Isso é incompatibilidade observada; não houve inspeção do log interno do WhatsApp para afirmar qual condição gerou o sintoma em cada cliente.
+
+Correções: metadados completos e imagem de marca na home; versões sociais JPEG1200x630 entre65259 e102113bytes para cursos e93910bytes para home; novas URLs de imagem para evitar reaproveitar o recurso PNG anterior. As capas PNG do catálogo foram preservadas. Metadados são HTML estático e não dependem do carregamento lazy ou da execução de JavaScript.
+
+Teste de regressão verifica home+sete cursos: campos OG presentes no head, head abaixo de300KB, URLsHTTPS no domínio certo, arquivos JPEG válidos e abaixo de600000bytes. Total:27 testes Node aprovados. Validação final dentro do WhatsApp depende do link exato e do cliente; não foi enviada nenhuma mensagem por automação.

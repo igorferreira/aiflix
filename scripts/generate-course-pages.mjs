@@ -13,7 +13,7 @@ export function renderCoursePage(course) {
   const description = preparing
     ? `${course.title}: curso em preparação. Vídeos ainda não disponíveis. Aprendizagem gratuita em inteligência artificial no IAFLIX.`
     : course.description.replace(/\s+/g, ' ').trim().slice(0, 240);
-  const image = `https://iaflix.vercel.app/assets/images/course-${course.id}.png`;
+  const image = `https://iaflix.vercel.app/assets/images/social/course-${course.id}-v1.jpg`;
   const lessonCount = course.modules.reduce((total, module) => total + module.lessons.length, 0);
   return `<!doctype html>
 <html lang="pt-BR">
@@ -31,7 +31,7 @@ export function renderCoursePage(course) {
   <meta property="og:url" content="${url}">
   <meta property="og:image" content="${image}">
   <meta property="og:image:secure_url" content="${image}">
-  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="${escapeHtml(`Capa do curso ${course.title} no IAFLIX`)}">
