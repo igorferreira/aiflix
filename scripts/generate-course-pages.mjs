@@ -59,7 +59,7 @@ export function renderCoursePage(course) {
     </div>
     ${course.modules.map(module => `<section><h2>${escapeHtml(module.title)}</h2><ul>${module.lessons.map(lesson => `<li><a href="/#/curso/${course.id}/aula/${lesson.id}">${escapeHtml(lesson.title)}</a></li>`).join('')}</ul></section>`).join('\n    ')}
   </main>
-  <footer><p>Curadoria IAFLIX. Autoria e links originais preservados nas aulas.</p></footer>
+  <footer><p>Curadoria IAFLIX. Autoria e links originais preservados nas aulas.</p><p><a class="admin-link" href="/#/admin">Administração</a></p></footer>
 </body>
 </html>
 `.replace(/[ \t]+$/gm, '');
