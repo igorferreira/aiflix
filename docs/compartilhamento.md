@@ -59,3 +59,9 @@ Achados remotos com user-agent WhatsApp: homeHTTP200 sem og:image; cursos com og
 Correções: metadados completos e imagem de marca na home; versões sociais JPEG1200x630 entre65259 e102113bytes para cursos e93910bytes para home; novas URLs de imagem para evitar reaproveitar o recurso PNG anterior. As capas PNG do catálogo foram preservadas. Metadados são HTML estático e não dependem do carregamento lazy ou da execução de JavaScript.
 
 Teste de regressão verifica home+sete cursos: campos OG presentes no head, head abaixo de300KB, URLsHTTPS no domínio certo, arquivos JPEG válidos e abaixo de600000bytes. Total:27 testes Node aprovados. Validação final dentro do WhatsApp depende do link exato e do cliente; não foi enviada nenhuma mensagem por automação.
+
+## Validação remota da correção WhatsApp — 16/11/2026
+
+Commit `b2089abb252681bab6e19292a1b05d0488d5a40e`, deployment `dpl_8paeLpzDNWfSks53ggNk8Xe4Q7ec` READY, alias https://iaflix.vercel.app atualizado. Requisições sem JavaScript com user-agent WhatsApp confirmaram home e sete cursosHTTP200, camposOG não vazios, imagens JPEG públicas com MIMEcorreto, dimensões reais1200x630 e tamanho entre65259 e102113bytes. A home usa93910bytes. O alias público confirmou as novas URLs sociais na home e em Harness.
+
+Essa checagem confirma a entrega dos metadados e a compatibilidade de tamanho; não simula o aplicativo WhatsApp nem comprova que uma prévia já armazenada foi renovada. O link exato foi solicitado a Igor para eventual reprodução adicional. Nenhuma mensagem foi enviada ou rascunho criado em conta pessoal.
