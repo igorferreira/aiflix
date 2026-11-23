@@ -25,3 +25,7 @@ Arquiteto analisou fronteiras, líder extraiu UI administrativa/transporte/helpe
 ## 23/11/2026 — Instalação PWA
 
 Implementação e validação pela raiz. Sem cronometragem integral; não estimar esforço retroativo. Manifest, ícones e metadados com 29 testes Node aprovados. Publicação e aceite físico registrados separadamente.
+
+## 23/11/2026 — Indicações de YouTubers
+
+Seção pública, validação de catálogo e compatibilidade editorial implementadas pela raiz. Build e 30 testes aprovados. Não foi cronometrado esforço integral. Navegador permaneceu indisponível; sem leitura de histórico nem curadoria de vídeos nesta etapa.
