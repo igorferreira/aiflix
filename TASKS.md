@@ -295,7 +295,7 @@ TOP-02 — Investigação de integração em 23/11: setup AppArmor liberou o nav
 |---|---|---|---|---|---|
 | YT-RANK-01 | Contar ocorrências de criadores de IA no histórico autorizado | Concluído para a primeira conta; segunda adiada por Igor | root (executou) | Janela de 90 dias aprovada | Coleta até ultrapassar 26/08/2026; duplicata descartada; relatório pessoal local |
 | YT-RANK-02 | Registrar ranking e método em Markdown no projeto | Concluído; arquivo pessoal local ignorado pelo Git | root (executou) | YT-RANK-01; cobertura e limites documentados | docs/ranking-youtubers-ia.md; dados brutos fora da publicação |
-| YT-RANK-03 | Publicar os dez primeiros como YouTubers indicados | Em validação e publicação | root (executando) | YT-RANK-02; URLs originais verificadas | public/data/catalog.json; specs/001-youtubers-indicados-v1.md v2 |
+| YT-RANK-03 | Publicar os dez primeiros como YouTubers indicados | Publicado; build e 30 testes aprovados | root (executou) | YT-RANK-02; URLs originais verificadas | Commit e0682cc; deployment dpl_DV8v8CBP2KMcu5asqSrfwnAGQ1qY READY; https://iaflix.vercel.app; catálogo remoto conferido com dez canais |
 | YT-RANK-04 | Consultar a segunda conta e recalcular o ranking | Backlog: adiado explicitamente por Igor | root / curadoria (planejado; sem agente executando) | Retomada por Igor e conexão da aba correta | Pedido: “Esquece isso de coletar na segunda por enquanto” |
 
 Não contar recomendações da home ou vídeos relacionados como assistidos. Contagens da interface representam ocorrências visíveis no histórico, não tempo assistido ou total irrestrito de reproduções. Dados brutos e endereços pessoais permanecem fora do repositório público.
