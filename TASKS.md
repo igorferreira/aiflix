@@ -223,8 +223,8 @@ Resultado MAN-01–04: arquitetura revisada, extração frontend concluída, QA 
 ## Cursos por assunto e histórico YouTube
 
 - TOP-01 — Concluída (estrutura) por root: área “Assuntos de IA em foco”, cursos Harness, Gerência de contexto, Memória e Agentes, independentes, com estado explícito de preparação até receber vídeos reais.
-- TOP-02 — Backlog, adiada explicitamente por Igor em 15/11/2026; root / curadoria (previsto): buscar vídeos assistidos na conta de Igor. Preview indisponível (`available:false`), runtime de navegador retornou `No browser is available` e lista de navegadores vazia. Não houve acesso ao histórico nem seleção de vídeos assistidos. Aguardando navegador conectado ou links fornecidos pelo usuário.
-- TOP-03 — Backlog, adiada junto à busca no histórico; root / curadoria (previsto): validar autoria, URL, duração e tema dos vídeos recebidos; associar a cada curso e publicar. Não substituir o histórico pessoal por buscas públicas nem apresentar os quatro assuntos como ranking verificado.
+- TOP-02 — Retomada por pedido explícito em 23/11/2026; aguardando acesso autenticado; agente youtube_history_curator concluiu diagnóstico: buscar vídeos assistidos na conta de Igor. Preview indisponível (`available:false`), runtime de navegador retornou `No browser is available` e lista de navegadores vazia. Não houve acesso ao histórico nem seleção de vídeos assistidos. Aguardando navegador conectado ou links fornecidos pelo usuário.
+- TOP-03 — Pendente de TOP-02; root / curadoria (planejado; ainda não executando): validar autoria, URL, duração e tema dos vídeos recebidos; associar a cada curso e publicar. Não substituir o histórico pessoal por buscas públicas nem apresentar os quatro assuntos como ranking verificado.
 
 Validação TOP-01: 20 testes Node passaram; sintaxe do app conferida; deployment `dpl_Dc1w7YDcmmTMDu2eJgpq7DtK8JV2` READY (commit `5f95acb`), alias https://iaflix.vercel.app atualizado. Catálogo remoto HTTP200 confirmou quatro cursos em preparação e preservou os três cursos com aulas. Sem navegador conectado, verificação visual e leitura do histórico permanecem pendentes.
 
@@ -271,3 +271,16 @@ WA-PREVIEW-01 publicada e validada tecnicamente por root: deployment `dpl_8paeLp
 |---|---|---|---|---|---|
 | PWA-01 | Revisar se PWA está ativo e permite instalação no celular | Concluída: configuração PWA ausente | root / DevSquad (executado) | Nenhuma | docs/revisao-pwa-2026-11-16.md; home sem manifest; endpoints manifest e sw retornam 404 |
 | PWA-02 | Configurar instalação PWA e validar abertura no celular | Publicado e validado por HTTP; 29 testes aprovados; aceite físico pendente | root (executou implementação e testes) | Aparelhos Android/iOS para aceite final | ADR 0004; commit d8ba030; deployment dpl_HM1c7ZeTbsqtn6g14jtgYXuBxx9o READY; https://iaflix.vercel.app |
+
+Retomada TOP-02 em 23/11/2026: Igor autorizou consultar os dois perfis YouTube indicados e usar vídeos dos criadores de IA mais assistidos. Verificar autenticação real por perfil; medir frequência apenas no histórico acessível, com janela e limites explícitos. Publicar somente metadados editoriais dos vídeos e atribuição; não publicar endereços pessoais, histórico bruto nem credenciais no repositório público. TOP-03 depende de seleção verificável.
+
+Diagnóstico TOP-02 — 23/11/2026: agente youtube_history_curator não conseguiu consultar nenhum dos perfis. T3 preview bloqueado por AppArmor; alternativa chrome:control-chrome retornou `No browser is available` e `agent.browsers.list()` retornou `[]`. Nenhum histórico lido, criador contabilizado ou vídeo selecionado. Dependência: navegador autenticado conectado ou exportação somente do histórico YouTube de cada conta. Não houve mudança no host, credenciais ou catálogo.
+
+## Indicações de YouTubers — 23/11/2026
+
+| ID | Requisito | Status | Agente responsável | Dependência | Evidência |
+|---|---|---|---|---|---|
+| YT-01 | Criar seção de indicações e incluir @ronnaldhawk | Implementação e testes em execução | root (executando) | Nenhuma; URL fornecida diretamente por Igor | specs/001-youtubers-indicados-v1.md |
+| YT-02 | Selecionar vídeos do canal para cursos de IA | Pendente de curadoria | root / curadoria (planejado) | Acesso ao canal e confirmação de título, duração e assunto dos vídeos | Canal indicado; nenhum vídeo específico selecionado nesta etapa |
+
+Tentativa de conexão nesta rodada: preview_open continua bloqueado por AppArmor; Chrome retorna `Browser is not available: chrome`. Orientado setup específico do navegador T3, sem desativar AppArmor globalmente. Nenhum histórico foi acessado.

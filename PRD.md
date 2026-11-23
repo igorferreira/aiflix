@@ -110,3 +110,7 @@ Igor definiu a grafia oficial **IAFLIX**. Aplicar a nome visível, logo, capas, 
 ## Instalação web — 23/11/2026
 
 Igor autorizou ativar PWA: instalação pelo navegador com identidade IAFLIX e abertura standalone. Não envolve aplicativo nativo nem lojas. Exige conexão; uso offline não integra esta entrega. Decisão: ADR 0004.
+
+## YouTubers indicados — 23/11/2026
+
+Igor solicitou seção de indicação de YouTubers e indicou https://www.youtube.com/@ronnaldhawk como canal que acompanha sobre IA. Mostrar indicação comunitária e acesso ao canal original na home, com dados editáveis no catálogo. Não alegar ranking de audiência nem parceria. Seleção de vídeos para cursos segue dependente de curadoria verificável; indicar um canal não publica aulas automaticamente.

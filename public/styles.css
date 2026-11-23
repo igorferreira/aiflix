@@ -22,6 +22,9 @@ h3 { line-height: 1.3; margin-block: 12px; }
 p { color: var(--muted); line-height: 1.65; max-width: 76ch; }
 section { margin-block: 32px; min-width: 0; }
 .section-head { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.creator-card { padding: 20px; background: #1b1719; border-radius: 6px; }
+.creator-card h3 { margin-top: 0; overflow-wrap: anywhere; }
+.creator-card a { display: inline-flex; align-items: center; min-height: 44px; }
 .actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-block: 16px; }
 .course-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 270px), 1fr)); gap: 18px; }
 .course-card { background: #1b191a; border: 1px solid #333033; border-radius: 7px; padding: 0 0 16px; min-width: 0; overflow-wrap: anywhere; }

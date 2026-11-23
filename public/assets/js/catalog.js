@@ -26,14 +26,26 @@ export function validateCatalog(value) {
   function array(item, path, nonempty = false) {
     if (!Array.isArray(item) || (nonempty && !item.length)) fail(path, 'lista inválida');
   }
-  const seen = { course: new Set(), module: new Set(), lesson: new Set(), track: new Set(), path: new Set() };
+  const seen = { course: new Set(), module: new Set(), lesson: new Set(), track: new Set(), path: new Set(), creator: new Set() };
   function identity(item, path, type) {
     if (!isId(item.id) || seen[type].has(item.id)) fail(`${path}.id`, 'ID inválido ou duplicado');
     seen[type].add(item.id); text(item.title, `${path}.title`, 160);
   }
-  object(value, 'catalog', ['schemaVersion', 'courses', 'tracks', 'learnPaths']);
+  object(value, 'catalog', ['schemaVersion', 'courses', 'tracks', 'learnPaths'], ['creators']);
   if (value.schemaVersion !== 2) fail('schemaVersion', 'versão não suportada');
   for (const key of ['courses', 'tracks', 'learnPaths']) array(value[key], key);
+  if (value.creators !== undefined) {
+    array(value.creators, 'creators');
+    value.creators.forEach((creator, i) => {
+      const p = `creators[${i}]`;
+      object(creator, p, ['id', 'title', 'description', 'channelUrl']);
+      identity(creator, p, 'creator'); text(creator.description, `${p}.description`, 4000);
+      try {
+        const url = httpsUrl(creator.channelUrl);
+        if (!['youtube.com', 'www.youtube.com'].includes(url.hostname) || url.port || url.search || url.hash || !/^\/@[A-Za-z0-9._-]+$/.test(url.pathname)) throw new Error();
+      } catch { fail(`${p}.channelUrl`, 'canal YouTube inválido'); }
+    });
+  }
   value.courses.forEach((course, i) => {
     const p = `courses[${i}]`;
     object(course, p, ['id', 'title', 'description', 'modules'], ['cover', 'status']); identity(course, p, 'course'); text(course.description, `${p}.description`, 4000, true);

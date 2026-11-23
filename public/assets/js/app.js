@@ -71,6 +71,19 @@ function home() {
     feature.append(copy, visual); main.append(feature);
   }
   if (catalog.courses.length) main.append(group('Todos os cursos', 'Acesso direto, sem matrícula ou pré-requisitos.', catalog.courses, true, true));
+  if (catalog.creators?.length) {
+    const section = el('section'); section.setAttribute('aria-labelledby', 'youtubers-title');
+    const title = el('h2', 'YouTubers indicados'); title.id = 'youtubers-title';
+    section.append(title, el('p', 'Canais indicados pela comunidade para acompanhar IA. Explore os conteúdos diretamente com seus autores.'));
+    const list = el('div', undefined, 'course-grid');
+    for (const creator of catalog.creators) {
+      const article = el('article', undefined, 'creator-card');
+      const channel = link('Visitar canal no YouTube (nova aba)', creator.channelUrl);
+      channel.target = '_blank'; channel.rel = 'noopener noreferrer';
+      article.append(el('h3', creator.title), el('p', creator.description), channel); list.append(article);
+    }
+    section.append(list); main.append(section);
+  }
   if (catalog.learnPaths.length) {
     const section = el('section'); section.append(el('h2', 'Caminhos de aprendizagem'));
     for (const path of catalog.learnPaths) { const article = el('article', undefined, 'course-card'); const title = el('h3'); title.append(link(path.title, `#/caminho/${path.id}`)); article.append(title, el('p', path.description), el('p', `${path.courseIds.length} cursos · sequência recomendada`, 'meta')); section.append(article); }

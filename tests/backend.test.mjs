@@ -26,6 +26,7 @@ async function request(handler, method = 'GET', url = '/api/session', input, coo
 test('backend: sessão, autorização, CAS e publicação sem rede real', async t => {
   const saved = Object.fromEntries(keys.map(key => [key, process.env[key]]));
   const realFetch = globalThis.fetch;
+  catalog.creators = [{ id: 'fixture-creator', title: 'Autor fixture', description: 'Indicação isolada de teste', channelUrl: 'https://www.youtube.com/@fixture' }];
   let state = { schemaVersion: 1, paths: [], publishedCatalog: structuredClone(catalog), audit: [] };
   let sha = 'revision-1';
   let writes = 0;
@@ -111,6 +112,7 @@ test('backend: sessão, autorização, CAS e publicação sem rede real', async 
       const published = await request(adminHandler, 'POST', '/api/admin/learn-paths/first-path/publish', { expectedRevision: 1 }, cookie);
       assert.equal(published.statusCode, 200);
       assert.equal(published.value.path.revision, 2);
+      assert.deepEqual((await request(catalogHandler, 'GET', '/api/catalog')).value.creators, catalog.creators);
       assert.equal((await request(catalogHandler, 'GET', '/api/catalog')).value.learnPaths[0].title, 'Caminho');
       assert.equal((await request(adminHandler, 'POST', '/api/admin/learn-paths/first-path/publish', { expectedRevision: 1 }, cookie)).statusCode, 409);
       const update = { title: 'Novo título', description: '', courseIds: ['fixture-course'], expectedRevision: 2 };

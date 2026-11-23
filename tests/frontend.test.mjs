@@ -18,6 +18,19 @@ test('URLs YouTube usam hosts exatos e ID sem repassar parâmetros extras', () =
   assert.equal(youtubeId('https://youtu.be/abcdefghijk?si=other'), 'abcdefghijk');
   for (const url of ['javascript:alert(1)', 'https://youtube.com.evil.test/watch?v=abcdefghijk', 'https://user:pass@youtube.com/watch?v=abcdefghijk', 'https://youtube.com/embed/abcdefghijk', 'https://youtu.be/abcdefghijk/extra', 'https://youtube.com:8080/watch?v=abcdefghijk', 'http://youtube.com/watch?v=abcdefghijk']) assert.throws(() => youtubeId(url));
 });
+test('indicações de canais são opcionais e rejeitam destinos inseguros e IDs duplicados', () => {
+  const creator = { id: 'ronnaldhawk', title: '@ronnaldhawk', description: 'Indicação da comunidade', channelUrl: 'https://www.youtube.com/@ronnaldhawk' };
+  const value = fixture();
+  assert.equal(validateCatalog(value), value);
+  value.creators = [creator];
+  assert.equal(validateCatalog(value).creators[0].channelUrl, creator.channelUrl);
+  for (const url of ['https://youtube.com.evil.test/@ronnaldhawk', 'javascript:alert(1)', 'https://user:pass@www.youtube.com/@ronnaldhawk', 'https://www.youtube.com/watch?v=abcdefghijk', 'https://www.youtube.com:8080/@ronnaldhawk', 'https://www.youtube.com/@ronnaldhawk?redirect=other']) {
+    assert.throws(() => validateCatalog({ ...value, creators: [{ ...creator, channelUrl: url }] }));
+  }
+  assert.throws(() => validateCatalog({ ...value, creators: [creator, creator] }));
+  assert.throws(() => validateCatalog({ ...value, creators: 'invalid' }));
+  assert.throws(() => validateCatalog({ ...value, creators: [{ ...creator, description: '' }] }));
+});
 test('rotas vinculam aula ao curso e rejeitam formatos malformados', () => {
   const value = fixture();
   assert.equal(resolveRoute('#/curso/test-course/aula/test-lesson', value).type, 'lesson');

@@ -194,5 +194,13 @@
         "arvore-decisao"
       ]
     }
+  ],
+  "creators": [
+    {
+      "id": "ronnaldhawk",
+      "title": "@ronnaldhawk",
+      "description": "Indicação da comunidade IAFLIX para acompanhar conteúdos de inteligência artificial no YouTube.",
+      "channelUrl": "https://www.youtube.com/@ronnaldhawk"
+    }
   ]
 }
