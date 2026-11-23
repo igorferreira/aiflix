@@ -9,3 +9,5 @@ Não adicionar service worker: instalação não o exige e cache offline não fo
 Fonte consultada via Context7: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable
 
 Validar manifest, dimensões PNG, referências na home e cursos, MIME e publicação HTTPS. Aceite em aparelhos físicos permanece separado. Android: menu do Chrome, Instalar aplicativo. iPhone: Compartilhar no Safari, Adicionar à Tela de Início. Oferta e texto dependem do navegador.
+
+Publicação verificada: commit d8ba030; deployment dpl_HM1c7ZeTbsqtn6g14jtgYXuBxx9o READY e alias https://iaflix.vercel.app. Home, curso harness, manifest e três ícones retornam HTTP 200; MIME e dimensões PNG corretos. Build e 29 testes Node aprovados. Não foi realizada instalação em aparelhos físicos.

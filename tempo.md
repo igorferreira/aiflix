@@ -21,3 +21,7 @@
 ## Revisão de camadas e manutenção
 
 Arquiteto analisou fronteiras, líder extraiu UI administrativa/transporte/helpers, QA verificou regressão e reviewer executa gate final. Não foi medida uma janela contínua desta rodada; duração total não informada para evitar estimativa sem evidência.
+
+## 23/11/2026 — Instalação PWA
+
+Implementação e validação pela raiz. Sem cronometragem integral; não estimar esforço retroativo. Manifest, ícones e metadados com 29 testes Node aprovados. Publicação e aceite físico registrados separadamente.

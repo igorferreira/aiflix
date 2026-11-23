@@ -270,4 +270,4 @@ WA-PREVIEW-01 publicada e validada tecnicamente por root: deployment `dpl_8paeLp
 | ID | Requisito | Status | Agente responsável | Dependência | Evidência |
 |---|---|---|---|---|---|
 | PWA-01 | Revisar se PWA está ativo e permite instalação no celular | Concluída: configuração PWA ausente | root / DevSquad (executado) | Nenhuma | docs/revisao-pwa-2026-11-16.md; home sem manifest; endpoints manifest e sw retornam 404 |
-| PWA-02 | Configurar instalação PWA e validar abertura no celular | Em execução: autorizado em 23/11 | root (executando implementação e validação) | Definir escopo e comportamento offline; acesso a aparelhos para aceite | Lacunas registradas na revisão PWA-01 |
+| PWA-02 | Configurar instalação PWA e validar abertura no celular | Publicado e validado por HTTP; 29 testes aprovados; aceite físico pendente | root (executou implementação e testes) | Aparelhos Android/iOS para aceite final | ADR 0004; commit d8ba030; deployment dpl_HM1c7ZeTbsqtn6g14jtgYXuBxx9o READY; https://iaflix.vercel.app |
