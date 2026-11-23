@@ -1,6 +1,6 @@
 # Spec 001 — Complemento: YouTubers indicados
 
-Versão v1 · 23/11/2026 · extensão do catálogo público.
+Versão v2 · 23/11/2026 · extensão do catálogo público.
 
 ## Requisito
 
@@ -17,4 +17,14 @@ Campo opcional `creators` em `public/data/catalog.json`, compatível com catálo
 - Dada URL insegura ou ID repetido, a validação recusa a entrada.
 - Publicar learn path preserva indicações.
 
-Sem imagens não verificadas, aulas inventadas, ranking pessoal ou histórico bruto no repositório. Pesquisa de vídeos e validação de metadados continuam em TOP-02/03.
+Sem imagens não verificadas, aulas inventadas, ranking pessoal ou histórico bruto no repositório público. Pesquisa de vídeos continua em TOP-02/03.
+
+## Seleção dos dez indicados — v2
+
+Igor solicitou ranking pessoal de canais de IA e desenvolvimento com base nos últimos 90 dias. A versão de 23/11/2026 usa somente a primeira conta confirmada; a segunda foi adiada explicitamente. O documento agregado `docs/ranking-youtubers-ia.md` e os artefatos de histórico permanecem locais, ignorados pelo Git e fora da saída pública.
+
+A seleção conta pares únicos de vídeo/data dentro da janela inclusiva de 26/08/2026 a 23/11/2026. Considera o recorte técnico/aplicado de IA, ferramentas, automação e programação; exclui falsos positivos e debates gerais sem esse foco. Ordena por contagem decrescente, com desempate alfabético por casefold Unicode. Esse recorte não representa tempo assistido, ranking iBest ou avaliação de qualidade.
+
+O catálogo contém os dez primeiros, nessa ordem, com nomes e URLs originais verificados por metadados públicos dos vídeos. Mantém o ID estável de Ronnald Hawk. O site não recebe contagens pessoais, e-mails ou registros assistidos. A publicação de canais não publica novas aulas.
+
+Aceite adicional: o catálogo validado deve conter exatamente dez canais, sem IDs ou URLs repetidos; a lista pública deve corresponder à seleção registrada localmente. A segunda conta não pode contribuir com dados não confirmados.

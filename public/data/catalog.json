@@ -197,10 +197,64 @@
   ],
   "creators": [
     {
+      "id": "quantbrasil",
+      "title": "Rafael Quintanilha – QuantBrasil",
+      "description": "Engenharia de IA, harnesses, SDD e ferramentas para programar com agentes.",
+      "channelUrl": "https://www.youtube.com/@QuantBrasil"
+    },
+    {
+      "id": "aiprogbr",
+      "title": "AI ProgBr",
+      "description": "Modelos de IA, execução local e testes de ferramentas para o dia a dia.",
+      "channelUrl": "https://www.youtube.com/@AIProgBr"
+    },
+    {
+      "id": "maestrosdaia",
+      "title": "Maestros da IA",
+      "description": "Agentes, automações e aplicações práticas de inteligência artificial.",
+      "channelUrl": "https://www.youtube.com/@maestrosdaia"
+    },
+    {
+      "id": "elirigobeliai",
+      "title": "Eli Rigobeli - IA",
+      "description": "Assistentes de IA, ferramentas e experimentos com Claude e ChatGPT.",
+      "channelUrl": "https://www.youtube.com/@EliRigobeliAI"
+    },
+    {
+      "id": "juliosilvaai",
+      "title": "Julio | Lucrar com IA",
+      "description": "Agente Hermes, skills e automação de fluxos de trabalho com IA.",
+      "channelUrl": "https://www.youtube.com/@juliosilvaai"
+    },
+    {
       "id": "ronnaldhawk",
-      "title": "@ronnaldhawk",
-      "description": "Indicação da comunidade IAFLIX para acompanhar conteúdos de inteligência artificial no YouTube.",
+      "title": "Ronnald Hawk | Engenharia de IA",
+      "description": "Engenharia de IA, harnesses e integração de modelos e agentes.",
       "channelUrl": "https://www.youtube.com/@ronnaldhawk"
+    },
+    {
+      "id": "matheusbattisti",
+      "title": "Matheus Battisti - Hora de Codar",
+      "description": "Programação com IA, Claude Code e ferramentas para desenvolver software.",
+      "channelUrl": "https://www.youtube.com/@MatheusBattisti"
+    },
+    {
+      "id": "orafavoss",
+      "title": "Rafa Voss | IA na Prática",
+      "description": "Agentes e ferramentas de inteligência artificial na prática.",
+      "channelUrl": "https://www.youtube.com/@Orafavoss"
+    },
+    {
+      "id": "obrunookamoto",
+      "title": "Bruno Okamoto",
+      "description": "Ferramentas de IA e aplicações de Claude e ChatGPT.",
+      "channelUrl": "https://www.youtube.com/@obrunookamoto"
+    },
+    {
+      "id": "inteligenciamilgrau",
+      "title": "Inteligência Mil Grau",
+      "description": "Novidades sobre modelos, assistentes e ferramentas de inteligência artificial.",
+      "channelUrl": "https://www.youtube.com/@inteligenciamilgrau"
     }
   ]
 }

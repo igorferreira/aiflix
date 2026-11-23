@@ -286,3 +286,21 @@ Diagnóstico TOP-02 — 23/11/2026: agente youtube_history_curator não consegui
 Tentativa de conexão nesta rodada: preview_open continua bloqueado por AppArmor; Chrome retorna `Browser is not available: chrome`. Orientado setup específico do navegador T3, sem desativar AppArmor globalmente. Nenhum histórico foi acessado.
 
 YT-01 — Smoke em https://iaflix.vercel.app: catálogo, app.js e manifest HTTP 200; canal @ronnaldhawk presente nos dados públicos e seção incluída no frontend. Sem inspeção visual nesta rodada devido ao bloqueio do navegador. Sem novos vídeos publicados ou histórico pessoal acessado.
+
+TOP-02 — Investigação de integração em 23/11: setup AppArmor liberou o navegador T3, mas login Google foi recusado nele. Extensão Chrome permanece sem conexão nesta sessão. Pesquisa e alternativa Playwright MCP em modo extensão registradas em ~/MEGA/T3-Code-Setup/NAVEGADOR-E-DESKTOP-2026-11-23.md; instalação e prova funcional pendentes. Não houve leitura de histórico privado.
+
+## Ranking de criadores de IA — 23/11/2026
+
+| ID | Requisito | Status | Agente responsável | Dependência | Evidência |
+|---|---|---|---|---|---|
+| YT-RANK-01 | Contar ocorrências de criadores de IA no histórico autorizado | Concluído para a primeira conta; segunda adiada por Igor | root (executou) | Janela de 90 dias aprovada | Coleta até ultrapassar 26/08/2026; duplicata descartada; relatório pessoal local |
+| YT-RANK-02 | Registrar ranking e método em Markdown no projeto | Concluído; arquivo pessoal local ignorado pelo Git | root (executou) | YT-RANK-01; cobertura e limites documentados | docs/ranking-youtubers-ia.md; dados brutos fora da publicação |
+| YT-RANK-03 | Publicar os dez primeiros como YouTubers indicados | Em validação e publicação | root (executando) | YT-RANK-02; URLs originais verificadas | public/data/catalog.json; specs/001-youtubers-indicados-v1.md v2 |
+| YT-RANK-04 | Consultar a segunda conta e recalcular o ranking | Backlog: adiado explicitamente por Igor | root / curadoria (planejado; sem agente executando) | Retomada por Igor e conexão da aba correta | Pedido: “Esquece isso de coletar na segunda por enquanto” |
+
+Não contar recomendações da home ou vídeos relacionados como assistidos. Contagens da interface representam ocorrências visíveis no histórico, não tempo assistido ou total irrestrito de reproduções. Dados brutos e endereços pessoais permanecem fora do repositório público.
+
+YT-RANK-01 — Atualização técnica: nova conexão IAFLIX ranking autorizada pelo usuário retornou somente a home do YouTube. Navegação direta com waitUntil domcontentloaded e timeout 20s retornou `page.goto: Target page, context or browser has been closed`; isClosed=true. Sem entradas do histórico lidas, sem contagens e sem alteração dos dez indicados. A Microsoft documenta conflitos de debugger com frames de outras extensões (https://github.com/microsoft/playwright/issues/43230); isso é hipótese para este host, ainda não causa comprovada.
+
+
+YT-RANK — Estado atual: a conexão da primeira conta permitiu leitura real do histórico. Os registros técnicos anteriores descrevem tentativas históricas, superadas para essa conta. A tentativa de segunda coleta duplicou registros existentes e foi descartada. A segunda conta está no backlog por decisão explícita; não participa desta publicação.

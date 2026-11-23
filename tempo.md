@@ -29,3 +29,7 @@ Implementação e validação pela raiz. Sem cronometragem integral; não estima
 ## 23/11/2026 — Indicações de YouTubers
 
 Seção pública, validação de catálogo e compatibilidade editorial implementadas pela raiz. Build e 30 testes aprovados. Não foi cronometrado esforço integral. Navegador permaneceu indisponível; sem leitura de histórico nem curadoria de vídeos nesta etapa.
+
+## 23/11/2026 — Ranking pessoal e dez indicações
+
+Coleta da primeira conta, normalização, filtro editorial, relatório local e atualização do catálogo executados pela raiz. Segunda conta adiada por Igor. Não houve cronometragem integral; sem estimativa retroativa de esforço. Validações e publicação registradas em TASKS.md.
