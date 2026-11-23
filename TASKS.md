@@ -264,3 +264,10 @@ THUMB-LOAD-01 publicada: commit4fab66a, deployment `dpl_6Gd5KvrDKNx9VyfciniLirfF
 - WA-PREVIEW-01 — Concluída (código) por root: relato confirmado como prévia do WhatsApp. Home semog:image e setePNG acima600KB incompatíveis com guia oficial. Adicionados OGhome e oitoJPEGsociais1200x630 (65–103KB), mantendoPNGsite. Build e27testes passaram; publicação pela raiz. Link exato solicitado para reproduzir no cliente; nenhuma mensagem enviada. Evidência docs/compartilhamento.md.
 
 WA-PREVIEW-01 publicada e validada tecnicamente por root: deployment `dpl_8paeLpzDNWfSks53ggNk8Xe4Q7ec` READY, home+sete cursos e JPEGsHTTP200 via user-agent WhatsApp, arquivos abaixo600KB e1200x630. Fonte oficial e evidências em docs/compartilhamento.md. Pendente somente confirmar prévia no cliente WhatsApp usando o link exato; não declarar esse aceite como concluído.
+
+## Revisão de instalação no celular — 16/11/2026
+
+| ID | Requisito | Status | Agente responsável | Dependência | Evidência |
+|---|---|---|---|---|---|
+| PWA-01 | Revisar se PWA está ativo e permite instalação no celular | Concluída: configuração PWA ausente | root / DevSquad (executado) | Nenhuma | docs/revisao-pwa-2026-11-16.md; home sem manifest; endpoints manifest e sw retornam 404 |
+| PWA-02 | Configurar instalação PWA e validar abertura no celular | Em execução: autorizado em 23/11 | root (executando implementação e validação) | Definir escopo e comportamento offline; acesso a aparelhos para aceite | Lacunas registradas na revisão PWA-01 |

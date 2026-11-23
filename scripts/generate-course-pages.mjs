@@ -39,6 +39,11 @@ export function renderCoursePage(course) {
   <meta name="twitter:title" content="${escapeHtml(title)}">
   <meta name="twitter:description" content="${escapeHtml(description)}">
   <meta name="twitter:image" content="${image}">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#141414">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="IAFLIX">
+  <link rel="apple-touch-icon" href="/assets/images/icon-180.png">
   <link rel="icon" href="/assets/images/logo-mark.svg" type="image/svg+xml">
   <link rel="stylesheet" href="/styles.css">
 </head>

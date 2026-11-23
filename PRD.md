@@ -106,3 +106,7 @@ Igor autorizou explicitamente: “Sim, usar vídeos externos com autoria e links
 ## Correção de marca e UX — 15/11/2026
 
 Igor definiu a grafia oficial **IAFLIX**. Aplicar a nome visível, logo, capas, títulos de página, catálogo, metadados e compartilhamento. A URL pública é https://iaflix.vercel.app. Referências históricas à grafia anterior não são a identidade atual. Nomes reais de repositório, checkout e recursos existentes não devem ser alterados por substituição textual; mudanças desses recursos exigem migração própria. Preservar progresso e sessões ao atualizar a marca. Revisar erro visual da primeira página com evidência de navegador.
+
+## Instalação web — 23/11/2026
+
+Igor autorizou ativar PWA: instalação pelo navegador com identidade IAFLIX e abertura standalone. Não envolve aplicativo nativo nem lojas. Exige conexão; uso offline não integra esta entrega. Decisão: ADR 0004.
