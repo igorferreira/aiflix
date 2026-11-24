@@ -281,7 +281,7 @@ Diagnóstico TOP-02 — 23/11/2026: agente youtube_history_curator não consegui
 | ID | Requisito | Status | Agente responsável | Dependência | Evidência |
 |---|---|---|---|---|---|
 | YT-01 | Criar seção de indicações e incluir @ronnaldhawk | Publicado; 30 testes aprovados; HTTP remoto validado | root (executou) | Nenhuma; URL fornecida diretamente por Igor | specs/001-youtubers-indicados-v1.md; commit 8ed3d54; deployment dpl_5w5vRLjnk6A3e5hiRc6kJjzQ2dL4 READY |
-| YT-02 | Selecionar vídeos dos canais indicados por tema para cursos de IA | Publicado; 24 aulas em 7 módulos nos 4 cursos temáticos; build e testes aprovados | root / curadoria (executou) | YT-RANK-03 e confirmação de título, duração, oEmbed e assunto dos vídeos | public/data/catalog.json; specs/001-youtubers-indicados-v1.md v3 |
+| YT-02 | Selecionar vídeos dos canais indicados por tema para cursos de IA | Publicado; 24 aulas em 7 módulos nos 4 cursos temáticos; build e testes aprovados | root / curadoria (executou) | YT-RANK-03 e confirmação de título, duração, oEmbed e assunto dos vídeos | Commit 8cb9a0f; https://iaflix.vercel.app alias atualizado; catálogo, 4 páginas /cursos/<id>/ e capas PNG/JPEG verificados via HTTP 200 |
 
 Tentativa de conexão nesta rodada: preview_open continua bloqueado por AppArmor; Chrome retorna `Browser is not available: chrome`. Orientado setup específico do navegador T3, sem desativar AppArmor globalmente. Nenhum histórico foi acessado.
 
