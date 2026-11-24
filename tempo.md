@@ -33,3 +33,7 @@ Seção pública, validação de catálogo e compatibilidade editorial implement
 ## 23/11/2026 — Ranking pessoal e dez indicações
 
 Coleta da primeira conta, normalização, filtro editorial, relatório local e atualização do catálogo executados pela raiz. Segunda conta adiada por Igor. Não houve cronometragem integral; sem estimativa retroativa de esforço. Validações e publicação registradas em TASKS.md.
+
+## 24/11/2026 — Curadoria temática de vídeos dos YouTubers indicados
+
+Seleção temática de 24 vídeos assistidos dos dez YouTubers indicados para os cursos Harness (8 aulas), Gerência de contexto (5 aulas), Memória (2 aulas) e Agentes (9 aulas), verificação de oEmbed e durações reais, atualização das capas PNG/JPEG e regeneração das páginas compartilháveis. Sem cronometragem integral; sem estimativa retroativa de esforço.

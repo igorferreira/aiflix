@@ -176,6 +176,8 @@ Pedido de Igor: cursos independentes Harness, Gerência de contexto, Memória e 
 
 Contrato schema 2 ampliado de forma aditiva: curso pode ter `status: "preparing"` e `modules: []`. Nesse estado não apresenta player, progresso, duração nem ação de assistir; mostra curadoria pendente. Cursos sem status mantêm exigência de módulos e aulas não vazios. Ao cadastrar aulas reais, remover status de preparação. Rota de curso continua válida; rota de aula inexistente permanece não encontrada. Não usar aulas fictícias para satisfazer o contrato.
 
+Em 24/11/2026, após coleta e verificação dos vídeos assistidos dos dez YouTubers indicados, os quatro cursos temáticos (`harness`, `gerencia-contexto`, `memoria-ia` e `agentes-ia`) receberam 7 módulos e 24 aulas verificadas com autoria, duração e links originais para os canais, deixando o estado `preparing`.
+
 ## Extensão aprovada — compartilhamento de cursos
 
 Pedido de Igor em 15/11/2026: revisão UX/logo, thumbnails para todos os cursos e links diretos que gerem uma apresentação adequada ao compartilhar no WhatsApp.

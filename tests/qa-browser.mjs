@@ -54,8 +54,8 @@ try {
  await admin.close();
  const real=await browser.newContext();await real.route('https://www.youtube.com/**',route=>route.abort());const realPage=await real.newPage();await realPage.goto(base);await realPage.getByRole('heading',{name:'Todos os cursos',exact:true}).waitFor();ok(await realPage.getByRole('region',{name:'Cursos: Todos os cursos',exact:true}).locator('.course-card').count()===7,'catálogo real contém sete cursos');
  const realCatalog=await (await realPage.request.get(`${base}/data/catalog.json`)).json();
- ok(realCatalog.courses.filter(course=>course.status!=='preparing').length===3,'três cursos reais com aulas preservados');
- ok(realCatalog.courses.filter(course=>course.status==='preparing'&&course.modules.length===0).length===4,'quatro cursos em preparação sem aulas fictícias');
+ ok(realCatalog.courses.filter(course=>course.status!=='preparing'&&course.modules.length>0).length===7,'sete cursos reais com aulas publicados');
+ ok(Array.isArray(realCatalog.creators)&&realCatalog.creators.length===10,'dez canais de YouTubers indicados publicados');
  for(const width of [320,768,1440]){
   await realPage.setViewportSize({width,height:900});await realPage.goto(base);await realPage.getByRole('link',{name:'Assistir agora',exact:true}).waitFor();
   ok(await realPage.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),`home real com capas sem overflow ${width}`);

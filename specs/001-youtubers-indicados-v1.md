@@ -25,6 +25,21 @@ Igor solicitou ranking pessoal de canais de IA e desenvolvimento com base nos ú
 
 A seleção conta pares únicos de vídeo/data dentro da janela inclusiva de 26/08/2026 a 23/11/2026. Considera o recorte técnico/aplicado de IA, ferramentas, automação e programação; exclui falsos positivos e debates gerais sem esse foco. Ordena por contagem decrescente, com desempate alfabético por casefold Unicode. Esse recorte não representa tempo assistido, ranking iBest ou avaliação de qualidade.
 
-O catálogo contém os dez primeiros, nessa ordem, com nomes e URLs originais verificados por metadados públicos dos vídeos. Mantém o ID estável de Ronnald Hawk. O site não recebe contagens pessoais, e-mails ou registros assistidos. A publicação de canais não publica novas aulas.
+O catálogo contém os dez primeiros, nessa ordem, com nomes e URLs originais verificados por metadados públicos dos vídeos. Mantém o ID estável de Ronnald Hawk. O site não recebe contagens pessoais, e-mails ou registros assistidos.
 
 Aceite adicional: o catálogo validado deve conter exatamente dez canais, sem IDs ou URLs repetidos; a lista pública deve corresponder à seleção registrada localmente. A segunda conta não pode contribuir com dados não confirmados.
+
+## Seleção temática de vídeos dos YouTubers indicados — v3 (24/11/2026)
+
+Igor solicitou publicar os YouTubers indicados e selecionar os vídeos deles pelos temas no site (`Harness`, `Gerência de contexto`, `Memória` e `Agentes`).
+
+Critérios aplicados:
+
+- Fonte restrita aos vídeos efetivamente observados no histórico de 90 dias dos dez YouTubers indicados, sem inventar URLs ou substituir o histórico por buscas genéricas.
+- Verificação individual por oEmbed e metadados públicos do YouTube (`title`, `author_name`, `author_url` e `lengthSeconds`), garantindo disponibilidade, incorporação permitida e atribuição explícita ao canal original em `description` e `materials`.
+- Distribuição temática nos quatro cursos de `Assuntos de IA em foco`:
+  - `harness`: 2 módulos e 8 aulas (Rafael Quintanilha – QuantBrasil, Ronnald Hawk | Engenharia de IA, Matheus Battisti - Hora de Codar e Bruno Okamoto).
+  - `gerencia-contexto`: 2 módulos e 5 aulas (Rafael Quintanilha – QuantBrasil, Matheus Battisti - Hora de Codar e AI ProgBr).
+  - `memoria-ia`: 1 módulo e 2 aulas (Rafael Quintanilha – QuantBrasil e Maestros da IA).
+  - `agentes-ia`: 2 módulos e 9 aulas (Rafael Quintanilha – QuantBrasil, Eli Rigobeli - IA, Inteligência Mil Grau, AI ProgBr, Rafa Voss | IA na Prática, Julio | Lucrar com IA e Maestros da IA).
+- Todos os dez YouTubers indicados possuem aulas associadas aos cursos temáticos, removendo `status: "preparing"` dos quatro cursos e atualizando capas e páginas compartilháveis `/cursos/<id>/`.

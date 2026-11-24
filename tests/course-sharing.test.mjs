@@ -35,8 +35,13 @@ test('build gera HTML público e metadados completos para os sete cursos', async
       if (course.status === 'preparing') {
         assert.ok(html.includes('Este curso ainda não possui aulas disponíveis.'));
         assert.ok(!html.includes('/aula/'));
+      } else {
+        assert.ok(html.includes('/aula/'));
       }
     }
+    const preparingHtml = renderCoursePage({ id: 'em-preparacao', title: 'Curso futuro', description: 'Aguardando curadoria', status: 'preparing', modules: [] });
+    assert.ok(preparingHtml.includes('Este curso ainda não possui aulas disponíveis.'));
+    assert.ok(!preparingHtml.includes('/aula/'));
   } finally {
     await rm(directory, { recursive: true, force: true });
   }
