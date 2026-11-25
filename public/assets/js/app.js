@@ -1,4 +1,4 @@
-import { validateCatalog, youtubeId, resolveRoute } from './catalog.js';
+import { validateCatalog, youtubeId, resolveRoute, lessonAuthor } from './catalog.js';
 import { createProgress } from './progress.js';
 import { el, link, button } from './ui.js';
 import { createAdminView } from './admin.js';
@@ -18,7 +18,13 @@ function statsText(course) { const s = progress.stats(course); return `${s.compl
 function artwork(course) {
   const art = el('div', undefined, 'course-art');
   art.setAttribute('aria-hidden', 'true');
-  art.append(el('span', course.title, 'art-title'), el('span', lessons(course)[0]?.title || 'Vídeos em preparação', 'art-lesson'));
+  const first = lessons(course)[0];
+  if (first) {
+    const author = lessonAuthor(first, catalog);
+    art.append(el('span', course.title, 'art-title'), el('span', first.title, 'art-lesson'), el('span', `Canal: ${author.name}`, 'art-author'));
+  } else {
+    art.append(el('span', course.title, 'art-title'), el('span', 'Vídeos em preparação', 'art-lesson'));
+  }
   return art;
 }
 function card(course, eager = false) {
@@ -61,6 +67,10 @@ function home() {
     const course = catalog.courses.find(course => lessons(course).length); const firstLesson = lessons(course)[0];
     const feature = el('section', undefined, 'featured-course'); const copy = el('div', undefined, 'featured-copy');
     copy.append(el('h2', course.title), el('p', course.description.split('. ')[0] + '.'));
+    if (firstLesson) {
+      const firstAuthor = lessonAuthor(firstLesson, catalog);
+      copy.append(el('p', `Primeira aula: ${firstLesson.title} · Canal: ${firstAuthor.name}`, 'meta'));
+    }
     const actions = el('div', undefined, 'actions'); const watch = link('Assistir agora', `#/curso/${course.id}/aula/${firstLesson.id}`); watch.className = 'button primary';
     const details = link('Ver curso', `#/curso/${course.id}`); details.className = 'button secondary'; actions.append(watch, details);
     copy.append(el('p', `${lessons(course).length} ${lessons(course).length === 1 ? 'aula' : 'aulas'} · ${duration(lessons(course).reduce((sum, lesson) => sum + lesson.durationSeconds, 0))} · Acesso gratuito`, 'meta'), actions);
@@ -141,9 +151,25 @@ function courseView(course, lesson) {
   const status = el('p', statsText(course), 'meta'); const meter = el('progress'); meter.max = 100; meter.value = progress.stats(course).percent; meter.setAttribute('aria-label', 'Conclusão do curso'); main.append(status, meter);
   const layout = el('div', undefined, 'course-layout'); const content = el('section'); const sidebar = el('aside'); sidebar.setAttribute('aria-label', 'Módulos e aulas');
   if (lesson) {
+    const author = lessonAuthor(lesson, catalog);
     content.append(el('h2', lesson.title), el('p', `${duration(lesson.durationSeconds)} · Reprodução pelo YouTube`, 'meta'));
     const iframe = el('iframe'); iframe.className = 'player'; iframe.src = `https://www.youtube.com/embed/${youtubeId(lesson.youtubeUrl)}`; iframe.title = `Aula: ${lesson.title}`; iframe.allow = 'accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen'; iframe.allowFullscreen = true; iframe.referrerPolicy = 'strict-origin-when-cross-origin'; content.append(iframe);
-    const external = link('Abrir no YouTube (nova aba)', `https://www.youtube.com/watch?v=${youtubeId(lesson.youtubeUrl)}`); external.target = '_blank'; external.rel = 'noopener noreferrer'; content.append(el('p', lesson.description), external);
+    const videoFooter = el('div', undefined, 'video-footer-attribution');
+    const authorLine = el('p', 'Canal: ', 'video-author-line');
+    authorLine.append(el('strong', author.name));
+    if (author.url) {
+      const channelLink = link(' (abrir canal)', author.url);
+      channelLink.target = '_blank';
+      channelLink.rel = 'noopener noreferrer';
+      channelLink.className = 'channel-link';
+      authorLine.append(channelLink);
+    }
+    const external = link('Abrir no YouTube (nova aba)', `https://www.youtube.com/watch?v=${youtubeId(lesson.youtubeUrl)}`);
+    external.target = '_blank';
+    external.rel = 'noopener noreferrer';
+    external.className = 'video-external-link';
+    videoFooter.append(authorLine, external);
+    content.append(videoFooter, el('p', lesson.description));
     const warning = el('p', progress.warning, 'notice'); warning.hidden = !progress.warning;
     const toggle = button('', () => {
       const replaceCorrupt = progress.corrupt && window.confirm('O progresso anterior não pode ser lido. Deseja substituí-lo por um novo registro?');
@@ -167,7 +193,17 @@ function courseView(course, lesson) {
     sidebar.replaceChildren(el('h2', 'Aulas do curso'));
     course.modules.forEach(module => {
       sidebar.append(el('h3', module.title)); const list = el('ol', undefined, 'lesson-list');
-      module.lessons.forEach(item => { const li = el('li'); const a = link(item.title, `#/curso/${course.id}/aula/${item.id}`); if (item.id === lesson?.id) a.setAttribute('aria-current', 'page'); li.append(a, el('div', `${duration(item.durationSeconds)}${progress.completed.has(item.id) ? ' · Concluída' : ''}`, 'meta')); list.append(li); }); sidebar.append(list);
+      module.lessons.forEach(item => {
+        const li = el('li');
+        const a = link(item.title, `#/curso/${course.id}/aula/${item.id}`);
+        if (item.id === lesson?.id) a.setAttribute('aria-current', 'page');
+        const itemAuthor = lessonAuthor(item, catalog);
+        const ownerDiv = el('div', `Canal: ${itemAuthor.name}`, 'lesson-owner');
+        const metaDiv = el('div', `${duration(item.durationSeconds)}${progress.completed.has(item.id) ? ' · Concluída' : ''}`, 'meta');
+        li.append(a, ownerDiv, metaDiv);
+        list.append(li);
+      });
+      sidebar.append(list);
     });
   }
   renderModules(); layout.append(content, sidebar); main.append(layout);

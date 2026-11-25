@@ -9,3 +9,5 @@ node_modules/
 
 # Ranking pessoal agregado: arquivo local, fora do repositório público.
 docs/ranking-youtubers-ia.md
+.impeccable/
+.insync-ignore

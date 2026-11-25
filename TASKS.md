@@ -310,7 +310,8 @@ YT-RANK — Estado atual: a conexão da primeira conta permitiu leitura real do 
 | ID | Requisito | Status | Agente responsável | Dependência | Evidência |
 |---|---|---|---|---|---|
 | ATTR-01 | Especificar no SDD a exibição obrigatória do YouTuber/dono do vídeo no rodapé do player e menções em listas | Concluída | devsquad-po (executou) | Nenhuma; solicitação de Igor em 25/11/2026 | specs/001-atribuicao-dono-do-video-v1.md |
-| ATTR-02 | Atualizar contrato de validação e catálogo com campos de autoria por aula (`author`, `authorUrl`, `creatorId`) | Backlog | devsquad-architect / curadoria (planejado) | ATTR-01 aprovada | public/assets/js/catalog.js e public/data/catalog.json |
-| ATTR-03 | Implementar rodapé no player de aula e etiqueta pequena do criador nas listas de aulas e destaques | Backlog | devsquad-frontend (planejado) | ATTR-02 | public/assets/js/app.js e public/styles.css |
-| ATTR-04 | QA funcional, de acessibilidade e regressão visual da atribuição | Backlog | devsquad-qa (planejado) | ATTR-03 | Testes Node e Playwright atualizados |
+| ATTR-02 | Atualizar contrato de validação e catálogo com campos de autoria por aula (`author`, `authorUrl`, `creatorId`) | Concluída | devsquad-architect / curadoria (executou) | ATTR-01 aprovada | public/assets/js/catalog.js e public/data/catalog.json (todas as 27 aulas enriquecidas com canal e links) |
+| ATTR-03 | Implementar rodapé no player de aula e etiqueta pequena do criador nas listas de aulas e destaques | Concluída | devsquad-frontend (executou) | ATTR-02 | public/assets/js/app.js e public/styles.css (.video-footer-attribution, .lesson-owner e .featured-lesson-info) |
+| ATTR-04 | QA funcional, de acessibilidade e regressão visual da atribuição | Concluída | devsquad-qa (executou) | ATTR-03 | 32 testes Node (npm test) e suites Playwright (qa-browser, qa-iaflix-layout, qa-admin-integration) aprovadas |
+
 

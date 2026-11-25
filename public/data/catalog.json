@@ -25,7 +25,9 @@
                   "title": "Apresentação do curso pelo autor",
                   "url": "https://diogocortiz.com.br/curso-de-inteligencia-artificial-gratuito-para-todos/"
                 }
-              ]
+              ],
+              "author": "Diogo Cortiz",
+              "authorUrl": "https://www.youtube.com/@DiogoCortiz"
             }
           ]
         }
@@ -56,7 +58,9 @@
                   "title": "Apresentação do curso pelo autor",
                   "url": "https://diogocortiz.com.br/curso-de-inteligencia-artificial-gratuito-para-todos/"
                 }
-              ]
+              ],
+              "author": "Diogo Cortiz",
+              "authorUrl": "https://www.youtube.com/@DiogoCortiz"
             }
           ]
         }
@@ -87,7 +91,9 @@
                   "title": "Apresentação do curso pelo autor",
                   "url": "https://diogocortiz.com.br/curso-de-inteligencia-artificial-gratuito-para-todos/"
                 }
-              ]
+              ],
+              "author": "Diogo Cortiz",
+              "authorUrl": "https://www.youtube.com/@DiogoCortiz"
             }
           ]
         }
@@ -114,7 +120,10 @@
                   "title": "Canal original — Rafael Quintanilha – QuantBrasil",
                   "url": "https://www.youtube.com/@QuantBrasil"
                 }
-              ]
+              ],
+              "author": "Rafael Quintanilha – QuantBrasil",
+              "authorUrl": "https://www.youtube.com/@QuantBrasil",
+              "creatorId": "quantbrasil"
             },
             {
               "id": "harness-self-improving",
@@ -127,7 +136,10 @@
                   "title": "Canal original — Ronnald Hawk | Engenharia de IA",
                   "url": "https://www.youtube.com/@ronnaldhawk"
                 }
-              ]
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
             },
             {
               "id": "harness-codex-api",
@@ -140,7 +152,10 @@
                   "title": "Canal original — Rafael Quintanilha – QuantBrasil",
                   "url": "https://www.youtube.com/@QuantBrasil"
                 }
-              ]
+              ],
+              "author": "Rafael Quintanilha – QuantBrasil",
+              "authorUrl": "https://www.youtube.com/@QuantBrasil",
+              "creatorId": "quantbrasil"
             },
             {
               "id": "harness-claude-code-mods",
@@ -153,7 +168,10 @@
                   "title": "Canal original — Matheus Battisti - Hora de Codar",
                   "url": "https://www.youtube.com/@MatheusBattisti"
                 }
-              ]
+              ],
+              "author": "Matheus Battisti - Hora de Codar",
+              "authorUrl": "https://www.youtube.com/@MatheusBattisti",
+              "creatorId": "matheusbattisti"
             },
             {
               "id": "harness-claude-duet",
@@ -166,7 +184,10 @@
                   "title": "Canal original — Bruno Okamoto",
                   "url": "https://www.youtube.com/@obrunookamoto"
                 }
-              ]
+              ],
+              "author": "Bruno Okamoto",
+              "authorUrl": "https://www.youtube.com/@obrunookamoto",
+              "creatorId": "obrunookamoto"
             }
           ]
         },
@@ -185,7 +206,10 @@
                   "title": "Canal original — Ronnald Hawk | Engenharia de IA",
                   "url": "https://www.youtube.com/@ronnaldhawk"
                 }
-              ]
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
             },
             {
               "id": "harness-openrouter",
@@ -198,7 +222,10 @@
                   "title": "Canal original — Ronnald Hawk | Engenharia de IA",
                   "url": "https://www.youtube.com/@ronnaldhawk"
                 }
-              ]
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
             },
             {
               "id": "harness-engenheiro-ia",
@@ -211,7 +238,10 @@
                   "title": "Canal original — Ronnald Hawk | Engenharia de IA",
                   "url": "https://www.youtube.com/@ronnaldhawk"
                 }
-              ]
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
             }
           ]
         }
@@ -238,7 +268,10 @@
                   "title": "Canal original — Rafael Quintanilha – QuantBrasil",
                   "url": "https://www.youtube.com/@QuantBrasil"
                 }
-              ]
+              ],
+              "author": "Rafael Quintanilha – QuantBrasil",
+              "authorUrl": "https://www.youtube.com/@QuantBrasil",
+              "creatorId": "quantbrasil"
             },
             {
               "id": "contexto-jev-decisoes",
@@ -251,7 +284,10 @@
                   "title": "Canal original — Matheus Battisti - Hora de Codar",
                   "url": "https://www.youtube.com/@MatheusBattisti"
                 }
-              ]
+              ],
+              "author": "Matheus Battisti - Hora de Codar",
+              "authorUrl": "https://www.youtube.com/@MatheusBattisti",
+              "creatorId": "matheusbattisti"
             }
           ]
         },
@@ -270,7 +306,10 @@
                   "title": "Canal original — Matheus Battisti - Hora de Codar",
                   "url": "https://www.youtube.com/@MatheusBattisti"
                 }
-              ]
+              ],
+              "author": "Matheus Battisti - Hora de Codar",
+              "authorUrl": "https://www.youtube.com/@MatheusBattisti",
+              "creatorId": "matheusbattisti"
             },
             {
               "id": "contexto-ponytail-tokens",
@@ -283,7 +322,10 @@
                   "title": "Canal original — Matheus Battisti - Hora de Codar",
                   "url": "https://www.youtube.com/@MatheusBattisti"
                 }
-              ]
+              ],
+              "author": "Matheus Battisti - Hora de Codar",
+              "authorUrl": "https://www.youtube.com/@MatheusBattisti",
+              "creatorId": "matheusbattisti"
             },
             {
               "id": "contexto-muse-spark-tokens",
@@ -296,7 +338,10 @@
                   "title": "Canal original — AI ProgBr",
                   "url": "https://www.youtube.com/@AIProgBr"
                 }
-              ]
+              ],
+              "author": "AI ProgBr",
+              "authorUrl": "https://www.youtube.com/@AIProgBr",
+              "creatorId": "aiprogbr"
             }
           ]
         }
@@ -323,7 +368,10 @@
                   "title": "Canal original — Rafael Quintanilha – QuantBrasil",
                   "url": "https://www.youtube.com/@QuantBrasil"
                 }
-              ]
+              ],
+              "author": "Rafael Quintanilha – QuantBrasil",
+              "authorUrl": "https://www.youtube.com/@QuantBrasil",
+              "creatorId": "quantbrasil"
             },
             {
               "id": "memoria-grafos-ia",
@@ -336,7 +384,10 @@
                   "title": "Canal original — Maestros da IA",
                   "url": "https://www.youtube.com/@maestrosdaia"
                 }
-              ]
+              ],
+              "author": "Maestros da IA",
+              "authorUrl": "https://www.youtube.com/@maestrosdaia",
+              "creatorId": "maestrosdaia"
             }
           ]
         }
@@ -363,7 +414,10 @@
                   "title": "Canal original — Rafael Quintanilha – QuantBrasil",
                   "url": "https://www.youtube.com/@QuantBrasil"
                 }
-              ]
+              ],
+              "author": "Rafael Quintanilha – QuantBrasil",
+              "authorUrl": "https://www.youtube.com/@QuantBrasil",
+              "creatorId": "quantbrasil"
             },
             {
               "id": "agentes-openai-dots-codex",
@@ -376,7 +430,10 @@
                   "title": "Canal original — Rafael Quintanilha – QuantBrasil",
                   "url": "https://www.youtube.com/@QuantBrasil"
                 }
-              ]
+              ],
+              "author": "Rafael Quintanilha – QuantBrasil",
+              "authorUrl": "https://www.youtube.com/@QuantBrasil",
+              "creatorId": "quantbrasil"
             },
             {
               "id": "agentes-dots-eli",
@@ -389,7 +446,10 @@
                   "title": "Canal original — Eli Rigobeli - IA",
                   "url": "https://www.youtube.com/@EliRigobeliAI"
                 }
-              ]
+              ],
+              "author": "Eli Rigobeli - IA",
+              "authorUrl": "https://www.youtube.com/@EliRigobeliAI",
+              "creatorId": "elirigobeliai"
             },
             {
               "id": "agentes-dots-jarvis",
@@ -402,7 +462,10 @@
                   "title": "Canal original — Inteligência Mil Grau",
                   "url": "https://www.youtube.com/@inteligenciamilgrau"
                 }
-              ]
+              ],
+              "author": "Inteligência Mil Grau",
+              "authorUrl": "https://www.youtube.com/@inteligenciamilgrau",
+              "creatorId": "inteligenciamilgrau"
             }
           ]
         },
@@ -421,7 +484,10 @@
                   "title": "Canal original — AI ProgBr",
                   "url": "https://www.youtube.com/@AIProgBr"
                 }
-              ]
+              ],
+              "author": "AI ProgBr",
+              "authorUrl": "https://www.youtube.com/@AIProgBr",
+              "creatorId": "aiprogbr"
             },
             {
               "id": "agentes-grok-bot-tutorial",
@@ -434,7 +500,10 @@
                   "title": "Canal original — Rafa Voss | IA na Prática",
                   "url": "https://www.youtube.com/@Orafavoss"
                 }
-              ]
+              ],
+              "author": "Rafa Voss | IA na Prática",
+              "authorUrl": "https://www.youtube.com/@Orafavoss",
+              "creatorId": "orafavoss"
             },
             {
               "id": "agentes-hermes-skill",
@@ -447,7 +516,10 @@
                   "title": "Canal original — Julio | Lucrar com IA",
                   "url": "https://www.youtube.com/@juliosilvaai"
                 }
-              ]
+              ],
+              "author": "Julio | Lucrar com IA",
+              "authorUrl": "https://www.youtube.com/@juliosilvaai",
+              "creatorId": "juliosilvaai"
             },
             {
               "id": "agentes-hermes-jev",
@@ -460,7 +532,10 @@
                   "title": "Canal original — Julio | Lucrar com IA",
                   "url": "https://www.youtube.com/@juliosilvaai"
                 }
-              ]
+              ],
+              "author": "Julio | Lucrar com IA",
+              "authorUrl": "https://www.youtube.com/@juliosilvaai",
+              "creatorId": "juliosilvaai"
             },
             {
               "id": "agentes-paperclip-ia",
@@ -473,7 +548,10 @@
                   "title": "Canal original — Maestros da IA",
                   "url": "https://www.youtube.com/@maestrosdaia"
                 }
-              ]
+              ],
+              "author": "Maestros da IA",
+              "authorUrl": "https://www.youtube.com/@maestrosdaia",
+              "creatorId": "maestrosdaia"
             }
           ]
         }

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { validateCatalog, youtubeId, resolveRoute } from '../public/assets/js/catalog.js';
+import { validateCatalog, youtubeId, resolveRoute, lessonAuthor } from '../public/assets/js/catalog.js';
 import { createProgress } from '../public/assets/js/progress.js';
 const fixture = () => ({ schemaVersion: 2, courses: [{ id: 'test-course', title: 'Fixture de teste', description: '', modules: [{ id: 'test-module', title: 'Módulo de teste', lessons: [{ id: 'test-lesson', title: 'Aula fictícia isolada', description: '<img src=x onerror=alert(1)>', durationSeconds: 60, youtubeUrl: 'https://www.youtube.com/watch?v=abcdefghijk', materials: [] }] }] }], tracks: [], learnPaths: [{ id: 'test-path', title: 'Caminho', description: '', courseIds: ['test-course'] }] });
 test('catálogo preserva texto como dados, curso independente e referências em caminhos', () => {
@@ -70,3 +70,46 @@ test('cursos em preparação são explícitos e não simulam aulas publicadas', 
   value.courses[1].modules = value.courses[0].modules;
   assert.throws(() => validateCatalog(value));
 });
+
+test('aulas aceitam campos de autoria e rejeitam valores inválidos', () => {
+  const value = fixture();
+  const lesson = value.courses[0].modules[0].lessons[0];
+  lesson.author = 'Canal de Teste';
+  lesson.authorUrl = 'https://www.youtube.com/@CanalTeste';
+  lesson.creatorId = 'ronnaldhawk';
+  assert.equal(validateCatalog(value), value);
+
+  // Author inválido
+  assert.throws(() => validateCatalog({ ...value, courses: [{ ...value.courses[0], modules: [{ ...value.courses[0].modules[0], lessons: [{ ...lesson, author: '' }] }] }] }));
+  assert.throws(() => validateCatalog({ ...value, courses: [{ ...value.courses[0], modules: [{ ...value.courses[0].modules[0], lessons: [{ ...lesson, author: 'a'.repeat(161) }] }] }] }));
+
+  // AuthorUrl inválido
+  assert.throws(() => validateCatalog({ ...value, courses: [{ ...value.courses[0], modules: [{ ...value.courses[0].modules[0], lessons: [{ ...lesson, authorUrl: 'https://evil.com/@teste' }] }] }] }));
+  assert.throws(() => validateCatalog({ ...value, courses: [{ ...value.courses[0], modules: [{ ...value.courses[0].modules[0], lessons: [{ ...lesson, authorUrl: 'https://www.youtube.com/watch?v=123' }] }] }] }));
+
+  // CreatorId inválido
+  assert.throws(() => validateCatalog({ ...value, courses: [{ ...value.courses[0], modules: [{ ...value.courses[0].modules[0], lessons: [{ ...lesson, creatorId: 'INVALID_ID!' }] }] }] }));
+});
+
+test('lessonAuthor resolve autoria explícita, por criador, por material ou fallback', () => {
+  const cat = {
+    creators: [{ id: 'test-creator', title: 'Criador Indicado', channelUrl: 'https://www.youtube.com/@indicado' }]
+  };
+  
+  // Explícito
+  assert.deepEqual(lessonAuthor({ author: 'Autor Direto', authorUrl: 'https://www.youtube.com/@direto' }, cat), { name: 'Autor Direto', url: 'https://www.youtube.com/@direto' });
+  
+  // Por creatorId
+  assert.deepEqual(lessonAuthor({ creatorId: 'test-creator' }, cat), { name: 'Criador Indicado', url: 'https://www.youtube.com/@indicado' });
+  
+  // Por materials (legado)
+  assert.deepEqual(lessonAuthor({ materials: [{ title: 'Canal original — Canal Legado', url: 'https://www.youtube.com/@legado' }] }, cat), { name: 'Canal Legado', url: 'https://www.youtube.com/@legado' });
+  
+  // Por description (legado)
+  assert.deepEqual(lessonAuthor({ description: 'Autoria: Nome na Descrição. Aula externa.' }, cat), { name: 'Nome na Descrição', url: null });
+  
+  // Fallback padrão
+  assert.deepEqual(lessonAuthor({}, cat), { name: 'IAFLIX', url: null });
+  assert.deepEqual(lessonAuthor(null, cat), { name: 'IAFLIX', url: null });
+});
+

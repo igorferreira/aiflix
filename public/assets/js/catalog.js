@@ -56,7 +56,17 @@ export function validateCatalog(value) {
     course.modules.forEach((module, j) => {
       const mp = `${p}.modules[${j}]`; object(module, mp, ['id', 'title', 'lessons']); identity(module, mp, 'module'); array(module.lessons, `${mp}.lessons`, true);
       module.lessons.forEach((lesson, k) => {
-        const lp = `${mp}.lessons[${k}]`; object(lesson, lp, ['id', 'title', 'description', 'durationSeconds', 'youtubeUrl', 'materials']); identity(lesson, lp, 'lesson'); text(lesson.description, `${lp}.description`, 4000, true);
+        const lp = `${mp}.lessons[${k}]`; object(lesson, lp, ['id', 'title', 'description', 'durationSeconds', 'youtubeUrl', 'materials'], ['author', 'authorUrl', 'creatorId']); identity(lesson, lp, 'lesson'); text(lesson.description, `${lp}.description`, 4000, true);
+        if (lesson.author !== undefined) text(lesson.author, `${lp}.author`, 160);
+        if (lesson.authorUrl !== undefined) {
+          try {
+            const u = httpsUrl(lesson.authorUrl);
+            if (!['youtube.com', 'www.youtube.com'].includes(u.hostname) || u.port || u.search || u.hash || !/^\/@[A-Za-z0-9._-]+$/.test(u.pathname)) throw new Error();
+          } catch { fail(`${lp}.authorUrl`, 'canal YouTube inválido'); }
+        }
+        if (lesson.creatorId !== undefined) {
+          if (!isId(lesson.creatorId)) fail(`${lp}.creatorId`, 'ID de criador inválido');
+        }
         if (!Number.isSafeInteger(lesson.durationSeconds) || lesson.durationSeconds <= 0) fail(`${lp}.durationSeconds`, 'duração inválida');
         try { youtubeId(lesson.youtubeUrl); } catch { fail(`${lp}.youtubeUrl`, 'URL YouTube inválida'); }
         array(lesson.materials, `${lp}.materials`);
@@ -92,4 +102,19 @@ export function resolveRoute(hash, catalog) {
     if (lesson) return { type: 'lesson', course, lesson };
   }
   return { type: 'not-found' };
+}
+export function lessonAuthor(lesson, catalog) {
+  if (!lesson) return { name: 'IAFLIX', url: null };
+  if (lesson.author) return { name: lesson.author, url: lesson.authorUrl || null };
+  if (lesson.creatorId && catalog?.creators) {
+    const creator = catalog.creators.find(c => c.id === lesson.creatorId);
+    if (creator) return { name: creator.title, url: creator.channelUrl };
+  }
+  const channelMat = lesson.materials?.find(m => m.title && m.title.startsWith('Canal original — '));
+  if (channelMat) {
+    return { name: channelMat.title.replace('Canal original — ', '').trim(), url: channelMat.url };
+  }
+  const matchDesc = lesson.description?.match(/^Autoria:\s*([^.]+)\./);
+  if (matchDesc) return { name: matchDesc[1].trim(), url: null };
+  return { name: 'IAFLIX', url: null };
 }
