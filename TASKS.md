@@ -304,3 +304,13 @@ YT-RANK-01 — Atualização técnica: nova conexão IAFLIX ranking autorizada p
 
 
 YT-RANK — Estado atual: a conexão da primeira conta permitiu leitura real do histórico. Os registros técnicos anteriores descrevem tentativas históricas, superadas para essa conta. A tentativa de segunda coleta duplicou registros existentes e foi descartada. A segunda conta está no backlog por decisão explícita; não participa desta publicação.
+
+## Atribuição de YouTubers nos vídeos (SDD) — 25/11/2026
+
+| ID | Requisito | Status | Agente responsável | Dependência | Evidência |
+|---|---|---|---|---|---|
+| ATTR-01 | Especificar no SDD a exibição obrigatória do YouTuber/dono do vídeo no rodapé do player e menções em listas | Concluída | devsquad-po (executou) | Nenhuma; solicitação de Igor em 25/11/2026 | specs/001-atribuicao-dono-do-video-v1.md |
+| ATTR-02 | Atualizar contrato de validação e catálogo com campos de autoria por aula (`author`, `authorUrl`, `creatorId`) | Backlog | devsquad-architect / curadoria (planejado) | ATTR-01 aprovada | public/assets/js/catalog.js e public/data/catalog.json |
+| ATTR-03 | Implementar rodapé no player de aula e etiqueta pequena do criador nas listas de aulas e destaques | Backlog | devsquad-frontend (planejado) | ATTR-02 | public/assets/js/app.js e public/styles.css |
+| ATTR-04 | QA funcional, de acessibilidade e regressão visual da atribuição | Backlog | devsquad-qa (planejado) | ATTR-03 | Testes Node e Playwright atualizados |
+
