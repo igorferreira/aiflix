@@ -324,5 +324,14 @@ YT-RANK — Estado atual: a conexão da primeira conta permitiu leitura real do 
 | EXP-04 | Regenerar páginas estáticas (`npm run build`) e validar contrato, unicidade e QA (`npm test` + Playwright) | Concluída | devsquad-qa (executou) | EXP-03 | npm run build (7 páginas); 33 testes Node aprovados (tests/frontend.test.mjs com gate de ≥10 aulas e unicidade); qa-browser (74 checks), qa-iaflix-layout (43 checks), qa-admin-integration e verificação DOM dos 4 cursos (12 aulas + rodapé + atribuições) |
 | EXP-05 | Revisão final, sync Git/GitHub e publicação em produção (`https://iaflix.vercel.app`) | Concluída | devsquad-reviewer / root (executou) | EXP-04 | Commit c1e0c00 em origin/main; deployment https://aiflix-kttu0tabg-isfconsult.vercel.app READY; alias https://iaflix.vercel.app atualizado; /api/catalog e /data/catalog.json verificados com 12 aulas em cada um dos 4 assuntos |
 
+## Rodapé informativo e explicação de progresso local (`localStorage`) — 25/11/2026
+
+| ID | Requisito | Status | Agente responsável | Dependência | Evidência |
+|---|---|---|---|---|---|
+| FTR-01 | Especificar no SDD o rodapé informativo com links e explicação sobre o controle de aulas via `localStorage` | Concluída | devsquad-po (executou) | Nenhuma; solicitação de Igor em 25/11/2026 | specs/001-rodape-informativo-progresso-local-v1.md |
+| FTR-02 | Implementar rodapé estruturado em colunas, link explicativo, rota `#/como-funciona-progresso` e atalho discreto na nota do player | Backlog | devsquad-frontend (planejado; sem agente executando) | FTR-01 aprovada | public/index.html, public/styles.css, public/assets/js/catalog.js e public/assets/js/app.js |
+| FTR-03 | Validar rota, acessibilidade, layout responsivo (320px a 1920px) e regressões via `npm test` e Playwright | Backlog | devsquad-qa (planejado) | FTR-02 | Pendente |
+| FTR-04 | Revisão final, sync Git/GitHub e publicação em produção (`https://iaflix.vercel.app`) | Backlog | devsquad-reviewer / root (planejado) | FTR-03 | Pendente |
+
 
 
