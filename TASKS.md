@@ -318,11 +318,11 @@ YT-RANK — Estado atual: a conexão da primeira conta permitiu leitura real do 
 
 | ID | Requisito | Status | Agente responsável | Dependência | Evidência |
 |---|---|---|---|---|---|
-| EXP-01 | Especificar no SDD a expansão para pelo menos 10 aulas por assunto buscando vídeos nos 10 YouTubers indicados | Concluída | devsquad-po (executou) | Nenhuma; solicitação de Igor em 25/11/2026 | specs/001-expansao-curadoria-dez-aulas-v1.md |
-| EXP-02 | Buscar e verificar vídeos públicos diretamente nos 10 canais indicados para atingir ≥ 10 aulas em Harness, Gerência de contexto, Memória e Agentes | Backlog | devsquad-curator (planejado; sem agente executando) | EXP-01 aprovada; verificação oEmbed, duração real e aderência temática | Pendente |
-| EXP-03 | Organizar módulos e atualizar `public/data/catalog.json` preservando os 24 IDs existentes e atribuindo `author`, `authorUrl` e `creatorId` | Backlog | devsquad-curator / devsquad-architect (planejado) | EXP-02 | Pendente |
-| EXP-04 | Regenerar páginas estáticas (`npm run build`) e validar contrato, unicidade e QA (`npm test` + Playwright) | Backlog | devsquad-qa (planejado) | EXP-03 | Pendente |
-| EXP-05 | Revisão final, sync Git/GitHub e publicação em produção (`https://iaflix.vercel.app`) | Backlog | devsquad-reviewer / root (planejado) | EXP-04 | Pendente |
+| EXP-01 | Especificar no SDD a expansão para pelo menos 10 aulas por assunto buscando vídeos nos 10 YouTubers indicados | Concluída | devsquad-po (executou) | Nenhuma; solicitação de Igor em 25/11/2026 | specs/001-expansao-curadoria-dez-aulas-v1.md; commit 457b72b |
+| EXP-02 | Buscar e verificar vídeos públicos diretamente nos 10 canais indicados para atingir ≥ 10 aulas em Harness, Gerência de contexto, Memória e Agentes | Concluída | devsquad-curator (executou) | EXP-01 aprovada por Igor ("1") | 1.396 vídeos públicos mapeados nos 10 canais; 24 novas aulas verificadas (oEmbed, playabilityStatus=OK, embed=true, duração real e título original pt-BR; 2 vídeos restritos a membros descartados) |
+| EXP-03 | Organizar módulos e atualizar `public/data/catalog.json` preservando os 24 IDs existentes e atribuindo `author`, `authorUrl` e `creatorId` | Concluída | devsquad-curator / devsquad-architect (executou) | EXP-02 | public/data/catalog.json com 12 aulas em cada um dos 4 assuntos (48 aulas temáticas em 12 módulos, 51 vídeos únicos no catálogo, todos os 24 IDs prévios preservados) |
+| EXP-04 | Regenerar páginas estáticas (`npm run build`) e validar contrato, unicidade e QA (`npm test` + Playwright) | Concluída | devsquad-qa (executou) | EXP-03 | npm run build (7 páginas); 33 testes Node aprovados (tests/frontend.test.mjs com gate de ≥10 aulas e unicidade); qa-browser (74 checks), qa-iaflix-layout (43 checks), qa-admin-integration e verificação DOM dos 4 cursos (12 aulas + rodapé + atribuições) |
+| EXP-05 | Revisão final, sync Git/GitHub e publicação em produção (`https://iaflix.vercel.app`) | Em execução | devsquad-reviewer / root (executando) | EXP-04 | Sync em andamento para GitHub e Vercel produção |
 
 
 

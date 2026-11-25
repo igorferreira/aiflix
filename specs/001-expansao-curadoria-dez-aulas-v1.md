@@ -1,6 +1,6 @@
 # Spec 001 — Complemento: Expansão de Curadoria (Mínimo de 10 Vídeos por Assunto)
 
-> **Versão:** v1.0 · **Data:** 25/11/2026 · **Status:** Proposta pelo DevSquad PO para aprovação de Igor  
+> **Versão:** v1.0 · **Data:** 25/11/2026 · **Status:** Aprovada por Igor e implementada pela DevSquad  
 > **Fase SDD:** 001 (Catálogo e Player — Curadoria de Conteúdo)  
 > **Referências:** `PRD.md` v0.4, `AGENTS.md`, `specs/001-youtubers-indicados-v1.md` (v3) e `specs/001-atribuicao-dono-do-video-v1.md` (v1)  
 > **Autor da especificação:** DevSquad Product Owner (PO) · **Solicitante:** Igor dos Santos Ferreira  

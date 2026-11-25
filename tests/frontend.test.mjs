@@ -113,3 +113,33 @@ test('lessonAuthor resolve autoria explícita, por criador, por material ou fall
   assert.deepEqual(lessonAuthor(null, cat), { name: 'IAFLIX', url: null });
 });
 
+test('catálogo publicado atende meta de >= 10 aulas por assunto em foco, sem vídeos duplicados e com autoria vinculada', async () => {
+  const { readFileSync } = await import('node:fs');
+  const catalog = validateCatalog(JSON.parse(readFileSync(new URL('../public/data/catalog.json', import.meta.url), 'utf8')));
+  const creatorIds = new Set(catalog.creators.map(c => c.id));
+  const seenVideoIds = new Set();
+
+  for (const course of catalog.courses) {
+    for (const mod of course.modules) {
+      for (const lesson of mod.lessons) {
+        const vid = youtubeId(lesson.youtubeUrl);
+        assert.equal(seenVideoIds.has(vid), false, `Vídeo duplicado no catálogo: ${vid} (${lesson.id})`);
+        seenVideoIds.add(vid);
+        assert.ok(lesson.author && lesson.author.trim().length > 0, `Aula sem author: ${lesson.id}`);
+        assert.ok(lesson.authorUrl, `Aula sem authorUrl: ${lesson.id}`);
+      }
+    }
+  }
+
+  for (const courseId of ['harness', 'gerencia-contexto', 'memoria-ia', 'agentes-ia']) {
+    const course = catalog.courses.find(c => c.id === courseId);
+    assert.ok(course, `Curso ausente: ${courseId}`);
+    const lessons = course.modules.flatMap(m => m.lessons);
+    assert.ok(lessons.length >= 10, `Curso ${courseId} possui apenas ${lessons.length} aulas (mínimo 10)`);
+    for (const lesson of lessons) {
+      assert.ok(creatorIds.has(lesson.creatorId), `Aula ${lesson.id} com creatorId fora de creators: ${lesson.creatorId}`);
+    }
+  }
+});
+
+

@@ -103,8 +103,62 @@
     {
       "id": "harness",
       "title": "Harness",
-      "description": "Estrutura de execução, ferramentas, roteamento de modelos e controle de sistemas com IA. Curadoria IAFLIX com aulas externas dos YouTubers indicados; autoria e links originais preservados.",
+      "description": "Curadoria IAFLIX com vídeos públicos dos YouTubers indicados sobre fundamentos de harness, ambientes de execução, ferramentas de codificação agêntica e roteamento de modelos.",
       "modules": [
+        {
+          "id": "harness-fundamentos-modulo",
+          "title": "Fundamentos de Harness e arquitetura de execução",
+          "lessons": [
+            {
+              "id": "harness-o-que-e",
+              "title": "O que é Harness e por que ele muda tudo nos agentes de IA",
+              "description": "Autoria: Rafael Quintanilha – QuantBrasil. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Explica o conceito de harness em agentes de IA e por que a camada de execução define resultados práticos.",
+              "durationSeconds": 2176,
+              "youtubeUrl": "https://www.youtube.com/watch?v=AUk8bhpXzpE",
+              "materials": [
+                {
+                  "title": "Canal original — Rafael Quintanilha – QuantBrasil",
+                  "url": "https://www.youtube.com/@QuantBrasil"
+                }
+              ],
+              "author": "Rafael Quintanilha – QuantBrasil",
+              "authorUrl": "https://www.youtube.com/@QuantBrasil",
+              "creatorId": "quantbrasil"
+            },
+            {
+              "id": "harness-segredo-claude-code",
+              "title": "O Segredo do Claude Code não é o Modelo (Agent Harness)",
+              "description": "Autoria: Ronnald Hawk | Engenharia de IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Analisa como o agent harness do Claude Code potencializa o modelo por meio de ferramentas, contexto e loop de execução.",
+              "durationSeconds": 1405,
+              "youtubeUrl": "https://www.youtube.com/watch?v=fVdXQR4ctTo",
+              "materials": [
+                {
+                  "title": "Canal original — Ronnald Hawk | Engenharia de IA",
+                  "url": "https://www.youtube.com/@ronnaldhawk"
+                }
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
+            },
+            {
+              "id": "harness-self-improving",
+              "title": "A próxima fase dos Harnesses de IA (SELF-IMPROVING HARNESS)",
+              "description": "Autoria: Ronnald Hawk | Engenharia de IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Explora arquitetura e evolução de harnesses autoaperfeiçoáveis na engenharia de IA.",
+              "durationSeconds": 1091,
+              "youtubeUrl": "https://www.youtube.com/watch?v=VHAWV5JY5Ug",
+              "materials": [
+                {
+                  "title": "Canal original — Ronnald Hawk | Engenharia de IA",
+                  "url": "https://www.youtube.com/@ronnaldhawk"
+                }
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
+            }
+          ]
+        },
         {
           "id": "harness-ambientes-modulo",
           "title": "Harnesses de desenvolvimento e execução",
@@ -124,22 +178,6 @@
               "author": "Rafael Quintanilha – QuantBrasil",
               "authorUrl": "https://www.youtube.com/@QuantBrasil",
               "creatorId": "quantbrasil"
-            },
-            {
-              "id": "harness-self-improving",
-              "title": "A próxima fase dos Harnesses de IA (SELF-IMPROVING HARNESS)",
-              "description": "Autoria: Ronnald Hawk | Engenharia de IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Explora arquitetura e evolução de harnesses autoaperfeiçoáveis na engenharia de IA.",
-              "durationSeconds": 1091,
-              "youtubeUrl": "https://www.youtube.com/watch?v=VHAWV5JY5Ug",
-              "materials": [
-                {
-                  "title": "Canal original — Ronnald Hawk | Engenharia de IA",
-                  "url": "https://www.youtube.com/@ronnaldhawk"
-                }
-              ],
-              "author": "Ronnald Hawk | Engenharia de IA",
-              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
-              "creatorId": "ronnaldhawk"
             },
             {
               "id": "harness-codex-api",
@@ -188,6 +226,38 @@
               "author": "Bruno Okamoto",
               "authorUrl": "https://www.youtube.com/@obrunookamoto",
               "creatorId": "obrunookamoto"
+            },
+            {
+              "id": "harness-opencode-alternativa",
+              "title": "OpenCode 2.0: uma alternativa ao Claude Code, Codex e Antigravity? Testei na prática",
+              "description": "Autoria: Eli Rigobeli - IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Demonstração prática do OpenCode 2.0 como harness open source alternativo para desenvolvimento com IA.",
+              "durationSeconds": 1474,
+              "youtubeUrl": "https://www.youtube.com/watch?v=mkS7FbSpe2w",
+              "materials": [
+                {
+                  "title": "Canal original — Eli Rigobeli - IA",
+                  "url": "https://www.youtube.com/@EliRigobeliAI"
+                }
+              ],
+              "author": "Eli Rigobeli - IA",
+              "authorUrl": "https://www.youtube.com/@EliRigobeliAI",
+              "creatorId": "elirigobeliai"
+            },
+            {
+              "id": "harness-deepseek-pratica",
+              "title": "DeepSeek Harness: o fim do Claude Code? (TESTEI NA PRÁTICA)",
+              "description": "Autoria: Julio | Lucrar com IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Testes práticos comparando o harness do DeepSeek com fluxos consolidados de codificação agêntica.",
+              "durationSeconds": 1168,
+              "youtubeUrl": "https://www.youtube.com/watch?v=acJjnkP7EZQ",
+              "materials": [
+                {
+                  "title": "Canal original — Julio | Lucrar com IA",
+                  "url": "https://www.youtube.com/@juliosilvaai"
+                }
+              ],
+              "author": "Julio | Lucrar com IA",
+              "authorUrl": "https://www.youtube.com/@juliosilvaai",
+              "creatorId": "juliosilvaai"
             }
           ]
         },
@@ -251,12 +321,28 @@
     {
       "id": "gerencia-contexto",
       "title": "Gerência de contexto",
-      "description": "Organização de especificações (SDD), seleção das informações enviadas aos modelos e otimização do consumo de tokens. Curadoria IAFLIX com aulas externas dos YouTubers indicados; autoria e links originais preservados.",
+      "description": "Curadoria IAFLIX com vídeos públicos dos YouTubers indicados sobre engenharia de contexto, Spec-Driven Development, arquivos de regras, organização de projetos e economia de tokens.",
       "modules": [
         {
           "id": "gerencia-contexto-sdd-modulo",
-          "title": "Especificação e estruturação de contexto",
+          "title": "Engenharia de contexto, SDD e arquivos de regras",
           "lessons": [
+            {
+              "id": "contexto-engenharia-agentes",
+              "title": "Engenharia de Contexto: A Chave para Construir Agentes de IA que Realmente Funcionam (com exemplos)",
+              "description": "Autoria: Ronnald Hawk | Engenharia de IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Apresenta fundamentos e exemplos práticos de engenharia de contexto para aumentar confiabilidade em agentes de IA.",
+              "durationSeconds": 1164,
+              "youtubeUrl": "https://www.youtube.com/watch?v=aMJUnOeOs2k",
+              "materials": [
+                {
+                  "title": "Canal original — Ronnald Hawk | Engenharia de IA",
+                  "url": "https://www.youtube.com/@ronnaldhawk"
+                }
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
+            },
             {
               "id": "contexto-sdd-agentes",
               "title": "Por que aprender SDD para programar com agentes de IA",
@@ -274,6 +360,60 @@
               "creatorId": "quantbrasil"
             },
             {
+              "id": "contexto-sdd-caminho",
+              "title": "Spec Driven Development é o Caminho?",
+              "description": "Autoria: Ronnald Hawk | Engenharia de IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Discute quando e como usar Spec-Driven Development para estruturar o contexto antes da geração de código.",
+              "durationSeconds": 566,
+              "youtubeUrl": "https://www.youtube.com/watch?v=DJE0LL0CuUQ",
+              "materials": [
+                {
+                  "title": "Canal original — Ronnald Hawk | Engenharia de IA",
+                  "url": "https://www.youtube.com/@ronnaldhawk"
+                }
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
+            },
+            {
+              "id": "contexto-claude-md-guia",
+              "title": "Este CLAUDE.md pode deixar o seu Claude Code em outro nível! (grátis)",
+              "description": "Autoria: Matheus Battisti - Hora de Codar. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Mostra como estruturar instruções persistentes em CLAUDE.md para guiar o comportamento do agente no projeto.",
+              "durationSeconds": 839,
+              "youtubeUrl": "https://www.youtube.com/watch?v=p2YycpH5i6c",
+              "materials": [
+                {
+                  "title": "Canal original — Matheus Battisti - Hora de Codar",
+                  "url": "https://www.youtube.com/@MatheusBattisti"
+                }
+              ],
+              "author": "Matheus Battisti - Hora de Codar",
+              "authorUrl": "https://www.youtube.com/@MatheusBattisti",
+              "creatorId": "matheusbattisti"
+            }
+          ]
+        },
+        {
+          "id": "gerencia-contexto-projetos-modulo",
+          "title": "Organização de projetos e decisões de contexto",
+          "lessons": [
+            {
+              "id": "contexto-projetos-claude-cowork",
+              "title": "Como criar PROJETOS no CLAUDE COWORK (e nunca perder contexto)",
+              "description": "Autoria: Rafa Voss | IA na Prática. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Ensina a organizar projetos e instruções no Claude Cowork para manter contexto consistente entre tarefas.",
+              "durationSeconds": 766,
+              "youtubeUrl": "https://www.youtube.com/watch?v=fZhITdr_XAw",
+              "materials": [
+                {
+                  "title": "Canal original — Rafa Voss | IA na Prática",
+                  "url": "https://www.youtube.com/@Orafavoss"
+                }
+              ],
+              "author": "Rafa Voss | IA na Prática",
+              "authorUrl": "https://www.youtube.com/@Orafavoss",
+              "creatorId": "orafavoss"
+            },
+            {
               "id": "contexto-jev-decisoes",
               "title": "Lançou uma IA que se recusa a escrever. E isso é o ponto (testei o Jev)",
               "description": "Autoria: Matheus Battisti - Hora de Codar. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Mostra como separar tomada de decisão e geração de código para enxugar o contexto do modelo principal.",
@@ -288,6 +428,38 @@
               "author": "Matheus Battisti - Hora de Codar",
               "authorUrl": "https://www.youtube.com/@MatheusBattisti",
               "creatorId": "matheusbattisti"
+            },
+            {
+              "id": "contexto-prompts-ingles-tokens",
+              "title": "Escrever prompt em inglês economiza tokens?",
+              "description": "Autoria: Rafael Quintanilha – QuantBrasil. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Analisa com testes o impacto do idioma do prompt na tokenização, consumo de janela de contexto e custo.",
+              "durationSeconds": 2309,
+              "youtubeUrl": "https://www.youtube.com/watch?v=wF15C3IPCCc",
+              "materials": [
+                {
+                  "title": "Canal original — Rafael Quintanilha – QuantBrasil",
+                  "url": "https://www.youtube.com/@QuantBrasil"
+                }
+              ],
+              "author": "Rafael Quintanilha – QuantBrasil",
+              "authorUrl": "https://www.youtube.com/@QuantBrasil",
+              "creatorId": "quantbrasil"
+            },
+            {
+              "id": "contexto-multiagentes-tokens",
+              "title": "Gastei 2.5 milhões de tokens (e quase um casamento) para aprender essa lição sobre multi-agentes",
+              "description": "Autoria: Bruno Okamoto. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Compartilha lições práticas sobre explosão de consumo de tokens e gestão de contexto em fluxos multiagentes.",
+              "durationSeconds": 1865,
+              "youtubeUrl": "https://www.youtube.com/watch?v=yrhaxFsMltQ",
+              "materials": [
+                {
+                  "title": "Canal original — Bruno Okamoto",
+                  "url": "https://www.youtube.com/@obrunookamoto"
+                }
+              ],
+              "author": "Bruno Okamoto",
+              "authorUrl": "https://www.youtube.com/@obrunookamoto",
+              "creatorId": "obrunookamoto"
             }
           ]
         },
@@ -295,6 +467,22 @@
           "id": "gerencia-contexto-tokens-modulo",
           "title": "Otimização e economia de tokens",
           "lessons": [
+            {
+              "id": "contexto-18-estrategias-tokens",
+              "title": "18 ESTRATÉGIAS pra ECONOMIZAR TOKENS no CLAUDE CODE",
+              "description": "Autoria: Julio | Lucrar com IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Lista técnicas práticas de compactação, escopo e hábitos de sessão para reduzir gasto de tokens no Claude Code.",
+              "durationSeconds": 1130,
+              "youtubeUrl": "https://www.youtube.com/watch?v=r2oMQqhqgv8",
+              "materials": [
+                {
+                  "title": "Canal original — Julio | Lucrar com IA",
+                  "url": "https://www.youtube.com/@juliosilvaai"
+                }
+              ],
+              "author": "Julio | Lucrar com IA",
+              "authorUrl": "https://www.youtube.com/@juliosilvaai",
+              "creatorId": "juliosilvaai"
+            },
             {
               "id": "contexto-tokens-claude-code",
               "title": "Parei de queimar tokens no Claude Code com o Jev (3 recursos para você copiar)",
@@ -351,12 +539,28 @@
     {
       "id": "memoria-ia",
       "title": "Memória",
-      "description": "Memória persistente entre sessões, consolidação de histórico e grafos de conhecimento em aplicações de IA. Curadoria IAFLIX com aulas externas dos YouTubers indicados; autoria e links originais preservados.",
+      "description": "Curadoria IAFLIX com vídeos públicos dos YouTubers indicados sobre memória persistente entre sessões, grafos de conhecimento, RAG em produção, Agentic RAG e segundo cérebro para agentes.",
       "modules": [
         {
           "id": "memoria-ia-persistencia-modulo",
-          "title": "Memória entre sessões e grafos de conhecimento",
+          "title": "Memória persistente e revisão entre sessões",
           "lessons": [
+            {
+              "id": "memoria-anthropic-futuro-agentes",
+              "title": "Anthropic e o FUTURO da MEMÓRIA em Agentes (Como eu implemento)",
+              "description": "Autoria: Ronnald Hawk | Engenharia de IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Explica padrões arquiteturais de memória em agentes de IA inspirados nas diretrizes da Anthropic e implementação prática.",
+              "durationSeconds": 1002,
+              "youtubeUrl": "https://www.youtube.com/watch?v=1OEkjwmEOi8",
+              "materials": [
+                {
+                  "title": "Canal original — Ronnald Hawk | Engenharia de IA",
+                  "url": "https://www.youtube.com/@ronnaldhawk"
+                }
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
+            },
             {
               "id": "memoria-dreaming-sessoes",
               "title": "Como fazer qualquer agente revisar a própria memória entre as sessões (Dreaming)",
@@ -374,6 +578,44 @@
               "creatorId": "quantbrasil"
             },
             {
+              "id": "memoria-claude-code-memory-2",
+              "title": "Claude CODE acaba de lançar MEMÓRIA 2.0",
+              "description": "Autoria: Julio | Lucrar com IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Apresenta a evolução de memória persistente no Claude Code para reter aprendizados entre sessões de trabalho.",
+              "durationSeconds": 579,
+              "youtubeUrl": "https://www.youtube.com/watch?v=UiHWEt3ftqQ",
+              "materials": [
+                {
+                  "title": "Canal original — Julio | Lucrar com IA",
+                  "url": "https://www.youtube.com/@juliosilvaai"
+                }
+              ],
+              "author": "Julio | Lucrar com IA",
+              "authorUrl": "https://www.youtube.com/@juliosilvaai",
+              "creatorId": "juliosilvaai"
+            },
+            {
+              "id": "memoria-whatsapp-longa-n8n",
+              "title": "Agente de IA no WhatsApp com Memória Longa | N8N Tutorial Completo",
+              "description": "Autoria: Julio | Lucrar com IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Tutorial completo construindo um agente com memória de longo prazo no n8n para manter histórico persistente no WhatsApp.",
+              "durationSeconds": 1807,
+              "youtubeUrl": "https://www.youtube.com/watch?v=HjRzEMylyEw",
+              "materials": [
+                {
+                  "title": "Canal original — Julio | Lucrar com IA",
+                  "url": "https://www.youtube.com/@juliosilvaai"
+                }
+              ],
+              "author": "Julio | Lucrar com IA",
+              "authorUrl": "https://www.youtube.com/@juliosilvaai",
+              "creatorId": "juliosilvaai"
+            }
+          ]
+        },
+        {
+          "id": "memoria-ia-rag-modulo",
+          "title": "Grafos, RAG em produção e Agentic RAG",
+          "lessons": [
+            {
               "id": "memoria-grafos-ia",
               "title": "Grafos de IA: o superpoder que os especialistas usam e ninguém explica direito",
               "description": "Autoria: Maestros da IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Explora representação de relacionamentos e memória estruturada com grafos em sistemas de IA.",
@@ -388,6 +630,124 @@
               "author": "Maestros da IA",
               "authorUrl": "https://www.youtube.com/@maestrosdaia",
               "creatorId": "maestrosdaia"
+            },
+            {
+              "id": "memoria-rag-producao-semantica",
+              "title": "RAG em Produção: Busca semântica não é suficiente",
+              "description": "Autoria: Ronnald Hawk | Engenharia de IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Aborda os limites da busca vetorial pura em produção e técnicas complementares para recuperação confiável de memória.",
+              "durationSeconds": 883,
+              "youtubeUrl": "https://www.youtube.com/watch?v=KFk_WtdAigY",
+              "materials": [
+                {
+                  "title": "Canal original — Ronnald Hawk | Engenharia de IA",
+                  "url": "https://www.youtube.com/@ronnaldhawk"
+                }
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
+            },
+            {
+              "id": "memoria-agentic-rag-pratica",
+              "title": "Agentic RAG: PENSE e CRIE como um PRO",
+              "description": "Autoria: Ronnald Hawk | Engenharia de IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Explora arquiteturas de Agentic RAG em que o próprio agente decide quando e como consultar bases de conhecimento.",
+              "durationSeconds": 939,
+              "youtubeUrl": "https://www.youtube.com/watch?v=m6Q9x678myU",
+              "materials": [
+                {
+                  "title": "Canal original — Ronnald Hawk | Engenharia de IA",
+                  "url": "https://www.youtube.com/@ronnaldhawk"
+                }
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
+            },
+            {
+              "id": "memoria-rag-3-subagentes-vfs",
+              "title": "RAG 3.0: Subagentes + Virtual File System | Nova Arquitetura",
+              "description": "Autoria: Ronnald Hawk | Engenharia de IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Mostra uma arquitetura moderna de recuperação de memória combinando subagentes especializados e sistema de arquivos virtual.",
+              "durationSeconds": 1193,
+              "youtubeUrl": "https://www.youtube.com/watch?v=hgLpzI85-cs",
+              "materials": [
+                {
+                  "title": "Canal original — Ronnald Hawk | Engenharia de IA",
+                  "url": "https://www.youtube.com/@ronnaldhawk"
+                }
+              ],
+              "author": "Ronnald Hawk | Engenharia de IA",
+              "authorUrl": "https://www.youtube.com/@ronnaldhawk",
+              "creatorId": "ronnaldhawk"
+            },
+            {
+              "id": "memoria-rag-n8n-reranker",
+              "title": "NOVO RAG NO N8N: o agente de IA mais inteligente (Reranker Cohere)",
+              "description": "Autoria: Julio | Lucrar com IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Demonstra como melhorar a precisão da memória externa de agentes no n8n usando reranking com Cohere.",
+              "durationSeconds": 1976,
+              "youtubeUrl": "https://www.youtube.com/watch?v=a8lv_8AJgKc",
+              "materials": [
+                {
+                  "title": "Canal original — Julio | Lucrar com IA",
+                  "url": "https://www.youtube.com/@juliosilvaai"
+                }
+              ],
+              "author": "Julio | Lucrar com IA",
+              "authorUrl": "https://www.youtube.com/@juliosilvaai",
+              "creatorId": "juliosilvaai"
+            }
+          ]
+        },
+        {
+          "id": "memoria-ia-segundo-cerebro-modulo",
+          "title": "Segundo cérebro e bases de conhecimento para agentes",
+          "lessons": [
+            {
+              "id": "memoria-obsidian-cerebro-agentes",
+              "title": "Transformei meu Obsidian em um cérebro para meus agentes de IA (Tutorial)",
+              "description": "Autoria: Rafael Quintanilha – QuantBrasil. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Tutorial prático integrando notas em Markdown do Obsidian como memória estruturada e consultável para agentes de IA.",
+              "durationSeconds": 1667,
+              "youtubeUrl": "https://www.youtube.com/watch?v=2KUF9BB_rh8",
+              "materials": [
+                {
+                  "title": "Canal original — Rafael Quintanilha – QuantBrasil",
+                  "url": "https://www.youtube.com/@QuantBrasil"
+                }
+              ],
+              "author": "Rafael Quintanilha – QuantBrasil",
+              "authorUrl": "https://www.youtube.com/@QuantBrasil",
+              "creatorId": "quantbrasil"
+            },
+            {
+              "id": "memoria-segundo-cerebro-openknowledge",
+              "title": "Montei um Segundo Cérebro que o Claude Code mantém sozinho (OpenKnowledge)",
+              "description": "Autoria: Matheus Battisti - Hora de Codar. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Mostra como construir uma base de conhecimento autoatualizável mantida pelo próprio agente de codificação.",
+              "durationSeconds": 907,
+              "youtubeUrl": "https://www.youtube.com/watch?v=eyXrMCMb4zA",
+              "materials": [
+                {
+                  "title": "Canal original — Matheus Battisti - Hora de Codar",
+                  "url": "https://www.youtube.com/@MatheusBattisti"
+                }
+              ],
+              "author": "Matheus Battisti - Hora de Codar",
+              "authorUrl": "https://www.youtube.com/@MatheusBattisti",
+              "creatorId": "matheusbattisti"
+            },
+            {
+              "id": "memoria-tres-camadas-segundo-cerebro",
+              "title": "As 3 camadas que deixam o Segundo Cérebro da sua IA mais inteligente",
+              "description": "Autoria: Bruno Okamoto. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Apresenta a organização em três camadas de memória para tornar assistentes e agentes de IA mais precisos.",
+              "durationSeconds": 1257,
+              "youtubeUrl": "https://www.youtube.com/watch?v=kbR8goTbJS0",
+              "materials": [
+                {
+                  "title": "Canal original — Bruno Okamoto",
+                  "url": "https://www.youtube.com/@obrunookamoto"
+                }
+              ],
+              "author": "Bruno Okamoto",
+              "authorUrl": "https://www.youtube.com/@obrunookamoto",
+              "creatorId": "obrunookamoto"
             }
           ]
         }
@@ -397,8 +757,62 @@
     {
       "id": "agentes-ia",
       "title": "Agentes",
-      "description": "Agentes de IA, controle do computador, skills, automação de fluxos e colaboração entre múltiplos agentes. Curadoria IAFLIX com aulas externas dos YouTubers indicados; autoria e links originais preservados.",
+      "description": "Curadoria IAFLIX com vídeos públicos dos YouTubers indicados sobre skills, MCPs, guardrails, assistentes pessoais com controle de computador e automação com agentes.",
       "modules": [
+        {
+          "id": "agentes-ia-arquitetura-modulo",
+          "title": "Fundamentos, skills, MCPs e segurança de agentes",
+          "lessons": [
+            {
+              "id": "agentes-skills-mcps-subagentes",
+              "title": "Skills, MCPs e subagentes: quando usar cada um (Programação com IA)",
+              "description": "Autoria: Rafael Quintanilha – QuantBrasil. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Guia prático diferenciando skills, MCPs e subagentes e quando aplicar cada padrão na arquitetura de agentes.",
+              "durationSeconds": 2671,
+              "youtubeUrl": "https://www.youtube.com/watch?v=LFq8gBbS8DQ",
+              "materials": [
+                {
+                  "title": "Canal original — Rafael Quintanilha – QuantBrasil",
+                  "url": "https://www.youtube.com/@QuantBrasil"
+                }
+              ],
+              "author": "Rafael Quintanilha – QuantBrasil",
+              "authorUrl": "https://www.youtube.com/@QuantBrasil",
+              "creatorId": "quantbrasil"
+            },
+            {
+              "id": "agentes-guia-hermes-iniciantes",
+              "title": "Guia Definitivo do Hermes Agent para Iniciantes",
+              "description": "Autoria: Maestros da IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Passo a passo introdutório para configurar, entender e operar o Hermes Agent em fluxos práticos.",
+              "durationSeconds": 1760,
+              "youtubeUrl": "https://www.youtube.com/watch?v=8sV6rsGFCS8",
+              "materials": [
+                {
+                  "title": "Canal original — Maestros da IA",
+                  "url": "https://www.youtube.com/@maestrosdaia"
+                }
+              ],
+              "author": "Maestros da IA",
+              "authorUrl": "https://www.youtube.com/@maestrosdaia",
+              "creatorId": "maestrosdaia"
+            },
+            {
+              "id": "agentes-guardrails-n8n",
+              "title": "Como Proteger Seus Agentes no n8n (Novo Guardrails)",
+              "description": "Autoria: Eli Rigobeli - IA. Aula externa incorporada do canal original, sem alteração ou hospedagem pelo IAFLIX. Ensina a configurar guardrails de segurança e validação para proteger agentes de IA em produção no n8n.",
+              "durationSeconds": 1421,
+              "youtubeUrl": "https://www.youtube.com/watch?v=pPkwnA-ANZI",
+              "materials": [
+                {
+                  "title": "Canal original — Eli Rigobeli - IA",
+                  "url": "https://www.youtube.com/@EliRigobeliAI"
+                }
+              ],
+              "author": "Eli Rigobeli - IA",
+              "authorUrl": "https://www.youtube.com/@EliRigobeliAI",
+              "creatorId": "elirigobeliai"
+            }
+          ]
+        },
         {
           "id": "agentes-ia-computador-modulo",
           "title": "Agentes no computador e assistentes pessoais",
