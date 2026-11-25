@@ -138,10 +138,10 @@ E npm test, npm run build e as suites Playwright passam sem regressões.
 ## 6. Definição de Pronto (Definition of Done - DoD)
 
 Esta história será considerada concluída quando:
-- [ ] Especificação SDD (`EXP-01`) aprovada por Igor.
-- [ ] Varredura dos vídeos públicos nos 10 canais indicados documentada (`EXP-02`), com registro de candidatos verificados (oEmbed, duração, tema e canal) e eventuais lacunas reportadas.
-- [ ] `public/data/catalog.json` atualizado (`EXP-03`) com ≥ 10 aulas por assunto em `assuntos-ia` (mantendo os 24 IDs originais intactos e `author`/`authorUrl`/`creatorId` preenchidos).
-- [ ] Páginas estáticas `/cursos/<id>/index.html` regeneradas via `npm run build` (`EXP-04`).
-- [ ] `npm test` (validação de contrato, autoria, rotas e unicidade) e suites Playwright (`qa-browser`, `qa-iaflix-layout`, `qa-admin-integration`) aprovados (`EXP-04`).
-- [ ] Revisão final, sincronização com o repositório Git externo ao Drive, deploy na Vercel e verificação HTTP 200 em `https://iaflix.vercel.app` (`EXP-05`).
-- [ ] `TASKS.md` atualizado com status, agentes executores e evidências reais.
+- [x] Especificação SDD (`EXP-01`) aprovada por Igor.
+- [x] Varredura dos vídeos públicos nos 10 canais indicados documentada (`EXP-02`), com registro de candidatos verificados (oEmbed, duração, tema e canal) e eventuais lacunas reportadas.
+- [x] `public/data/catalog.json` atualizado (`EXP-03`) com ≥ 10 aulas por assunto em `assuntos-ia` (mantendo os 24 IDs originais intactos e `author`/`authorUrl`/`creatorId` preenchidos).
+- [x] Páginas estáticas `/cursos/<id>/index.html` regeneradas via `npm run build` (`EXP-04`).
+- [x] `npm test` (validação de contrato, autoria, rotas e unicidade) e suites Playwright (`qa-browser`, `qa-iaflix-layout`, `qa-admin-integration`) aprovados (`EXP-04`).
+- [x] Revisão final, sincronização com o repositório Git externo ao Drive, deploy na Vercel e verificação HTTP 200 em `https://iaflix.vercel.app` (`EXP-05`).
+- [x] `TASKS.md` atualizado com status, agentes executores e evidências reais.
