@@ -64,7 +64,7 @@ export function renderCoursePage(course) {
     </div>
     ${course.modules.map(module => `<section><h2>${escapeHtml(module.title)}</h2><ul>${module.lessons.map(lesson => `<li><a href="/#/curso/${course.id}/aula/${lesson.id}">${escapeHtml(lesson.title)}</a></li>`).join('')}</ul></section>`).join('\n    ')}
   </main>
-  <footer><p>Curadoria IAFLIX. Autoria e links originais preservados nas aulas.</p><p><a class="admin-link" href="/#/admin">Administração</a></p></footer>
+  <footer class="site-footer"><section class="footer-col"><h2>Sobre o IAFLIX</h2><p>Curadoria IAFLIX. Autoria e links originais preservados nas aulas.</p></section><nav class="footer-col" aria-label="Informações e links do rodapé"><h2>Informações e links</h2><ul><li><a href="/#/">Catálogo de cursos</a></li><li><a href="/#/como-funciona-progresso">Como funciona o controle de aulas (localStorage)</a></li><li><a href="/#/como-funciona-progresso#privacidade">Privacidade e armazenamento local</a></li><li><a href="/#/como-funciona-progresso#curadoria">Curadoria e direitos autorais</a></li><li><a class="admin-link" href="/#/admin">Administração</a></li></ul></nav><section class="footer-col"><h2>Progresso local</h2><p>Sem cadastro e sem rastreamento em servidor. As aulas concluídas ficam salvas apenas neste navegador (localStorage).</p><p><a href="/#/como-funciona-progresso">Saiba como suas aulas são salvas</a></p></section></footer>
 </body>
 </html>
 `.replace(/[ \t]+$/gm, '');

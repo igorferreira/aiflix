@@ -89,6 +89,8 @@ export function resolveRoute(hash, catalog) {
   if (route === '#/admin') return { type: 'admin' };
   const admin = /^#\/admin\/caminho\/([a-z0-9-]+)$/.exec(route);
   if (admin && isId(admin[1])) return { type: 'admin', id: admin[1] };
+  const info = /^#\/como-funciona-progresso(?:#(privacidade|curadoria))?$/.exec(route);
+  if (info) return { type: 'progress-info', section: info[1] };
   const path = /^#\/caminho\/([a-z0-9-]+)$/.exec(route);
   if (path && isId(path[1])) {
     const entry = catalog.learnPaths.find(p => p.id === path[1]);

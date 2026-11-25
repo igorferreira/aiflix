@@ -329,9 +329,9 @@ YT-RANK — Estado atual: a conexão da primeira conta permitiu leitura real do 
 | ID | Requisito | Status | Agente responsável | Dependência | Evidência |
 |---|---|---|---|---|---|
 | FTR-01 | Especificar no SDD o rodapé informativo com links e explicação sobre o controle de aulas via `localStorage` | Concluída | devsquad-po (executou) | Nenhuma; solicitação de Igor em 25/11/2026 | specs/001-rodape-informativo-progresso-local-v1.md |
-| FTR-02 | Implementar rodapé estruturado em colunas, link explicativo, rota `#/como-funciona-progresso` e atalho discreto na nota do player | Backlog | devsquad-frontend (planejado; sem agente executando) | FTR-01 aprovada | public/index.html, public/styles.css, public/assets/js/catalog.js e public/assets/js/app.js |
-| FTR-03 | Validar rota, acessibilidade, layout responsivo (320px a 1920px) e regressões via `npm test` e Playwright | Backlog | devsquad-qa (planejado) | FTR-02 | Pendente |
-| FTR-04 | Revisão final, sync Git/GitHub e publicação em produção (`https://iaflix.vercel.app`) | Backlog | devsquad-reviewer / root (planejado) | FTR-03 | Pendente |
+| FTR-02 | Implementar rodapé estruturado em colunas, link explicativo, rota `#/como-funciona-progresso` e atalho discreto na nota do player | Concluída | devsquad-frontend (planejado); executado por root inline | FTR-01 aprovada | public/index.html, public/styles.css, public/assets/js/catalog.js, public/assets/js/app.js, scripts/generate-course-pages.mjs (rodapé das páginas estáticas); `npm test` 34/34; `npm run build` com 7 páginas |
+| FTR-03 | Validar rota, acessibilidade, layout responsivo (320px a 1920px) e regressões via `npm test` e Playwright | Concluída | devsquad-qa (planejado); executado por root inline | FTR-02 | tests/frontend.test.mjs (rota nova); qa-iaflix-layout sem overflow em 320–1920px; qa-browser 74/74 PASS; qa-thumbnails OK; check ad hoc de rodapé, rota e atalho da aula em 320/390/768/1440px sem erro de página |
+| FTR-04 | Revisão final, sync Git/GitHub e publicação em produção (`https://iaflix.vercel.app`) | Em andamento | devsquad-reviewer / root (planejado); executado por root | FTR-03 | Commit e push em `main`; deploy Vercel pendente (ver evidência em docs/publicacao-2026-11-14.md quando atualizada) |
 
 
 

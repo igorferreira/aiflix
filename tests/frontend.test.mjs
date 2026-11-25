@@ -37,6 +37,13 @@ test('rotas vinculam aula ao curso e rejeitam formatos malformados', () => {
   for (const hash of ['#/curso/missing/aula/test-lesson', '#/curso/test-course/aula/missing', '#/curso/test-course%2fextra', '#/curso/test-course/', '#/admin/caminho/--bad']) assert.equal(resolveRoute(hash, value).type, 'not-found');
   assert.deepEqual(resolveRoute('#/admin/caminho/new-path', value), { type: 'admin', id: 'new-path' });
 });
+test('rota explicativa do progresso aceita seções conhecidas e rejeita variações', () => {
+  const value = fixture();
+  assert.deepEqual(resolveRoute('#/como-funciona-progresso', value), { type: 'progress-info', section: undefined });
+  assert.deepEqual(resolveRoute('#/como-funciona-progresso#privacidade', value), { type: 'progress-info', section: 'privacidade' });
+  assert.deepEqual(resolveRoute('#/como-funciona-progresso#curadoria', value), { type: 'progress-info', section: 'curadoria' });
+  for (const hash of ['#/como-funciona-progresso/', '#/como-funciona-progresso#outra', '#/como-funciona-progresso?x=1']) assert.equal(resolveRoute(hash, value).type, 'not-found');
+});
 test('progresso persiste reversão e preserva IDs removidos do catálogo', () => {
   let raw = JSON.stringify({ version: 1, completedLessonIds: ['removed-lesson'] });
   const store = { getItem: () => raw, setItem: (_, value) => { raw = value; } };

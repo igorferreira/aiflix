@@ -179,7 +179,7 @@ function courseView(course, lesson) {
     const updateToggle = () => { toggle.textContent = progress.completed.has(lesson.id) ? 'Marcar como não concluída' : 'Marcar como concluída'; toggle.setAttribute('aria-pressed', String(progress.completed.has(lesson.id))); };
     updateToggle(); const actions = el('div', undefined, 'actions'); actions.append(toggle); content.append(actions, warning);
     if (lesson.materials.length) { content.append(el('h3', 'Materiais complementares')); const list = el('ul'); lesson.materials.forEach(material => { const item = el('li'); const a = link(`${material.title} (nova aba)`, material.url); a.target = '_blank'; a.rel = 'noopener noreferrer'; item.append(a); list.append(item); }); content.append(list); }
-    content.append(el('p', 'Conclusão manual salva neste navegador. A reprodução não marca a aula automaticamente.', 'meta'));
+    const note = el('p', 'Conclusão manual salva neste navegador. A reprodução não marca a aula automaticamente. ', 'meta'); note.append(link('Saiba como funciona', '#/como-funciona-progresso')); content.append(note);
   } else {
     if (course.cover) {
       const cover = el('img'); cover.src = course.cover; cover.alt = ''; cover.className = 'course-overview-cover'; content.append(cover);
@@ -223,17 +223,34 @@ async function render() {
   const route = resolveRoute(location.hash, catalog);
   if (route.type === 'admin') { await admin(route.id, version); return; }
   if (route.type === 'home') home();
+  else if (route.type === 'progress-info') progressInfo();
   else if (route.type === 'course' || route.type === 'lesson') courseView(route.course, route.lesson);
   else if (route.type === 'path') { main.append(link('Todos os cursos', '#/')); heading(route.path.title); main.append(el('p', route.path.description), el('p', 'Esta ordem é uma recomendação. Todos os cursos estão disponíveis diretamente.', 'notice'), group('Cursos deste caminho', '', route.path.courseIds.map(id => catalog.courses.find(course => course.id === id)))); }
   else { heading('Conteúdo não encontrado'); main.append(el('p', 'Confira o endereço ou volte ao catálogo.'), link('Voltar ao catálogo', '#/')); }
   main.querySelector('h1')?.focus();
+  if (route.type === 'progress-info' && route.section) document.getElementById(route.section)?.scrollIntoView();
+}
+function progressInfo() {
+  heading('Como funciona o controle de aulas');
+  const block = (id, title, ...paragraphs) => { const s = el('section'); if (id) s.id = id; s.append(el('h2', title), ...paragraphs.map(text => el('p', text))); return s; };
+  const limits = el('ul'); ['Permanece salvo ao recarregar a página, fechar a aba ou voltar em outro dia, no mesmo navegador e aparelho.', 'Não sincroniza entre celular, computador ou navegadores diferentes, como Chrome e Safari.', 'É apagado se você limpar os dados de navegação do site ou usar aba anônima ou privada.', 'Se o navegador bloquear o armazenamento local, as aulas continuam livres e o progresso vale só enquanto a sessão estiver aberta.', 'Se duas abas alterarem o progresso ao mesmo tempo, a última gravação prevalece.'].forEach(text => limits.append(el('li', text)));
+  const section3 = el('section'); section3.append(el('h2', 'Quando o progresso fica salvo e quais são os limites'), limits);
+  main.append(
+    el('p', 'Você não precisa de login nem de cadastro. Qualquer pessoa pode estudar gratuitamente, no seu ritmo.'),
+    block(undefined, 'Sem login e 100% gratuito', 'Os cursos e as aulas estão disponíveis para todos, sem criar conta.'),
+    block(undefined, 'O que é localStorage', 'localStorage é a área de armazenamento do próprio navegador. O IAFLIX guarda nela apenas uma lista com os identificadores das aulas concluídas, na chave aiflix.progress.v1. Nome, e-mail e outros dados pessoais não são armazenados.'),
+    section3,
+    block('privacidade', 'Marcação manual e privacidade', 'O player do YouTube não informa ao IAFLIX quanto tempo você assistiu. A aula só fica concluída quando você clica em "Marcar como concluída". O IAFLIX não envia o seu histórico de aulas a nenhum servidor próprio.'),
+    block('curadoria', 'Curadoria e autoria', 'Os vídeos pertencem aos YouTubers indicados. O IAFLIX não baixa nem hospeda os vídeos e exibe a autoria e o link do canal original em cada aula.'),
+    link('Voltar para o catálogo', '#/'),
+  );
 }
 async function load() {
   main.replaceChildren(el('p', 'Carregando catálogo…'));
   try {
     const response = await fetch('data/catalog.json', { cache: 'no-store' }); if (!response.ok) throw new Error('Falha no carregamento'); catalog = validateCatalog(await response.json()); await render();
   } catch (error) {
-    if (resolveRoute(location.hash, catalog).type === 'admin') { await render(); return; }
+    if (['admin', 'progress-info'].includes(resolveRoute(location.hash, catalog).type)) { await render(); return; }
     console.error('Catálogo indisponível:', error.message); main.replaceChildren(); heading('Catálogo indisponível'); main.append(el('p', 'Não foi possível carregar os cursos. Tente novamente.', 'error'), button('Tentar novamente', load), link('Administração', '#/admin'));
   }
 }
