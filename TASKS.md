@@ -314,4 +314,15 @@ YT-RANK — Estado atual: a conexão da primeira conta permitiu leitura real do 
 | ATTR-03 | Implementar rodapé no player de aula e etiqueta pequena do criador nas listas de aulas e destaques | Concluída | devsquad-frontend (executou) | ATTR-02 | public/assets/js/app.js e public/styles.css (.video-footer-attribution, .lesson-owner e .featured-lesson-info) |
 | ATTR-04 | QA funcional, de acessibilidade e regressão visual da atribuição | Concluída | devsquad-qa (executou) | ATTR-03 | 32 testes Node (npm test) e suites Playwright (qa-browser, qa-iaflix-layout, qa-admin-integration) aprovadas |
 
+## Expansão de curadoria: mínimo de 10 vídeos por assunto (SDD) — 25/11/2026
+
+| ID | Requisito | Status | Agente responsável | Dependência | Evidência |
+|---|---|---|---|---|---|
+| EXP-01 | Especificar no SDD a expansão para pelo menos 10 aulas por assunto buscando vídeos nos 10 YouTubers indicados | Concluída | devsquad-po (executou) | Nenhuma; solicitação de Igor em 25/11/2026 | specs/001-expansao-curadoria-dez-aulas-v1.md |
+| EXP-02 | Buscar e verificar vídeos públicos diretamente nos 10 canais indicados para atingir ≥ 10 aulas em Harness, Gerência de contexto, Memória e Agentes | Backlog | devsquad-curator (planejado; sem agente executando) | EXP-01 aprovada; verificação oEmbed, duração real e aderência temática | Pendente |
+| EXP-03 | Organizar módulos e atualizar `public/data/catalog.json` preservando os 24 IDs existentes e atribuindo `author`, `authorUrl` e `creatorId` | Backlog | devsquad-curator / devsquad-architect (planejado) | EXP-02 | Pendente |
+| EXP-04 | Regenerar páginas estáticas (`npm run build`) e validar contrato, unicidade e QA (`npm test` + Playwright) | Backlog | devsquad-qa (planejado) | EXP-03 | Pendente |
+| EXP-05 | Revisão final, sync Git/GitHub e publicação em produção (`https://iaflix.vercel.app`) | Backlog | devsquad-reviewer / root (planejado) | EXP-04 | Pendente |
+
+
 
